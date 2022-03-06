@@ -13,7 +13,7 @@ The circuit is subdivided into two parts, a control part and a measurement part.
 #### 1.1 Connections Arduino - ADG726 Multiplexer (M1)
 
 
-![PCB_Layout](documentation/figures/PCB_Layout.svg)
+![PCB_Layout](documentation/figures/PCB_Layout.png)
 
 
 [See documentation of ADG726 Multiplexer](https://www.mouser.de/datasheet/2/609/ADG726_732-1503078.pdf).
