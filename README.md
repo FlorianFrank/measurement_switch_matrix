@@ -1,1 +1,61 @@
-# measurement_switch_matrix
+# Measurement Switch Matrix
+
+This repository contains a description of the NanoSEC switch matrix, as well as all the relevant source code, 
+to controll the board. 
+
+![Switch Matrix](documentation/figures/Motherboard.jpg)
+
+### 1. Circuit description 
+
+The circuit is subdivided into two parts, a control part and a measurement part. 
+
+
+#### 1.1 Connections Arduino - ADG726 Multiplexer (M1)
+
+
+![PCB_Layout](documentation/figures/PCB_Layout.svg)
+
+
+[See documentation of ADG726 Multiplexer](https://www.mouser.de/datasheet/2/609/ADG726_732-1503078.pdf).
+
+| Pin Arduino | Description | ADG726    | Description   |
+|:-----------:|:-----------:|:---------:|:-------------:|
+| Pin 16      |     3.3V    |  Pin 13   | VDD           |
+| Pin 16      |     3.3V    |  Pin 14   | VDD           |
+| Pin 4/29    |     GND     |  Pin 23   | GND           |
+| Pin 4/29    |     GND     |  Pin 24   | VSS           |  
+| Pin 5       |     A2      |  Pin 19   | CSA           |
+| Pin 5       |     A2      |  Pin 20   | CSB           |
+| Pin 12      |     D9      |  Pin 21   | WR            |
+| Pin 23      |     A4      |  Pin 22   | EN            |
+| Pin 16      |     3.3V    | Pin 43    | DA            |   
+| Pin 19      |     A0      | Pin 15    | A0            |
+| Pin 20      |     A1      | Pin 16    | A1            |
+| Pin 21      |     A2      | Pin 17    | A2            |
+| Pin 22      |     A3      | Pin 18    | A3            |
+
+<BR>
+
+##### 1.1.2 Connections Darlington Array (U3) - ADG726 (U4)
+
+|     Pin U3     | Description | Pin ADG726 (U4) | Description  |
+|:--------------:|:-----------:|:---------------:|:------------:|
+| Pin  1         |     I1      | Pin 1           | S12A         |       
+| Pin  2         |     I2      | Pin 2           | S11A         |      
+| Pin  3         |     I3      | Pin 3           | S10A         |     
+| Pin  4         |     I4      | Pin 4           |  S9A         |
+| Pin  5         |     I5      | Pin 5           |  S8A         |     
+| Pin  6         |     I6      | Pin 6           |  S7A         |     
+ 
+<BR>
+
+##### 1.1.3 Connections Darlington Array (U3) - ADG726 (U4)
+
+|     Pin U3     | Description | Pin ADG726 (U4) | Description  |
+|:--------------:|:-----------:|:---------------:|:------------:|
+| Pin  1         |     I1      | Pin 7           |  S8A        |       
+| Pin  2         |     I2      | Pin 8           |  S7A         |      
+| Pin  3         |     I3      | Pin 9           |  S6A         |     
+| Pin  4         |     I4      | Pin 10          |  S5A         |
+| Pin  5         |     I5      | Pin 11          |  S4A         |     
+| Pin  6         |     I6      | Pin 12          |  S3A         |     
