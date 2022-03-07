@@ -250,3 +250,54 @@ Routed on the Backside. Common length of 140 mm.
 | Pin 4/29           | GND | Pin 7 | Ground connection.  |
 
 <BR>
+
+
+### 2. Code description 
+
+The code is basically subdivided into two different components. 
+- The **Arduino Firmware** which is the code executed on the Arduino Nano. 
+It accepts commands via an UART interface and forwards the commands to the multiplexers, which switch the corresponding rows and columns.
+  <br><br>
+- The **Client Side API** is executed on the computer responsible for the test execution and communicates the 
+commands to the Arduino Nano via an UART interface.
+  
+#### 2.1 Preconditions
+
+##### 2.1.1 Installing the compilers
+
+To compile the firmware the avr-gcc or avr-g++ compilers must be installed.
+These can be installed manually or are part of the [Arduino IDE](https://www.arduino.cc/en/software).
+
+##### 2.1.1 Installing CMAKE
+
+Additionally, the cmake build system must be installed to build the Firmware as well as the Client Side API.
+
+Linux: 
+```
+sudo apt-get install cmake
+```
+
+Windows: 
+
+Follow this link [Cmake install](https://cmake.org/download/) and download the latest version. 
+
+
+##### 2.2 Compiling the firmware
+
+On Linux run: 
+
+```
+cd ./Arduino_Firmware
+./compile.sh
+```
+
+On Windows run:
+
+```
+cd ./Arduino_Firmware
+./compile.bat
+```
+
+##### 2.2 Flashing the Firmware onto the Aruino Nano
+
+
