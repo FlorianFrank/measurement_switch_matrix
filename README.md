@@ -19,6 +19,9 @@ The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}
 
 #### 1.1 Overview Components
 
+This table contains an overview of the components on the Motherboard. 
+Each component is identified by a Symbol ID.
+
 | Symbol | Component         | Description                                            |
 |:------:|:-----------------:|:------------------------------------------------------:|
 | U1     | [5-1634556-0-1 ](https://www.mouser.de/datasheet/2/418/7/ENG_CD_1634556_G2-2014703.pdf). | PCI-E M.2 Key M connector to mount the daugher boards  |
@@ -48,21 +51,9 @@ The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}
 | J10 | V_DS connector  | Connector to forward V_DS to the row and column relays. Must be connected by a 2.54mm jumper. |
 | MP* | Mounting holes  | To mount the board using M2 or M3 screws to a holder or case. The four mounting holes in the vicinity of the M.2 interface are used to mount holders for the daugherboard. The hole are placed according to the PC/104 EBX standard. | 
 
-[See documentation of ADG726 Multiplexer](https://www.mouser.de/datasheet/2/609/ADG726_732-1503078.pdf).
-<BR>
-[See documentation of Arduino Nano](https://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf).
-<BR>
-[See documentation of ALN2003APW](https://www.ti.com/general/docs/suppproductinfo.tsp?distId=26&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fuln2003a). 
-<BR>
-[See documentation of MDT350M01001VT-2](https://www.amphenol-icc.com/pcie-m-2-mdt350m01001vt.html).
-<BR>
-[See documentation of 5-1634556-0-1 ](https://www.mouser.de/datasheet/2/418/7/ENG_CD_1634556_G2-2014703.pdf).
-<BR>
-[See documentation of Finder 0.51.9.012.0000 ](https://asset.re-in.de/add/160267/c1/-/en/001419701DS02/DA_Finder-40.51.9.012.0000-Printrelais-12-V-DC-10A-1-Wechsler-1St..pdf).
-<BR>
-[See documentation of BarrelJack Wuerth 6941xx301002 ](http://katalog.we-online.de/em/datasheet/6941xx301002.pdf).
-  
-#### 1.1 Connections Arduino - ADG726 Multiplexer (M1)
+#### 1.2 Connections 
+
+#### 1.2.1 Connections Arduino - ADG726 Multiplexer (M1)
 
 
 | Pin Arduino | Description | ADG726 (U4) | Description   |
@@ -83,7 +74,7 @@ The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}
 
 <BR>
 
-##### 1.1.2 Connections Darlington Array (U3) - ADG726 (U4)
+##### 1.2.2 Connections Darlington Array (U3) - ADG726 (U4)
 
 | Darlington U3  | Description | Pin ADG726 (U4) | Description  |
 |:--------------:|:-----------:|:---------------:|:------------:|
@@ -96,7 +87,7 @@ The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}
  
 <BR>
 
-##### 1.1.3 Connections Darlington Array (U3) - ADG726 (U4)
+##### 1.2.3 Connections Darlington Array (U3) - ADG726 (U4)
 
 | Darlington U2  | Description | Pin ADG726 (U4) | Description  |
 |:--------------:|:-----------:|:---------------:|:------------:|
@@ -108,11 +99,8 @@ The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}
 | Pin  6         |     I6      | Pin 12          |  S3A         |     
 
 
-#### 1.2 Connections Arduino - ADG726 Multiplexer (M2)
+#### 1.2.4 Connections Arduino - ADG726 Multiplexer (M2)
 
-
-[See documentation of ADG726 Multiplexer](https://www.mouser.de/datasheet/2/609/ADG726_732-1503078.pdf).
-[See documentation of Arduino Nano](https://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf).
 
 | Pin Arduino | Description | ADG726 (U11) | Description   |
 |:-----------:|:-----------:|:-----------:|:-------------:|
@@ -133,9 +121,9 @@ The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}
 
 <BR>
 
-##### 1.1.2 Connections Darlington Array (U3) - ADG726 (U4)
+##### 1.2.5 Connections Darlington Array (U3) - ADG726 (U4)
 
-|     Pin U3     | Description | Pin ADG726 (U6) | Description  |
+|     Pin U6     | Description | Pin ADG726 (U11) | Description  |
 |:--------------:|:-----------:|:---------------:|:------------:|
 | Pin  1         |     I1      | Pin 6           | S7A         |       
 | Pin  2         |     I2      | Pin 5           | S8A         |      
@@ -146,13 +134,47 @@ The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}
  
 <BR>
 
-##### 1.1.3 Connections Darlington Array (U3) - ADG726 (U4)
+##### 1.2.6 Connections Darlington Array (U3) - ADG726 (U4)
 
-|     Pin U3     | Description | Pin ADG726 (U5) | Description  |
+|     Pin U5     | Description | Pin ADG726 (U11) | Description  |
 |:--------------:|:-----------:|:---------------:|:------------:|
 | Pin  1         |     I1      | Pin 12           |  S3A        |       
 | Pin  2         |     I2      | Pin 11           |  S4A         |      
 | Pin  3         |     I3      | Pin 10           |  S5A         |     
 | Pin  4         |     I4      | Pin 9            |  S6A         |
 | Pin  5         |     I5      | Pin 8            |  S7A         |     
-| Pin  6         |     I6      | Pin 7            |  S8A         |     
+| Pin  6         |     I6      | Pin 7            |  S8A         |
+
+<BR>
+
+##### 1.2.7 Connections M.2 interface (J1)
+
+
+|     Pin J1     | Description | Component            | Description  |
+|:--------------:|:-----------:|:--------------------:|:------------:|
+| Pin  1         |  GND Pad    | J9 |  Connected with ground pad connector forwarded to BNC GND (U10)        |       
+| Pin  3         |     Row 1      | K13 | Connected to Relay output (Pin 11) |     
+| Pin  5         |     Row 2      | K14 | Connected to Relay output (Pin 11) |    
+| Pin  7         |     Row 3      | K15 | Connected to Relay output (Pin 11) |
+| Pin  9         |     Row 4      | K16 | Connected to Relay output (Pin 11) |
+| Pin  11         |     Row 5     | K17 | Connected to Relay output (Pin 11) |
+| Pin  13         |     Row 6     | K18 | Connected to Relay output (Pin 11) |
+| Pin  15         |     Column 1  | K1 | Connected to Relay output (Pin 11) |
+| Pin  17         |     Column 2  | K3 | Connected to Relay output (Pin 11) |
+| Pin  19         |     Column 3  | K5 | Connected to Relay output (Pin 11) |
+| Pin  21         |     Column 4  | K7 | Connected to Relay output (Pin 11) |
+| Pin  23         |     Column 5  | K9 | Connected to Relay output (Pin 11) |
+| Pin  25         |     Column 6  | K11 | Connected to Relay output (Pin 11) |
+| Pin  27         |     Row 7      | K19 | Connected to Relay output (Pin 11) |
+| Pin  29         |     Row 8      | K20 | Connected to Relay output (Pin 11) |     
+| Pin  31         |     Row 9      | K21 | Connected to Relay output (Pin 11) |
+| Pin  33         |     Row 10      | K22 | Connected to Relay output (Pin 11) |     
+| Pin  35         |     Row 11     | K23 | Connected to Relay output (Pin 11) |
+| Pin  37         |     Row 12     | K24 | Connected to Relay output (Pin 11) |
+| Pin  27         |     Column 7      | K2 | Connected to Relay output (Pin 11) |
+| Pin  29         |     Column 8      | K4 | Connected to Relay output (Pin 11) |      
+| Pin  31         |     Column 9      | K6 | Connected to Relay output (Pin 11) |     
+| Pin  33         |     Column 10     | K8 | Connected to Relay output (Pin 11) |
+| Pin  35         |     Column 11      | K10 | Connected to Relay output (Pin 11) |     
+| Pin  37         |     Column 12  | K12 | Connected to Relay output (Pin 11) |
+
