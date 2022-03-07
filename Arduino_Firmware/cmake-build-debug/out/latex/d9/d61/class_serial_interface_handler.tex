@@ -1,0 +1,400 @@
+\hypertarget{class_serial_interface_handler}{}\doxysection{Serial\+Interface\+Handler Class Reference}
+\label{class_serial_interface_handler}\index{SerialInterfaceHandler@{SerialInterfaceHandler}}
+
+
+{\ttfamily \#include $<$Serial\+Interface\+Handler.\+h$>$}
+
+
+
+Collaboration diagram for Serial\+Interface\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{dc/d11/class_serial_interface_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_serial_interface_handler_ab48b55dd39975572cfba59dd9d1db902}{Serial\+Interface\+Handler}} (uint16\+\_\+t baud\+Rate=9600)
+\item 
+\mbox{\hyperlink{class_serial_interface_handler_a8af7296a4da1fd8202281c5e222f03b1}{$\sim$\+Serial\+Interface\+Handler}} ()
+\item 
+\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} \mbox{\hyperlink{class_serial_interface_handler_a1d383b9324fb96efc3c9f17e12de5886}{Initialize\+Serial\+Interface}} ()
+\item 
+\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} \mbox{\hyperlink{class_serial_interface_handler_a504c6be2047cd588c63f91a0798859e7}{De\+Initialize\+Serial\+Interface}} ()
+\item 
+\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} \mbox{\hyperlink{class_serial_interface_handler_a7a42dfe707724421c7de536f7fad4343}{Write\+Message}} (\mbox{\hyperlink{class_message}{Message}} \&message) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_message}{Message}} \mbox{\hyperlink{class_serial_interface_handler_abba67286134857f1ba7604b32db6f4d3}{Read\+And\+Parse\+Message\+Blocking}} (int $\ast$len)
+\item 
+static \mbox{\hyperlink{class_message}{Message}} \mbox{\hyperlink{class_serial_interface_handler_a3b2002503f5459a04c90af57699ead71}{Read\+And\+Parse\+Message\+Non\+Blocking}} (int $\ast$len)
+\item 
+static int \mbox{\hyperlink{class_serial_interface_handler_a49d8f1aebd456660b9278cebc90e9b68}{Data\+Avail}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_serial_interface_handler_a25bbdc8cef06c716072622690b82ff21}{m\+\_\+\+Baudrate}}
+\item 
+bool \mbox{\hyperlink{class_serial_interface_handler_ae895855e260a7abab0014000d6e7b6e4}{m\+\_\+\+Is\+Serial\+Interface\+Open}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8h_source_l00018}{18}} of file \mbox{\hyperlink{_serial_interface_handler_8h_source}{Serial\+Interface\+Handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_serial_interface_handler_ab48b55dd39975572cfba59dd9d1db902}\label{class_serial_interface_handler_ab48b55dd39975572cfba59dd9d1db902}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{SerialInterfaceHandler()}{SerialInterfaceHandler()}}
+{\footnotesize\ttfamily Serial\+Interface\+Handler\+::\+Serial\+Interface\+Handler (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{baud\+Rate = {\ttfamily 9600} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008                                                                : \mbox{\hyperlink{class_serial_interface_handler_a25bbdc8cef06c716072622690b82ff21}{m\_Baudrate}}(baudRate), \mbox{\hyperlink{class_serial_interface_handler_ae895855e260a7abab0014000d6e7b6e4}{m\_IsSerialInterfaceOpen}}(\textcolor{keyword}{false})}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     \mbox{\hyperlink{class_serial_interface_handler_a1d383b9324fb96efc3c9f17e12de5886}{InitializeSerialInterface}}(); \textcolor{comment}{// TODO think about error handling}}
+\DoxyCodeLine{00011 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00018}{Initialize\+Serial\+Interface()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_ab48b55dd39975572cfba59dd9d1db902_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_interface_handler_a8af7296a4da1fd8202281c5e222f03b1}\label{class_serial_interface_handler_a8af7296a4da1fd8202281c5e222f03b1}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!````~SerialInterfaceHandler@{$\sim$SerialInterfaceHandler}}
+\index{````~SerialInterfaceHandler@{$\sim$SerialInterfaceHandler}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$SerialInterfaceHandler()}{~SerialInterfaceHandler()}}
+{\footnotesize\ttfamily Serial\+Interface\+Handler\+::$\sim$\+Serial\+Interface\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     \mbox{\hyperlink{class_serial_interface_handler_ae895855e260a7abab0014000d6e7b6e4}{m\_IsSerialInterfaceOpen}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00016 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_serial_interface_handler_8h_source_l00034}{m\+\_\+\+Is\+Serial\+Interface\+Open}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serial_interface_handler_a49d8f1aebd456660b9278cebc90e9b68}\label{class_serial_interface_handler_a49d8f1aebd456660b9278cebc90e9b68}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!DataAvail@{DataAvail}}
+\index{DataAvail@{DataAvail}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{DataAvail()}{DataAvail()}}
+{\footnotesize\ttfamily int Serial\+Interface\+Handler\+::\+Data\+Avail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{}
+\DoxyCodeLine{00092     \textcolor{keywordflow}{return} Serial.available();}
+\DoxyCodeLine{00093 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00079}{Read\+And\+Parse\+Message\+Non\+Blocking()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_a49d8f1aebd456660b9278cebc90e9b68_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_interface_handler_a504c6be2047cd588c63f91a0798859e7}\label{class_serial_interface_handler_a504c6be2047cd588c63f91a0798859e7}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!DeInitializeSerialInterface@{DeInitializeSerialInterface}}
+\index{DeInitializeSerialInterface@{DeInitializeSerialInterface}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{DeInitializeSerialInterface()}{DeInitializeSerialInterface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} Serial\+Interface\+Handler\+::\+De\+Initialize\+Serial\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{}
+\DoxyCodeLine{00033     \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa9150b687e9c52039a4bd5ea5ae2e0fe9}{INVALID\_LENGTH}};}
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_error_codes_8h_source_l00016}{INVALID\+\_\+\+LENGTH}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00049}{Arduino\+Main\+Controller\+::\+De\+Init()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_a504c6be2047cd588c63f91a0798859e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_interface_handler_a1d383b9324fb96efc3c9f17e12de5886}\label{class_serial_interface_handler_a1d383b9324fb96efc3c9f17e12de5886}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!InitializeSerialInterface@{InitializeSerialInterface}}
+\index{InitializeSerialInterface@{InitializeSerialInterface}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{InitializeSerialInterface()}{InitializeSerialInterface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} Serial\+Interface\+Handler\+::\+Initialize\+Serial\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020     Serial.begin(\mbox{\hyperlink{class_serial_interface_handler_a25bbdc8cef06c716072622690b82ff21}{m\_Baudrate}});}
+\DoxyCodeLine{00021     \textcolor{keywordflow}{while}(!Serial)}
+\DoxyCodeLine{00022     \{}
+\DoxyCodeLine{00023         \textcolor{comment}{// TODO implement timeout and error handling}}
+\DoxyCodeLine{00024     \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \mbox{\hyperlink{class_serial_interface_handler_ae895855e260a7abab0014000d6e7b6e4}{m\_IsSerialInterfaceOpen}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fabf350750d0d4fabd8954c0f1e9bbae94}{NO\_ERROR}};}
+\DoxyCodeLine{00029 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_serial_interface_handler_8h_source_l00033}{m\+\_\+\+Baudrate}}, \mbox{\hyperlink{_serial_interface_handler_8h_source_l00034}{m\+\_\+\+Is\+Serial\+Interface\+Open}}, and \mbox{\hyperlink{_error_codes_8h_source_l00011}{NO\+\_\+\+ERROR}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00032}{Arduino\+Main\+Controller\+::\+Init()}}, and \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00008}{Serial\+Interface\+Handler()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_a1d383b9324fb96efc3c9f17e12de5886_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_interface_handler_abba67286134857f1ba7604b32db6f4d3}\label{class_serial_interface_handler_abba67286134857f1ba7604b32db6f4d3}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!ReadAndParseMessageBlocking@{ReadAndParseMessageBlocking}}
+\index{ReadAndParseMessageBlocking@{ReadAndParseMessageBlocking}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{ReadAndParseMessageBlocking()}{ReadAndParseMessageBlocking()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_message}{Message}} Serial\+Interface\+Handler\+::\+Read\+And\+Parse\+Message\+Blocking (\begin{DoxyParamCaption}\item[{int $\ast$}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053 \{}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{if}(!len || *len == 0)}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_message}{Message}}(0, \mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153a7e07130e0bea13162408021d61994021}{NOPE}});}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{keywordtype}{int} pos = 0;}
+\DoxyCodeLine{00058     \textcolor{keywordtype}{char} tempData[\mbox{\hyperlink{_message_8h_a81f68567c11671e8c35cfcfb454a4160}{MAX\_COMMAND\_LEN}}];}
+\DoxyCodeLine{00059     memset(tempData, 0x00, \mbox{\hyperlink{_message_8h_a81f68567c11671e8c35cfcfb454a4160}{MAX\_COMMAND\_LEN}});}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{comment}{// collect data until \(\backslash\)n}}
+\DoxyCodeLine{00062     \textcolor{keywordtype}{int} lenToRead = *len;}
+\DoxyCodeLine{00063     *len = 0;}
+\DoxyCodeLine{00064     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00065     \{}
+\DoxyCodeLine{00066         *len += Serial.readBytes(\&tempData[pos], lenToRead);}
+\DoxyCodeLine{00067         lenToRead =-\/ *len;}
+\DoxyCodeLine{00068         pos += *len;}
+\DoxyCodeLine{00069     \} \textcolor{keywordflow}{while}(!strstr(tempData, \textcolor{stringliteral}{"{}\(\backslash\)n"{}}) \&\& lenToRead > 0);}
+\DoxyCodeLine{00070     Serial.write(tempData);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{keywordflow}{if}(*len == 0)}
+\DoxyCodeLine{00074         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_message}{Message}}(0, \mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153a7e07130e0bea13162408021d61994021}{NOPE}});}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_message_a2813a8d2312d3983fb932c8c1c8f31ce}{Message::CharArrayToMessage}}(tempData);}
+\DoxyCodeLine{00077 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_message_8cpp_source_l00054}{Message\+::\+Char\+Array\+To\+Message()}}, \mbox{\hyperlink{_message_8h_source_l00013}{MAX\+\_\+\+COMMAND\+\_\+\+LEN}}, and \mbox{\hyperlink{_commands_8h_source_l00016}{NOPE}}.
+
+
+
+Referenced by \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00079}{Read\+And\+Parse\+Message\+Non\+Blocking()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_abba67286134857f1ba7604b32db6f4d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_abba67286134857f1ba7604b32db6f4d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_interface_handler_a3b2002503f5459a04c90af57699ead71}\label{class_serial_interface_handler_a3b2002503f5459a04c90af57699ead71}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!ReadAndParseMessageNonBlocking@{ReadAndParseMessageNonBlocking}}
+\index{ReadAndParseMessageNonBlocking@{ReadAndParseMessageNonBlocking}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{ReadAndParseMessageNonBlocking()}{ReadAndParseMessageNonBlocking()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_message}{Message}} Serial\+Interface\+Handler\+::\+Read\+And\+Parse\+Message\+Non\+Blocking (\begin{DoxyParamCaption}\item[{int $\ast$}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080 \{}
+\DoxyCodeLine{00081     \textcolor{keywordflow}{if}(!len || *len == 0)}
+\DoxyCodeLine{00082         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_message}{Message}}(0, \mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153a7e07130e0bea13162408021d61994021}{NOPE}});}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_serial_interface_handler_a49d8f1aebd456660b9278cebc90e9b68}{DataAvail}}() > 0)}
+\DoxyCodeLine{00086         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_serial_interface_handler_abba67286134857f1ba7604b32db6f4d3}{ReadAndParseMessageBlocking}}(len);}
+\DoxyCodeLine{00087     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_message}{Message}}(0, \mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153a7e07130e0bea13162408021d61994021}{NOPE}});}
+\DoxyCodeLine{00088 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00090}{Data\+Avail()}}, \mbox{\hyperlink{_commands_8h_source_l00016}{NOPE}}, and \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00052}{Read\+And\+Parse\+Message\+Blocking()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00067}{Arduino\+Main\+Controller\+::\+Loop()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_a3b2002503f5459a04c90af57699ead71_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_a3b2002503f5459a04c90af57699ead71_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_interface_handler_a7a42dfe707724421c7de536f7fad4343}\label{class_serial_interface_handler_a7a42dfe707724421c7de536f7fad4343}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!WriteMessage@{WriteMessage}}
+\index{WriteMessage@{WriteMessage}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{WriteMessage()}{WriteMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} Serial\+Interface\+Handler\+::\+Write\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_message}{Message}} \&}]{message }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_serial_interface_handler_8cpp_source}{Serial\+Interface\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_serial_interface_handler_ae895855e260a7abab0014000d6e7b6e4}{m\_IsSerialInterfaceOpen}})}
+\DoxyCodeLine{00039         \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa56dbaa6d138028010046221ba5d4c516}{INTERFACE\_CLOSED}};}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordtype}{char} sendBuffer[\mbox{\hyperlink{_serial_interface_handler_8h_ab356f5b267384a4c77c9b0e0c73683b4}{MAX\_LEN\_SEND\_BUFFER}}];}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{int} len = \mbox{\hyperlink{_serial_interface_handler_8h_ab356f5b267384a4c77c9b0e0c73683b4}{MAX\_LEN\_SEND\_BUFFER}};}
+\DoxyCodeLine{00043     \mbox{\hyperlink{class_message_adccaa256da501f1c74ef7aaa5decd74e}{Message::MessageToCharArray}}(message, sendBuffer, \&len);}
+\DoxyCodeLine{00044     \textcolor{keywordflow}{if}(Serial.write(sendBuffer) != message.\mbox{\hyperlink{class_message_a6f6140c197f1cda7a751a9985aa1027d}{GetSize}}())}
+\DoxyCodeLine{00045     \{}
+\DoxyCodeLine{00046         \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa9150b687e9c52039a4bd5ea5ae2e0fe9}{INVALID\_LENGTH}};}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fabf350750d0d4fabd8954c0f1e9bbae94}{NO\_ERROR}};}
+\DoxyCodeLine{00050 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_message_8cpp_source_l00049}{Message\+::\+Get\+Size()}}, \mbox{\hyperlink{_error_codes_8h_source_l00015}{INTERFACE\+\_\+\+CLOSED}}, \mbox{\hyperlink{_error_codes_8h_source_l00016}{INVALID\+\_\+\+LENGTH}}, \mbox{\hyperlink{_serial_interface_handler_8h_source_l00034}{m\+\_\+\+Is\+Serial\+Interface\+Open}}, \mbox{\hyperlink{_serial_interface_handler_8h_source_l00016}{MAX\+\_\+\+LEN\+\_\+\+SEND\+\_\+\+BUFFER}}, \mbox{\hyperlink{_message_8cpp_source_l00098}{Message\+::\+Message\+To\+Char\+Array()}}, and \mbox{\hyperlink{_error_codes_8h_source_l00011}{NO\+\_\+\+ERROR}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00067}{Arduino\+Main\+Controller\+::\+Loop()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_a7a42dfe707724421c7de536f7fad4343_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d61/class_serial_interface_handler_a7a42dfe707724421c7de536f7fad4343_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{class_serial_interface_handler_a25bbdc8cef06c716072622690b82ff21}\label{class_serial_interface_handler_a25bbdc8cef06c716072622690b82ff21}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!m\_Baudrate@{m\_Baudrate}}
+\index{m\_Baudrate@{m\_Baudrate}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{m\_Baudrate}{m\_Baudrate}}
+{\footnotesize\ttfamily uint16\+\_\+t Serial\+Interface\+Handler\+::m\+\_\+\+Baudrate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8h_source_l00033}{33}} of file \mbox{\hyperlink{_serial_interface_handler_8h_source}{Serial\+Interface\+Handler.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00018}{Initialize\+Serial\+Interface()}}.
+
+\mbox{\Hypertarget{class_serial_interface_handler_ae895855e260a7abab0014000d6e7b6e4}\label{class_serial_interface_handler_ae895855e260a7abab0014000d6e7b6e4}} 
+\index{SerialInterfaceHandler@{SerialInterfaceHandler}!m\_IsSerialInterfaceOpen@{m\_IsSerialInterfaceOpen}}
+\index{m\_IsSerialInterfaceOpen@{m\_IsSerialInterfaceOpen}!SerialInterfaceHandler@{SerialInterfaceHandler}}
+\doxysubsubsection{\texorpdfstring{m\_IsSerialInterfaceOpen}{m\_IsSerialInterfaceOpen}}
+{\footnotesize\ttfamily bool Serial\+Interface\+Handler\+::m\+\_\+\+Is\+Serial\+Interface\+Open\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_serial_interface_handler_8h_source_l00034}{34}} of file \mbox{\hyperlink{_serial_interface_handler_8h_source}{Serial\+Interface\+Handler.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00018}{Initialize\+Serial\+Interface()}}, \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00036}{Write\+Message()}}, and \mbox{\hyperlink{_serial_interface_handler_8cpp_source_l00013}{$\sim$\+Serial\+Interface\+Handler()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/florianfrank/\+Documents/\+Research/\+Projects/\+Nano\+Sec/measurement\+\_\+switch\+\_\+matrix/nanosec\+\_\+crossbar\+\_\+controller/\+Arduino\+\_\+\+Firmware/\+Include/\mbox{\hyperlink{_serial_interface_handler_8h}{Serial\+Interface\+Handler.\+h}}\item 
+/home/florianfrank/\+Documents/\+Research/\+Projects/\+Nano\+Sec/measurement\+\_\+switch\+\_\+matrix/nanosec\+\_\+crossbar\+\_\+controller/\+Arduino\+\_\+\+Firmware/\+Src/\mbox{\hyperlink{_serial_interface_handler_8cpp}{Serial\+Interface\+Handler.\+cpp}}\end{DoxyCompactItemize}

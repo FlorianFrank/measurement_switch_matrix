@@ -1,0 +1,153 @@
+\hypertarget{class_error_handler}{}\doxysection{Error\+Handler Class Reference}
+\label{class_error_handler}\index{ErrorHandler@{ErrorHandler}}
+
+
+{\ttfamily \#include $<$Error\+Handler.\+h$>$}
+
+
+
+Collaboration diagram for Error\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{db/d45/class_error_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \mbox{\hyperlink{class_error_handler_ab52f87e567a7a72d1d751a6528bb90a1}{Error\+Code\+To\+String}} (\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} err\+Code)
+\begin{DoxyCompactList}\small\item\em This function transforms an error code to a error message as string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{error\+Code\+Buffer}} \mbox{[}128\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_error_handler_8h_source_l00016}{16}} of file \mbox{\hyperlink{_error_handler_8h_source}{Error\+Handler.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_error_handler_ab52f87e567a7a72d1d751a6528bb90a1}\label{class_error_handler_ab52f87e567a7a72d1d751a6528bb90a1}} 
+\index{ErrorHandler@{ErrorHandler}!ErrorCodeToString@{ErrorCodeToString}}
+\index{ErrorCodeToString@{ErrorCodeToString}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{ErrorCodeToString()}{ErrorCodeToString()}}
+{\footnotesize\ttfamily const char $\ast$ Error\+Handler\+::\+Error\+Code\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}}}]{err\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function transforms an error code to a error message as string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em err\+Code} & error code to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error message as string. 
+\end{DoxyReturn}
+No error occurred.
+
+Invalid row or column index chosen.
+
+Format of received message is invalid.
+
+UART interface is already closed.
+
+TODO invalid length?
+
+The length of the buffer is invalid.
+
+Argument is invalid for current command.
+
+Command is invalid.
+
+UART connection is already closed.
+
+Trying to apply a function on an uninitialized object.
+
+Definition at line \mbox{\hyperlink{_error_handler_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_error_handler_8cpp_source}{Error\+Handler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{}
+\DoxyCodeLine{00014     \textcolor{keywordflow}{switch} (errCode)}
+\DoxyCodeLine{00015     \{}
+\DoxyCodeLine{00017         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fabf350750d0d4fabd8954c0f1e9bbae94}{NO\_ERROR}}:}
+\DoxyCodeLine{00018             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}NO ERROR"{}});}
+\DoxyCodeLine{00019             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa8c92550c8a92a25ed11b1833fbc14f65}{INVALID\_INDEX}}:}
+\DoxyCodeLine{00022             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Invalid Index"{}});}
+\DoxyCodeLine{00023             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa1d8a55c9db9837d78931015f24a5adae}{INVALID\_MESSAGE}}:}
+\DoxyCodeLine{00026             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Invalid Message"{}});}
+\DoxyCodeLine{00027             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa56dbaa6d138028010046221ba5d4c516}{INTERFACE\_CLOSED}}:}
+\DoxyCodeLine{00030             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Interface Closed"{}});}
+\DoxyCodeLine{00031             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa9150b687e9c52039a4bd5ea5ae2e0fe9}{INVALID\_LENGTH}}:}
+\DoxyCodeLine{00034             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Invalid Length"{}});}
+\DoxyCodeLine{00035             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa9b1bfe6b4508af1ae47c577b3629aee9}{INVALID\_BUFFER\_LEN}}:}
+\DoxyCodeLine{00038             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Invalid Buffer Len"{}});}
+\DoxyCodeLine{00039             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa5eee2964b285af6b0b8bf73c72fdf0f4}{INVALID\_ARGUMENT}}:}
+\DoxyCodeLine{00042             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Invalid Argument"{}});}
+\DoxyCodeLine{00043             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00045         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa495c8431364b64b83e6f7cad3529ffc8}{INVALID\_COMMAND}}:}
+\DoxyCodeLine{00046             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Invalid Command"{}});}
+\DoxyCodeLine{00047             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00049         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05facdaad1112073e3e2ea032424c38c34e1}{DISCONNECTED}}:}
+\DoxyCodeLine{00050             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Disconnected"{}});}
+\DoxyCodeLine{00051             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00053         \textcolor{keywordflow}{case} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa5b2b878895a108b84dc5e2f237d72ef1}{NOT\_INITIALIZED}}:}
+\DoxyCodeLine{00054             strcpy(\mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}}, \textcolor{stringliteral}{"{}Variable not initialized"{}});}
+\DoxyCodeLine{00055             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00056     \}}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}{errorCodeBuffer}};}
+\DoxyCodeLine{00058 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_error_codes_8h_source_l00020}{DISCONNECTED}}, \mbox{\hyperlink{_error_handler_8h_source_l00022}{error\+Code\+Buffer}}, \mbox{\hyperlink{_error_codes_8h_source_l00015}{INTERFACE\+\_\+\+CLOSED}}, \mbox{\hyperlink{_error_codes_8h_source_l00018}{INVALID\+\_\+\+ARGUMENT}}, \mbox{\hyperlink{_error_codes_8h_source_l00017}{INVALID\+\_\+\+BUFFER\+\_\+\+LEN}}, \mbox{\hyperlink{_error_codes_8h_source_l00019}{INVALID\+\_\+\+COMMAND}}, \mbox{\hyperlink{_error_codes_8h_source_l00013}{INVALID\+\_\+\+INDEX}}, \mbox{\hyperlink{_error_codes_8h_source_l00016}{INVALID\+\_\+\+LENGTH}}, \mbox{\hyperlink{_error_codes_8h_source_l00014}{INVALID\+\_\+\+MESSAGE}}, \mbox{\hyperlink{_error_codes_8h_source_l00011}{NO\+\_\+\+ERROR}}, and \mbox{\hyperlink{_error_codes_8h_source_l00021}{NOT\+\_\+\+INITIALIZED}}.
+
+
+
+Referenced by \mbox{\hyperlink{_message_8cpp_source_l00032}{Message\+::\+Message()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dee/class_error_handler_ab52f87e567a7a72d1d751a6528bb90a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}\label{class_error_handler_a6cdb89e9302da76525195f6b5ba79c21}} 
+\index{ErrorHandler@{ErrorHandler}!errorCodeBuffer@{errorCodeBuffer}}
+\index{errorCodeBuffer@{errorCodeBuffer}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{errorCodeBuffer}{errorCodeBuffer}}
+{\footnotesize\ttfamily char Error\+Handler\+::error\+Code\+Buffer\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_error_handler_8h_source_l00022}{22}} of file \mbox{\hyperlink{_error_handler_8h_source}{Error\+Handler.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_error_handler_8cpp_source_l00012}{Error\+Code\+To\+String()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/florianfrank/\+Documents/\+Research/\+Projects/\+Nano\+Sec/measurement\+\_\+switch\+\_\+matrix/nanosec\+\_\+crossbar\+\_\+controller/\+Arduino\+\_\+\+Firmware/\+Include/\mbox{\hyperlink{_error_handler_8h}{Error\+Handler.\+h}}\item 
+/home/florianfrank/\+Documents/\+Research/\+Projects/\+Nano\+Sec/measurement\+\_\+switch\+\_\+matrix/nanosec\+\_\+crossbar\+\_\+controller/\+Arduino\+\_\+\+Firmware/\+Src/\mbox{\hyperlink{_error_handler_8cpp}{Error\+Handler.\+cpp}}\end{DoxyCompactItemize}

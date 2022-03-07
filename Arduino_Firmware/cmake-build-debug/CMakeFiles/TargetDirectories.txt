@@ -1,0 +1,9 @@
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/nanosec_crossbar_controller-burn.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/upload.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/nanosec_crossbar_controller-upload.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/doc_doxygen.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/nanosec_crossbar_controller.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/nano_CORE.dir
+/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug/CMakeFiles/nanosec_crossbar_controller-size.dir

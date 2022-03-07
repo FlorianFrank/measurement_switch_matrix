@@ -1,0 +1,756 @@
+\hypertarget{class_multiplexer_controller}{}\doxysection{Multiplexer\+Controller Class Reference}
+\label{class_multiplexer_controller}\index{MultiplexerController@{MultiplexerController}}
+
+
+This class is responsible for controlling an ADG726 Multiplexer. The row is set by controlling.  
+
+
+
+
+{\ttfamily \#include $<$Multiplexer\+Controller.\+h$>$}
+
+
+
+Collaboration diagram for Multiplexer\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d0/d86/class_multiplexer_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multiplexer_controller_ac331b0891121afbb6cab0186a9298207}{Multiplexer\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Constructor sets the maximum number of rows and columns. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multiplexer_controller_a8c30ef8aeec2197b6bcb3c5058f1ad9c}{$\sim$\+Multiplexer\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de-\/initializes the multiplexer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multiplexer_controller_a2696c9288fbf61e8fb16333a720c55e8}{De\+Initialize\+Multiplexer}} ()
+\begin{DoxyCompactList}\small\item\em Currently not used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} \mbox{\hyperlink{class_multiplexer_controller_a1495faebe00d5ec5755d389b39495541}{Select\+Row}} (uint8\+\_\+t row)
+\begin{DoxyCompactList}\small\item\em Selects a row without physically switching the multiplexer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} \mbox{\hyperlink{class_multiplexer_controller_a3a673e06cfd2bf44f498a15847a09d2a}{Select\+Column}} (uint8\+\_\+t column)
+\begin{DoxyCompactList}\small\item\em Selects a column without physically switching the multiplexer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} \mbox{\hyperlink{class_multiplexer_controller_a9e2544bce59143c8b08082d5ee8a62dd}{Write\+Row\+Column}} ()
+\begin{DoxyCompactList}\small\item\em This method writes the row and column by forwarding the commands to the two multiplexers. A switch operation is only executed when the previous index changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_multiplexer_controller_afc046fb7a2d518c0fceaf82029451dcc}{Initialize\+Multiplexer}} ()
+\begin{DoxyCompactList}\small\item\em Initialization function enables the pin modes and initializes all lines to its default values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873}{Row\+Column\+Selector}} \{ \mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a6f7dab297659c927bf537fd4dd3b82a8}{ROW}}
+, \mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a9fa033e259be2e75f7364f6f38286ee1}{COLUMN}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7}{MUXChannel}} \{ \mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a5c5ced123cd11b5c3255f50227cccd77}{CH\+\_\+\+MUX1}}
+, \mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a534b3d50d77dfa732065bd3d6a663cfc}{CH\+\_\+\+MUX2}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_multiplexer_controller_a93ea769f948dc8f599be805f19747a0d}{Write\+Row\+Physical}} () const
+\begin{DoxyCompactList}\small\item\em Sets the physical pins to set a row via the multiplexer 1 (U4) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multiplexer_controller_a8d18ffe6c95a687f88343ee60954bb2c}{Write\+Column\+Physical}} () const
+\begin{DoxyCompactList}\small\item\em Sets the physical pins to set a row via the multiplexer 2 (U11) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_multiplexer_controller_acbe23063ae0d6c3227fe7d8e92c3efb4}{Initialize\+Pin\+Modes}} ()
+\item 
+static void \mbox{\hyperlink{class_multiplexer_controller_a64d584c9a60aab6db19476ee8dd349c9}{Set\+Pin\+Default\+Values}} ()
+\begin{DoxyCompactList}\small\item\em Deselect all rows and columns, set CS, EN and WE of both multiplexers to low. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} \mbox{\hyperlink{class_multiplexer_controller_a1001338bef007601921d3e393d8d52bf}{Set\+Address\+Lines}} (\mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873}{Row\+Column\+Selector}} row\+Column\+Selector, uint8\+\_\+t address4\+Bit)
+\item 
+static void \mbox{\hyperlink{class_multiplexer_controller_a9b60b62a7a8c89ef19cd96e569508443}{Enable\+Channel}} (\mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7}{MUXChannel}} mux\+Channel)
+\begin{DoxyCompactList}\small\item\em Sets the Chip enable signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\+\_\+\+Current\+Column}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\+\_\+\+Current\+Row}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_multiplexer_controller_af311be2320fcf257b2f6a7398e9ab7d4}{m\+\_\+\+Last\+Column}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_multiplexer_controller_aa450edac74cc0b3e92ca9975c97d6146}{m\+\_\+\+Last\+Row}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is responsible for controlling an ADG726 Multiplexer. The row is set by controlling. 
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8h_source_l00028}{28}} of file \mbox{\hyperlink{_multiplexer_controller_8h_source}{Multiplexer\+Controller.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7}\label{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7}} 
+\index{MultiplexerController@{MultiplexerController}!MUXChannel@{MUXChannel}}
+\index{MUXChannel@{MUXChannel}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{MUXChannel}{MUXChannel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7}{Multiplexer\+Controller\+::\+MUXChannel}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CH\_MUX1@{CH\_MUX1}!MultiplexerController@{MultiplexerController}}\index{MultiplexerController@{MultiplexerController}!CH\_MUX1@{CH\_MUX1}}}\mbox{\Hypertarget{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a5c5ced123cd11b5c3255f50227cccd77}\label{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a5c5ced123cd11b5c3255f50227cccd77}} 
+CH\+\_\+\+MUX1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CH\_MUX2@{CH\_MUX2}!MultiplexerController@{MultiplexerController}}\index{MultiplexerController@{MultiplexerController}!CH\_MUX2@{CH\_MUX2}}}\mbox{\Hypertarget{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a534b3d50d77dfa732065bd3d6a663cfc}\label{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a534b3d50d77dfa732065bd3d6a663cfc}} 
+CH\+\_\+\+MUX2&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8h_source_l00056}{56}} of file \mbox{\hyperlink{_multiplexer_controller_8h_source}{Multiplexer\+Controller.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                     \{}
+\DoxyCodeLine{00057         \mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a5c5ced123cd11b5c3255f50227cccd77}{CH\_MUX1}},}
+\DoxyCodeLine{00058         \mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a534b3d50d77dfa732065bd3d6a663cfc}{CH\_MUX2}}}
+\DoxyCodeLine{00059     \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873}\label{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873}} 
+\index{MultiplexerController@{MultiplexerController}!RowColumnSelector@{RowColumnSelector}}
+\index{RowColumnSelector@{RowColumnSelector}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{RowColumnSelector}{RowColumnSelector}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873}{Multiplexer\+Controller\+::\+Row\+Column\+Selector}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROW@{ROW}!MultiplexerController@{MultiplexerController}}\index{MultiplexerController@{MultiplexerController}!ROW@{ROW}}}\mbox{\Hypertarget{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a6f7dab297659c927bf537fd4dd3b82a8}\label{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a6f7dab297659c927bf537fd4dd3b82a8}} 
+ROW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COLUMN@{COLUMN}!MultiplexerController@{MultiplexerController}}\index{MultiplexerController@{MultiplexerController}!COLUMN@{COLUMN}}}\mbox{\Hypertarget{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a9fa033e259be2e75f7364f6f38286ee1}\label{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a9fa033e259be2e75f7364f6f38286ee1}} 
+COLUMN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8h_source_l00051}{51}} of file \mbox{\hyperlink{_multiplexer_controller_8h_source}{Multiplexer\+Controller.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051                            \{}
+\DoxyCodeLine{00052         \mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a6f7dab297659c927bf537fd4dd3b82a8}{ROW}},}
+\DoxyCodeLine{00053         \mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873a9fa033e259be2e75f7364f6f38286ee1}{COLUMN}}}
+\DoxyCodeLine{00054     \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_multiplexer_controller_ac331b0891121afbb6cab0186a9298207}\label{class_multiplexer_controller_ac331b0891121afbb6cab0186a9298207}} 
+\index{MultiplexerController@{MultiplexerController}!MultiplexerController@{MultiplexerController}}
+\index{MultiplexerController@{MultiplexerController}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{MultiplexerController()}{MultiplexerController()}}
+{\footnotesize\ttfamily Multiplexer\+Controller\+::\+Multiplexer\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor sets the maximum number of rows and columns. 
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008                                              : \mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}}(\mbox{\hyperlink{_multiplexer_controller_8h_abb67e679510d6898c636e93acddde244}{SELECT\_NO\_COLUMN}}), \mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}}(\mbox{\hyperlink{_multiplexer_controller_8h_a467beceadb2d529e2480e0dcf86414e5}{SELECT\_NO\_ROW}}),}
+\DoxyCodeLine{00009                                                  \mbox{\hyperlink{class_multiplexer_controller_af311be2320fcf257b2f6a7398e9ab7d4}{m\_LastColumn}}(256), \mbox{\hyperlink{class_multiplexer_controller_aa450edac74cc0b3e92ca9975c97d6146}{m\_LastRow}}(256)}
+\DoxyCodeLine{00010 \{}
+\DoxyCodeLine{00011 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_multiplexer_controller_a8c30ef8aeec2197b6bcb3c5058f1ad9c}\label{class_multiplexer_controller_a8c30ef8aeec2197b6bcb3c5058f1ad9c}} 
+\index{MultiplexerController@{MultiplexerController}!````~MultiplexerController@{$\sim$MultiplexerController}}
+\index{````~MultiplexerController@{$\sim$MultiplexerController}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{$\sim$MultiplexerController()}{~MultiplexerController()}}
+{\footnotesize\ttfamily Multiplexer\+Controller\+::$\sim$\+Multiplexer\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de-\/initializes the multiplexer. 
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018     \mbox{\hyperlink{class_multiplexer_controller_a2696c9288fbf61e8fb16333a720c55e8}{DeInitializeMultiplexer}}();}
+\DoxyCodeLine{00019 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00033}{De\+Initialize\+Multiplexer()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a8c30ef8aeec2197b6bcb3c5058f1ad9c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_multiplexer_controller_a2696c9288fbf61e8fb16333a720c55e8}\label{class_multiplexer_controller_a2696c9288fbf61e8fb16333a720c55e8}} 
+\index{MultiplexerController@{MultiplexerController}!DeInitializeMultiplexer@{DeInitializeMultiplexer}}
+\index{DeInitializeMultiplexer@{DeInitializeMultiplexer}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{DeInitializeMultiplexer()}{DeInitializeMultiplexer()}}
+{\footnotesize\ttfamily void Multiplexer\+Controller\+::\+De\+Initialize\+Multiplexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Currently not used. 
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034 \{}
+\DoxyCodeLine{00035 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00049}{Arduino\+Main\+Controller\+::\+De\+Init()}}, and \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00016}{$\sim$\+Multiplexer\+Controller()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a2696c9288fbf61e8fb16333a720c55e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_a9b60b62a7a8c89ef19cd96e569508443}\label{class_multiplexer_controller_a9b60b62a7a8c89ef19cd96e569508443}} 
+\index{MultiplexerController@{MultiplexerController}!EnableChannel@{EnableChannel}}
+\index{EnableChannel@{EnableChannel}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{EnableChannel()}{EnableChannel()}}
+{\footnotesize\ttfamily void Multiplexer\+Controller\+::\+Enable\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7}{Multiplexer\+Controller\+::\+MUXChannel}}}]{mux\+Channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Sets the Chip enable signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mux\+Channel} & select either multiplexer 1 or multiplexer 2. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171 \{}
+\DoxyCodeLine{00172     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a85c5de2b10e47fec2baf4e24b1135778}{MUX1\_WE}}, LOW);}
+\DoxyCodeLine{00173     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_ae4f47a8e738b23f6ad4dcb789087476e}{MUX1\_EN}}, LOW);}
+\DoxyCodeLine{00174     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a8e65c091e8ffdb68a6d05b2500537586}{MUX2\_WE}}, LOW);}
+\DoxyCodeLine{00175     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a203c8add31e403bc685ea890f471dabf}{MUX2\_EN}}, LOW);}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177     \textcolor{keywordflow}{if} (muxChannel == \mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a5c5ced123cd11b5c3255f50227cccd77}{CH\_MUX1}})}
+\DoxyCodeLine{00178     \{}
+\DoxyCodeLine{00179         digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a175014b8991e906cd832b5a534ab23a2}{MUX1\_CS}}, LOW);}
+\DoxyCodeLine{00180     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00181     \{}
+\DoxyCodeLine{00182         digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_ae2a0b4611fdb2c02eb24625e49b747bc}{MUX2\_CS}}, LOW);}
+\DoxyCodeLine{00183     \}}
+\DoxyCodeLine{00184 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_multiplexer_controller_8h_source_l00057}{CH\+\_\+\+MUX1}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00031}{MUX1\+\_\+\+CS}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00018}{MUX1\+\_\+\+EN}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00032}{MUX1\+\_\+\+WE}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00041}{MUX2\+\_\+\+CS}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00039}{MUX2\+\_\+\+EN}}, and \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00043}{MUX2\+\_\+\+WE}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{Write\+Row\+Column()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a9b60b62a7a8c89ef19cd96e569508443_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_afc046fb7a2d518c0fceaf82029451dcc}\label{class_multiplexer_controller_afc046fb7a2d518c0fceaf82029451dcc}} 
+\index{MultiplexerController@{MultiplexerController}!InitializeMultiplexer@{InitializeMultiplexer}}
+\index{InitializeMultiplexer@{InitializeMultiplexer}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{InitializeMultiplexer()}{InitializeMultiplexer()}}
+{\footnotesize\ttfamily void Multiplexer\+Controller\+::\+Initialize\+Multiplexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initialization function enables the pin modes and initializes all lines to its default values. 
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025 \{}
+\DoxyCodeLine{00026     \mbox{\hyperlink{class_multiplexer_controller_acbe23063ae0d6c3227fe7d8e92c3efb4}{InitializePinModes}}();}
+\DoxyCodeLine{00027     \mbox{\hyperlink{class_multiplexer_controller_a64d584c9a60aab6db19476ee8dd349c9}{SetPinDefaultValues}}();}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00064}{Initialize\+Pin\+Modes()}}, and \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00041}{Set\+Pin\+Default\+Values()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00032}{Arduino\+Main\+Controller\+::\+Init()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_afc046fb7a2d518c0fceaf82029451dcc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_afc046fb7a2d518c0fceaf82029451dcc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_acbe23063ae0d6c3227fe7d8e92c3efb4}\label{class_multiplexer_controller_acbe23063ae0d6c3227fe7d8e92c3efb4}} 
+\index{MultiplexerController@{MultiplexerController}!InitializePinModes@{InitializePinModes}}
+\index{InitializePinModes@{InitializePinModes}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{InitializePinModes()}{InitializePinModes()}}
+{\footnotesize\ttfamily void Multiplexer\+Controller\+::\+Initialize\+Pin\+Modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065 \{}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{comment}{// Initialize multiplexer 1 (U4)}}
+\DoxyCodeLine{00068     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_ae4f47a8e738b23f6ad4dcb789087476e}{MUX1\_EN}}, OUTPUT);}
+\DoxyCodeLine{00069     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a175014b8991e906cd832b5a534ab23a2}{MUX1\_CS}}, OUTPUT);}
+\DoxyCodeLine{00070     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a85c5de2b10e47fec2baf4e24b1135778}{MUX1\_WE}}, OUTPUT);}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a97f7658dc4a73148c1037a3ededbb007}{MUX1\_A0}}, OUTPUT);}
+\DoxyCodeLine{00073     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_aa0c48acc13523e8ce734744fe697b0a4}{MUX1\_A1}}, OUTPUT);}
+\DoxyCodeLine{00074     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a2acb3ea1b32835a7d1336e2be00585c9}{MUX1\_A2}}, OUTPUT);}
+\DoxyCodeLine{00075     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a03b8342249473066afb04edfc342b83a}{MUX1\_A3}}, OUTPUT);}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077     \textcolor{comment}{// Initialize multiplexer 2 (U11)}}
+\DoxyCodeLine{00078     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a203c8add31e403bc685ea890f471dabf}{MUX2\_EN}}, OUTPUT);}
+\DoxyCodeLine{00079     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_ae2a0b4611fdb2c02eb24625e49b747bc}{MUX2\_CS}}, OUTPUT);}
+\DoxyCodeLine{00080     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a8e65c091e8ffdb68a6d05b2500537586}{MUX2\_WE}}, OUTPUT);}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a1a167a8ffdcd7e974b44fa870b76f774}{MUX2\_A0}}, OUTPUT);}
+\DoxyCodeLine{00083     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_ab1986c0c82206c591c9d2d744906b1ed}{MUX2\_A1}}, OUTPUT);}
+\DoxyCodeLine{00084     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a8ed6c28a986b97b5b3c7cc9a3817f235}{MUX2\_A2}}, OUTPUT);}
+\DoxyCodeLine{00085     pinMode(\mbox{\hyperlink{_a_d_g726_pins_8h_a91f0267c977c64c3fb296ae65af9d67a}{MUX2\_A3}}, OUTPUT);}
+\DoxyCodeLine{00086 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00023}{MUX1\+\_\+\+A0}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00025}{MUX1\+\_\+\+A1}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00027}{MUX1\+\_\+\+A2}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00029}{MUX1\+\_\+\+A3}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00031}{MUX1\+\_\+\+CS}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00018}{MUX1\+\_\+\+EN}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00032}{MUX1\+\_\+\+WE}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00046}{MUX2\+\_\+\+A0}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00048}{MUX2\+\_\+\+A1}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00050}{MUX2\+\_\+\+A2}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00052}{MUX2\+\_\+\+A3}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00041}{MUX2\+\_\+\+CS}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00039}{MUX2\+\_\+\+EN}}, and \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00043}{MUX2\+\_\+\+WE}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00024}{Initialize\+Multiplexer()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_acbe23063ae0d6c3227fe7d8e92c3efb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_a3a673e06cfd2bf44f498a15847a09d2a}\label{class_multiplexer_controller_a3a673e06cfd2bf44f498a15847a09d2a}} 
+\index{MultiplexerController@{MultiplexerController}!SelectColumn@{SelectColumn}}
+\index{SelectColumn@{SelectColumn}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{SelectColumn()}{SelectColumn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} Multiplexer\+Controller\+::\+Select\+Column (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{column }\end{DoxyParamCaption})}
+
+
+
+Selects a column without physically switching the multiplexer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & column to select. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NO\+\_\+\+ERROR if index is valid otherwise INVALID\+\_\+\+INDEX is returned. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117 \{}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{if} (column < \mbox{\hyperlink{_multiplexer_controller_8h_ae1f822020b3b0f6d3d57c4258a76a4a1}{MAX\_COLUMNS\_IDX}})}
+\DoxyCodeLine{00119     \{}
+\DoxyCodeLine{00120         \mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}} = column;}
+\DoxyCodeLine{00121     \}}
+\DoxyCodeLine{00122     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00123         \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa8c92550c8a92a25ed11b1833fbc14f65}{INVALID\_INDEX}};}
+\DoxyCodeLine{00124     \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fabf350750d0d4fabd8954c0f1e9bbae94}{NO\_ERROR}};}
+\DoxyCodeLine{00125 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_error_codes_8h_source_l00013}{INVALID\+\_\+\+INDEX}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00044}{m\+\_\+\+Current\+Column}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00017}{MAX\+\_\+\+COLUMNS\+\_\+\+IDX}}, and \mbox{\hyperlink{_error_codes_8h_source_l00011}{NO\+\_\+\+ERROR}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00109}{Arduino\+Main\+Controller\+::\+Set\+Row\+Column()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a3a673e06cfd2bf44f498a15847a09d2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_a1495faebe00d5ec5755d389b39495541}\label{class_multiplexer_controller_a1495faebe00d5ec5755d389b39495541}} 
+\index{MultiplexerController@{MultiplexerController}!SelectRow@{SelectRow}}
+\index{SelectRow@{SelectRow}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{SelectRow()}{SelectRow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} Multiplexer\+Controller\+::\+Select\+Row (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row }\end{DoxyParamCaption})}
+
+
+
+Selects a row without physically switching the multiplexer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column} & column to select. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NO\+\_\+\+ERROR if index is valid otherwise INVALID\+\_\+\+INDEX is returned. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133 \{}
+\DoxyCodeLine{00134     \textcolor{keywordflow}{if} (row < \mbox{\hyperlink{_multiplexer_controller_8h_a94d375594cfd426507b1a7442362ef34}{MAX\_ROWS\_IDX}})}
+\DoxyCodeLine{00135     \{}
+\DoxyCodeLine{00136         \mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}} = row;}
+\DoxyCodeLine{00137     \}}
+\DoxyCodeLine{00138     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fa8c92550c8a92a25ed11b1833fbc14f65}{INVALID\_INDEX}};}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fabf350750d0d4fabd8954c0f1e9bbae94}{NO\_ERROR}};}
+\DoxyCodeLine{00141 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_error_codes_8h_source_l00013}{INVALID\+\_\+\+INDEX}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00046}{m\+\_\+\+Current\+Row}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00015}{MAX\+\_\+\+ROWS\+\_\+\+IDX}}, and \mbox{\hyperlink{_error_codes_8h_source_l00011}{NO\+\_\+\+ERROR}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00109}{Arduino\+Main\+Controller\+::\+Set\+Row\+Column()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a1495faebe00d5ec5755d389b39495541_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_a1001338bef007601921d3e393d8d52bf}\label{class_multiplexer_controller_a1001338bef007601921d3e393d8d52bf}} 
+\index{MultiplexerController@{MultiplexerController}!SetAddressLines@{SetAddressLines}}
+\index{SetAddressLines@{SetAddressLines}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{SetAddressLines()}{SetAddressLines()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} Multiplexer\+Controller\+::\+Set\+Address\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_multiplexer_controller_a1de604493b7d09865f0f32c5ab219873}{Row\+Column\+Selector}}}]{row\+Column\+Selector,  }\item[{uint8\+\_\+t}]{address4\+Bit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_multiplexer_controller_a64d584c9a60aab6db19476ee8dd349c9}\label{class_multiplexer_controller_a64d584c9a60aab6db19476ee8dd349c9}} 
+\index{MultiplexerController@{MultiplexerController}!SetPinDefaultValues@{SetPinDefaultValues}}
+\index{SetPinDefaultValues@{SetPinDefaultValues}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{SetPinDefaultValues()}{SetPinDefaultValues()}}
+{\footnotesize\ttfamily void Multiplexer\+Controller\+::\+Set\+Pin\+Default\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Deselect all rows and columns, set CS, EN and WE of both multiplexers to low. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042 \{}
+\DoxyCodeLine{00043     \textcolor{comment}{// Deselect all rows and columns}}
+\DoxyCodeLine{00044     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a97f7658dc4a73148c1037a3ededbb007}{MUX1\_A0}}, LOW);}
+\DoxyCodeLine{00045     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_aa0c48acc13523e8ce734744fe697b0a4}{MUX1\_A1}}, LOW);}
+\DoxyCodeLine{00046     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a2acb3ea1b32835a7d1336e2be00585c9}{MUX1\_A2}}, LOW);}
+\DoxyCodeLine{00047     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a03b8342249473066afb04edfc342b83a}{MUX1\_A3}}, LOW);}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a175014b8991e906cd832b5a534ab23a2}{MUX1\_CS}}, LOW);}
+\DoxyCodeLine{00050     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_ae4f47a8e738b23f6ad4dcb789087476e}{MUX1\_EN}}, LOW);}
+\DoxyCodeLine{00051     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a85c5de2b10e47fec2baf4e24b1135778}{MUX1\_WE}}, LOW);}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{comment}{// Deselect all rows and columns}}
+\DoxyCodeLine{00054     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a1a167a8ffdcd7e974b44fa870b76f774}{MUX2\_A0}}, LOW);}
+\DoxyCodeLine{00055     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_ab1986c0c82206c591c9d2d744906b1ed}{MUX2\_A1}}, LOW);}
+\DoxyCodeLine{00056     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a8ed6c28a986b97b5b3c7cc9a3817f235}{MUX2\_A2}}, LOW);}
+\DoxyCodeLine{00057     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a91f0267c977c64c3fb296ae65af9d67a}{MUX2\_A3}}, LOW);}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_ae2a0b4611fdb2c02eb24625e49b747bc}{MUX2\_CS}}, LOW);}
+\DoxyCodeLine{00060     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a203c8add31e403bc685ea890f471dabf}{MUX2\_EN}}, LOW);}
+\DoxyCodeLine{00061     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a8e65c091e8ffdb68a6d05b2500537586}{MUX2\_WE}}, LOW);}
+\DoxyCodeLine{00062 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00023}{MUX1\+\_\+\+A0}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00025}{MUX1\+\_\+\+A1}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00027}{MUX1\+\_\+\+A2}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00029}{MUX1\+\_\+\+A3}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00031}{MUX1\+\_\+\+CS}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00018}{MUX1\+\_\+\+EN}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00032}{MUX1\+\_\+\+WE}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00046}{MUX2\+\_\+\+A0}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00048}{MUX2\+\_\+\+A1}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00050}{MUX2\+\_\+\+A2}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00052}{MUX2\+\_\+\+A3}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00041}{MUX2\+\_\+\+CS}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00039}{MUX2\+\_\+\+EN}}, and \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00043}{MUX2\+\_\+\+WE}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00024}{Initialize\+Multiplexer()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a64d584c9a60aab6db19476ee8dd349c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_a8d18ffe6c95a687f88343ee60954bb2c}\label{class_multiplexer_controller_a8d18ffe6c95a687f88343ee60954bb2c}} 
+\index{MultiplexerController@{MultiplexerController}!WriteColumnPhysical@{WriteColumnPhysical}}
+\index{WriteColumnPhysical@{WriteColumnPhysical}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{WriteColumnPhysical()}{WriteColumnPhysical()}}
+{\footnotesize\ttfamily void Multiplexer\+Controller\+::\+Write\+Column\+Physical (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets the physical pins to set a row via the multiplexer 2 (U11) 
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103 \{}
+\DoxyCodeLine{00104     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a1a167a8ffdcd7e974b44fa870b76f774}{MUX2\_A0}}, \mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}} \& 1);}
+\DoxyCodeLine{00105     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_ab1986c0c82206c591c9d2d744906b1ed}{MUX2\_A1}}, ((\mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}} \& 2) > 0) ? 1 : 0);}
+\DoxyCodeLine{00106     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a8ed6c28a986b97b5b3c7cc9a3817f235}{MUX2\_A2}}, ((\mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}} \& 4) > 0) ? 1 : 0);}
+\DoxyCodeLine{00107     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a91f0267c977c64c3fb296ae65af9d67a}{MUX2\_A3}}, ((\mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}} \& 8) > 0) ? 1 : 0);}
+\DoxyCodeLine{00108 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_multiplexer_controller_8h_source_l00044}{m\+\_\+\+Current\+Column}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00046}{MUX2\+\_\+\+A0}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00048}{MUX2\+\_\+\+A1}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00050}{MUX2\+\_\+\+A2}}, and \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00052}{MUX2\+\_\+\+A3}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{Write\+Row\+Column()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a8d18ffe6c95a687f88343ee60954bb2c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_a9e2544bce59143c8b08082d5ee8a62dd}\label{class_multiplexer_controller_a9e2544bce59143c8b08082d5ee8a62dd}} 
+\index{MultiplexerController@{MultiplexerController}!WriteRowColumn@{WriteRowColumn}}
+\index{WriteRowColumn@{WriteRowColumn}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{WriteRowColumn()}{WriteRowColumn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{Error\+Code}} Multiplexer\+Controller\+::\+Write\+Row\+Column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method writes the row and column by forwarding the commands to the two multiplexers. A switch operation is only executed when the previous index changes. 
+
+\begin{DoxyReturn}{Returns}
+NO\+\_\+\+ERROR if no error occurred otherwise return error code. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149 \{}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_multiplexer_controller_aa450edac74cc0b3e92ca9975c97d6146}{m\_LastRow}} != \mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}})}
+\DoxyCodeLine{00151     \{}
+\DoxyCodeLine{00152         \mbox{\hyperlink{class_multiplexer_controller_a9b60b62a7a8c89ef19cd96e569508443}{EnableChannel}}(\mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a5c5ced123cd11b5c3255f50227cccd77}{CH\_MUX1}});}
+\DoxyCodeLine{00153         \mbox{\hyperlink{class_multiplexer_controller_a93ea769f948dc8f599be805f19747a0d}{WriteRowPhysical}}();}
+\DoxyCodeLine{00154         \mbox{\hyperlink{class_multiplexer_controller_aa450edac74cc0b3e92ca9975c97d6146}{m\_LastRow}} = \mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}};}
+\DoxyCodeLine{00155     \}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_multiplexer_controller_af311be2320fcf257b2f6a7398e9ab7d4}{m\_LastColumn}} != \mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}})}
+\DoxyCodeLine{00158     \{}
+\DoxyCodeLine{00159         \mbox{\hyperlink{class_multiplexer_controller_a9b60b62a7a8c89ef19cd96e569508443}{EnableChannel}}(\mbox{\hyperlink{class_multiplexer_controller_afe683dc3469e0a7cb63fe4caa4f5cda7a534b3d50d77dfa732065bd3d6a663cfc}{CH\_MUX2}});}
+\DoxyCodeLine{00160         \mbox{\hyperlink{class_multiplexer_controller_a8d18ffe6c95a687f88343ee60954bb2c}{WriteColumnPhysical}}();}
+\DoxyCodeLine{00161         \mbox{\hyperlink{class_multiplexer_controller_af311be2320fcf257b2f6a7398e9ab7d4}{m\_LastColumn}} = \mbox{\hyperlink{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}{m\_CurrentColumn}};}
+\DoxyCodeLine{00162     \}}
+\DoxyCodeLine{00163     \textcolor{keywordflow}{return} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05fabf350750d0d4fabd8954c0f1e9bbae94}{NO\_ERROR}};}
+\DoxyCodeLine{00164 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_multiplexer_controller_8h_source_l00057}{CH\+\_\+\+MUX1}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00058}{CH\+\_\+\+MUX2}}, \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00170}{Enable\+Channel()}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00044}{m\+\_\+\+Current\+Column}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00046}{m\+\_\+\+Current\+Row}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00047}{m\+\_\+\+Last\+Column}}, \mbox{\hyperlink{_multiplexer_controller_8h_source_l00049}{m\+\_\+\+Last\+Row}}, \mbox{\hyperlink{_error_codes_8h_source_l00011}{NO\+\_\+\+ERROR}}, \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00102}{Write\+Column\+Physical()}}, and \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00091}{Write\+Row\+Physical()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_arduino_main_controller_8cpp_source_l00109}{Arduino\+Main\+Controller\+::\+Set\+Row\+Column()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a9e2544bce59143c8b08082d5ee8a62dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a9e2544bce59143c8b08082d5ee8a62dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multiplexer_controller_a93ea769f948dc8f599be805f19747a0d}\label{class_multiplexer_controller_a93ea769f948dc8f599be805f19747a0d}} 
+\index{MultiplexerController@{MultiplexerController}!WriteRowPhysical@{WriteRowPhysical}}
+\index{WriteRowPhysical@{WriteRowPhysical}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{WriteRowPhysical()}{WriteRowPhysical()}}
+{\footnotesize\ttfamily void Multiplexer\+Controller\+::\+Write\+Row\+Physical (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets the physical pins to set a row via the multiplexer 1 (U4) 
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_multiplexer_controller_8cpp_source}{Multiplexer\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092 \{}
+\DoxyCodeLine{00093     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a97f7658dc4a73148c1037a3ededbb007}{MUX1\_A0}}, \mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}} \& 1);}
+\DoxyCodeLine{00094     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_aa0c48acc13523e8ce734744fe697b0a4}{MUX1\_A1}}, ((\mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}} \& 2) > 0) ? 1 : 0);}
+\DoxyCodeLine{00095     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a2acb3ea1b32835a7d1336e2be00585c9}{MUX1\_A2}}, ((\mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}} \& 4) > 0) ? 1 : 0);}
+\DoxyCodeLine{00096     digitalWrite(\mbox{\hyperlink{_a_d_g726_pins_8h_a03b8342249473066afb04edfc342b83a}{MUX1\_A3}}, ((\mbox{\hyperlink{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}{m\_CurrentRow}} \& 8) > 0) ? 1 : 0);}
+\DoxyCodeLine{00097 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_multiplexer_controller_8h_source_l00046}{m\+\_\+\+Current\+Row}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00023}{MUX1\+\_\+\+A0}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00025}{MUX1\+\_\+\+A1}}, \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00027}{MUX1\+\_\+\+A2}}, and \mbox{\hyperlink{_a_d_g726_pins_8h_source_l00029}{MUX1\+\_\+\+A3}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{Write\+Row\+Column()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d94/class_multiplexer_controller_a93ea769f948dc8f599be805f19747a0d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}\label{class_multiplexer_controller_a875db89b2009bd9eb5777cd5c3dfe86b}} 
+\index{MultiplexerController@{MultiplexerController}!m\_CurrentColumn@{m\_CurrentColumn}}
+\index{m\_CurrentColumn@{m\_CurrentColumn}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{m\_CurrentColumn}{m\_CurrentColumn}}
+{\footnotesize\ttfamily uint8\+\_\+t Multiplexer\+Controller\+::m\+\_\+\+Current\+Column\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8h_source_l00044}{44}} of file \mbox{\hyperlink{_multiplexer_controller_8h_source}{Multiplexer\+Controller.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00116}{Select\+Column()}}, \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00102}{Write\+Column\+Physical()}}, and \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{Write\+Row\+Column()}}.
+
+\mbox{\Hypertarget{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}\label{class_multiplexer_controller_aaecbfb4e5a60c9ce0c78488c48bbf881}} 
+\index{MultiplexerController@{MultiplexerController}!m\_CurrentRow@{m\_CurrentRow}}
+\index{m\_CurrentRow@{m\_CurrentRow}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{m\_CurrentRow}{m\_CurrentRow}}
+{\footnotesize\ttfamily uint8\+\_\+t Multiplexer\+Controller\+::m\+\_\+\+Current\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8h_source_l00046}{46}} of file \mbox{\hyperlink{_multiplexer_controller_8h_source}{Multiplexer\+Controller.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00132}{Select\+Row()}}, \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{Write\+Row\+Column()}}, and \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00091}{Write\+Row\+Physical()}}.
+
+\mbox{\Hypertarget{class_multiplexer_controller_af311be2320fcf257b2f6a7398e9ab7d4}\label{class_multiplexer_controller_af311be2320fcf257b2f6a7398e9ab7d4}} 
+\index{MultiplexerController@{MultiplexerController}!m\_LastColumn@{m\_LastColumn}}
+\index{m\_LastColumn@{m\_LastColumn}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{m\_LastColumn}{m\_LastColumn}}
+{\footnotesize\ttfamily uint8\+\_\+t Multiplexer\+Controller\+::m\+\_\+\+Last\+Column\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8h_source_l00047}{47}} of file \mbox{\hyperlink{_multiplexer_controller_8h_source}{Multiplexer\+Controller.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{Write\+Row\+Column()}}.
+
+\mbox{\Hypertarget{class_multiplexer_controller_aa450edac74cc0b3e92ca9975c97d6146}\label{class_multiplexer_controller_aa450edac74cc0b3e92ca9975c97d6146}} 
+\index{MultiplexerController@{MultiplexerController}!m\_LastRow@{m\_LastRow}}
+\index{m\_LastRow@{m\_LastRow}!MultiplexerController@{MultiplexerController}}
+\doxysubsubsection{\texorpdfstring{m\_LastRow}{m\_LastRow}}
+{\footnotesize\ttfamily uint8\+\_\+t Multiplexer\+Controller\+::m\+\_\+\+Last\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_multiplexer_controller_8h_source_l00049}{49}} of file \mbox{\hyperlink{_multiplexer_controller_8h_source}{Multiplexer\+Controller.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_multiplexer_controller_8cpp_source_l00148}{Write\+Row\+Column()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/florianfrank/\+Documents/\+Research/\+Projects/\+Nano\+Sec/measurement\+\_\+switch\+\_\+matrix/nanosec\+\_\+crossbar\+\_\+controller/\+Arduino\+\_\+\+Firmware/\+Include/\mbox{\hyperlink{_multiplexer_controller_8h}{Multiplexer\+Controller.\+h}}\item 
+/home/florianfrank/\+Documents/\+Research/\+Projects/\+Nano\+Sec/measurement\+\_\+switch\+\_\+matrix/nanosec\+\_\+crossbar\+\_\+controller/\+Arduino\+\_\+\+Firmware/\+Src/\mbox{\hyperlink{_multiplexer_controller_8cpp}{Multiplexer\+Controller.\+cpp}}\end{DoxyCompactItemize}

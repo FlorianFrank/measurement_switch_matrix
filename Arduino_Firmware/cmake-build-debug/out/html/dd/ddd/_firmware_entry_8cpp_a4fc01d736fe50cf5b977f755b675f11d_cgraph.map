@@ -1,0 +1,8 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node1" title="Initialization of the Arduino Nano as well as the Switch Matrix." alt="" coords="5,78,64,105"/>
+<area shape="rect" id="node2" href="$db/d27/class_arduino_main_controller.html#a631be6c9a5f622af9db3a7ccfceac0ff" title="This function runs the initialization functions of the multiplexer, as well as the serial interface h..." alt="" coords="112,71,280,112"/>
+<area shape="rect" id="node3" href="$d6/d94/class_multiplexer_controller.html#afc046fb7a2d518c0fceaf82029451dcc" title="Initialization function enables the pin modes and initializes all lines to its default values." alt="" coords="339,37,498,79"/>
+<area shape="rect" id="node6" href="$d9/d61/class_serial_interface_handler.html#a1d383b9324fb96efc3c9f17e12de5886" title=" " alt="" coords="328,103,509,144"/>
+<area shape="rect" id="node4" href="$d6/d94/class_multiplexer_controller.html#acbe23063ae0d6c3227fe7d8e92c3efb4" title=" " alt="" coords="559,5,718,47"/>
+<area shape="rect" id="node5" href="$d6/d94/class_multiplexer_controller.html#a64d584c9a60aab6db19476ee8dd349c9" title="Deselect all rows and columns, set CS, EN and WE of both multiplexers to low." alt="" coords="557,71,720,112"/>
+</map>

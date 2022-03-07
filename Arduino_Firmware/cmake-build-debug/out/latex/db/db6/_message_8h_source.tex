@@ -1,0 +1,43 @@
+\hypertarget{_message_8h_source}{}\doxysection{Message.\+h}
+\label{_message_8h_source}\index{/home/florianfrank/Documents/Research/Projects/NanoSec/measurement\_switch\_matrix/nanosec\_crossbar\_controller/Arduino\_Firmware/Include/Message.h@{/home/florianfrank/Documents/Research/Projects/NanoSec/measurement\_switch\_matrix/nanosec\_crossbar\_controller/Arduino\_Firmware/Include/Message.h}}
+\mbox{\hyperlink{_message_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00008}00008 \textcolor{preprocessor}{\#ifndef ARDUINO\_BOARD\_CONTROLLER\_MESSAGE\_H}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00009}00009 \textcolor{preprocessor}{\#define ARDUINO\_BOARD\_CONTROLLER\_MESSAGE\_H}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_error_handler_8h}{ErrorHandler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_commands_8h}{Commands.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00013}\mbox{\hyperlink{_message_8h_a81f68567c11671e8c35cfcfb454a4160}{00013}} \textcolor{preprocessor}{\#define MAX\_COMMAND\_LEN 50}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00014}\mbox{\hyperlink{_message_8h_a23195218eef2cf21e2beae685a041783}{00014}} \textcolor{preprocessor}{\#define DELIMITER "{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00017}\mbox{\hyperlink{class_message}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{class_message}{Message}}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00019}00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00020}00020     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_message_a10b114269ff059d951abde6ae3d9d557}{Message}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} parameter, \mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153}{Command}} command);}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00021}00021     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_message_a10b114269ff059d951abde6ae3d9d557}{Message}}(\mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{ErrorCode}} errCode);}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00023}00023     [[nodiscard]] \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_message_a6f6140c197f1cda7a751a9985aa1027d}{GetSize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00025}00025     \textcolor{keyword}{static} \mbox{\hyperlink{class_message}{Message}} \mbox{\hyperlink{class_message_a2813a8d2312d3983fb932c8c1c8f31ce}{CharArrayToMessage}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *byteMessage);}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00026}00026     \textcolor{keyword}{static} \mbox{\hyperlink{_error_codes_8h_a59e56af19e754a6aa26a612ebf91d05f}{ErrorCode}} \mbox{\hyperlink{class_message_adccaa256da501f1c74ef7aaa5decd74e}{MessageToCharArray}}(\mbox{\hyperlink{class_message}{Message}}\& message, \textcolor{keywordtype}{char} *buffer, \textcolor{keywordtype}{int} *len);}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00028}00028     \textcolor{comment}{// Getters and Setters}}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00029}00029     [[nodiscard]] \mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153}{Command}} \mbox{\hyperlink{class_message_ae42713823e90420e17a103502887732e}{GetCurrentCommand}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00030}00030     [[nodiscard]] \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_message_a56dd9d10b625708650fa5ce11d6e16d2}{GetParameter}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00032}00032 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00033}00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_message_a6706a54e0080a074f706d32036d259c7}{Initialize}}(\mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153}{Command}} command, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} parameter, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* errorMessage);}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00034}00034     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_message_aed010683351ce86eb3f613162650f1d1}{ParseParameter}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *inputMessage, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *searchString, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *delimiter);}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00035}\mbox{\hyperlink{class_message_a58545adc1a66124960189ff6342cdc2a}{00035}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_message_a58545adc1a66124960189ff6342cdc2a}{m\_Size}}\{\};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00036}\mbox{\hyperlink{class_message_a388b5d7447d38ca6af61f575f20a3ef2}{00036}}     \mbox{\hyperlink{_commands_8h_a2afce0a47a93eee73a314d53e4890153}{Command}} \mbox{\hyperlink{class_message_a388b5d7447d38ca6af61f575f20a3ef2}{m\_CurrentCommand}};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00037}\mbox{\hyperlink{class_message_aec14d6645091c63dc5f406480870e179}{00037}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_message_aec14d6645091c63dc5f406480870e179}{m\_parameter}}\{\};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00038}\mbox{\hyperlink{class_message_a8b6fe9015d63f407caa73a3dca2debc8}{00038}}     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_message_a8b6fe9015d63f407caa73a3dca2debc8}{commandsAsStrings}}[\mbox{\hyperlink{_message_8h_a81f68567c11671e8c35cfcfb454a4160}{MAX\_COMMAND\_LEN}}];}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00039}\mbox{\hyperlink{class_message_acaee63d6e068278f76f55c4f51e9c85a}{00039}}     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_message_acaee63d6e068278f76f55c4f51e9c85a}{m\_ErrorMessage}}\{\};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00040}00040 \};}
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_message_8h_source_l00043}00043 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//ARDUINO\_BOARD\_CONTROLLER\_MESSAGE\_H}}
+
+\end{DoxyCode}

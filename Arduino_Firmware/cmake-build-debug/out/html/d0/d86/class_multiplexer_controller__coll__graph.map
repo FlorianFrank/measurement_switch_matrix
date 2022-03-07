@@ -1,0 +1,4 @@
+<map id="MultiplexerController" name="MultiplexerController">
+<area shape="rect" id="node1" title="This class is responsible for controlling an ADG726 Multiplexer. The row is set by controlling." alt="" coords="5,139,164,165"/>
+<area shape="rect" id="node2" title=" " alt="" coords="51,5,118,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Message::CharArrayToMessage" name="Message::CharArrayToMessage">
+<area shape="rect" id="node1" title=" " alt="" coords="916,13,1141,39"/>
+<area shape="rect" id="node2" href="$d9/d61/class_serial_interface_handler.html#abba67286134857f1ba7604b32db6f4d3" title=" " alt="" coords="631,5,868,47"/>
+<area shape="rect" id="node3" href="$d9/d61/class_serial_interface_handler.html#a3b2002503f5459a04c90af57699ead71" title=" " alt="" coords="320,5,583,47"/>
+<area shape="rect" id="node4" href="$db/d27/class_arduino_main_controller.html#aa851b7bdbfb738930816e18428551e32" title="This method contains the main loop of the firmware executed on the Arduino. Here, data is read from t..." alt="" coords="104,5,272,47"/>
+<area shape="rect" id="node5" href="$dd/ddd/_firmware_entry_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop in which the commands are parsed and forwarded to the Switch Matrix." alt="" coords="5,13,56,39"/>
+</map>

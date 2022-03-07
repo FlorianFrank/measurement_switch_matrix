@@ -1,0 +1,49 @@
+/home/florianfrank/Applications/CLion-2020.2.4/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at cmake/Platform/Arduino.cmake:285 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  /home/florianfrank/Applications/CLion-2020.2.4/clion-2020.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake:26 (include)
+  CMakeLists.txt:9 (project)
+
+
+CMake Deprecation Warning at cmake/Platform/Arduino.cmake:285 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  /home/florianfrank/Applications/CLion-2020.2.4/clion-2020.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCInformation.cmake:66 (include)
+  CMakeLists.txt:9 (project)
+
+
+CMake Deprecation Warning at cmake/Platform/Arduino.cmake:285 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  /home/florianfrank/Applications/CLion-2020.2.4/clion-2020.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCXXInformation.cmake:65 (include)
+  CMakeLists.txt:9 (project)
+
+
+-- Generating nanosec_crossbar_controller
+-- Using /usr/bin/avr-objcopy for converting firmware image to hex
+Missing nano.bootloader.high_fuses, not creating bootloader burn target nanosec_crossbar_controller-burn-bootloader.
+Doxygen build started
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/nanosec_crossbar_controller/Arduino_Firmware/cmake-build-debug

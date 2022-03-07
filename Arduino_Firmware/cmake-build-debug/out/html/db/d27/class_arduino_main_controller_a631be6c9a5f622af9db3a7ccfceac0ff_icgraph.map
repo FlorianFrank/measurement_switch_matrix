@@ -1,0 +1,4 @@
+<map id="ArduinoMainController::Init" name="ArduinoMainController::Init">
+<area shape="rect" id="node1" title="This function runs the initialization functions of the multiplexer, as well as the serial interface h..." alt="" coords="112,5,280,47"/>
+<area shape="rect" id="node2" href="$dd/ddd/_firmware_entry_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Initialization of the Arduino Nano as well as the Switch Matrix." alt="" coords="5,13,64,39"/>
+</map>

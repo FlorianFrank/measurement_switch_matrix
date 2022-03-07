@@ -1,0 +1,6 @@
+<map id="SerialInterfaceHandler::InitializeSerialInterface" name="SerialInterfaceHandler::InitializeSerialInterface">
+<area shape="rect" id="node1" title=" " alt="" coords="336,39,517,80"/>
+<area shape="rect" id="node2" href="$db/d27/class_arduino_main_controller.html#a631be6c9a5f622af9db3a7ccfceac0ff" title="This function runs the initialization functions of the multiplexer, as well as the serial interface h..." alt="" coords="116,5,284,47"/>
+<area shape="rect" id="node4" href="$d9/d61/class_serial_interface_handler.html#ab48b55dd39975572cfba59dd9d1db902" title=" " alt="" coords="112,71,288,112"/>
+<area shape="rect" id="node3" href="$dd/ddd/_firmware_entry_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Initialization of the Arduino Nano as well as the Switch Matrix." alt="" coords="5,13,64,39"/>
+</map>

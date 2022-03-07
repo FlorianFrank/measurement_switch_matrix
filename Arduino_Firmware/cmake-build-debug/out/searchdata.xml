@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<add>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorHandler.cpp</field>
+    <field name="url">d0/d8e/_error_handler_8cpp_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorHandler::errorCodeBuffer ERR_CODE_BUFFER_SIZE errCode NO_ERROR strcpy errorCodeBuffer INVALID_INDEX strcpy errorCodeBuffer INVALID_MESSAGE strcpy errorCodeBuffer INTERFACE_CLOSED strcpy errorCodeBuffer INVALID_LENGTH strcpy errorCodeBuffer INVALID_BUFFER_LEN strcpy errorCodeBuffer INVALID_ARGUMENT strcpy errorCodeBuffer INVALID_COMMAND strcpy errorCodeBuffer DISCONNECTED strcpy errorCodeBuffer NOT_INITIALIZED strcpy errorCodeBuffer errorCodeBuffer</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorHandler.cpp</field>
+    <field name="url">d0/d8e/_error_handler_8cpp_source.html#l00012</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorHandler::ErrorCodeToString ErrorCode errCode errCode NO_ERROR strcpy errorCodeBuffer INVALID_INDEX strcpy errorCodeBuffer INVALID_MESSAGE strcpy errorCodeBuffer INTERFACE_CLOSED strcpy errorCodeBuffer INVALID_LENGTH strcpy errorCodeBuffer INVALID_BUFFER_LEN strcpy errorCodeBuffer INVALID_ARGUMENT strcpy errorCodeBuffer INVALID_COMMAND strcpy errorCodeBuffer DISCONNECTED strcpy errorCodeBuffer NOT_INITIALIZED strcpy errorCodeBuffer errorCodeBuffer</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">m_CurrentColumn SELECT_NO_COLUMN m_CurrentRow SELECT_NO_ROW m_LastColumn m_LastRow DeInitializeMultiplexer digitalWrite MUX1_WE LOW digitalWrite MUX1_EN LOW digitalWrite MUX2_WE LOW digitalWrite MUX2_EN LOW muxChannel CH_MUX1 digitalWrite MUX1_CS LOW digitalWrite MUX2_CS LOW InitializePinModes SetPinDefaultValues pinMode MUX1_EN OUTPUT pinMode MUX1_CS OUTPUT pinMode MUX1_WE OUTPUT pinMode MUX1_A0 OUTPUT pinMode MUX1_A1 OUTPUT pinMode MUX1_A2 OUTPUT pinMode MUX1_A3 OUTPUT pinMode MUX2_EN OUTPUT pinMode MUX2_CS OUTPUT pinMode MUX2_WE OUTPUT pinMode MUX2_A0 OUTPUT pinMode MUX2_A1 OUTPUT pinMode MUX2_A2 OUTPUT pinMode MUX2_A3 OUTPUT column MAX_COLUMNS_IDX m_CurrentColumn column INVALID_INDEX NO_ERROR row MAX_ROWS_IDX m_CurrentRow row INVALID_INDEX NO_ERROR digitalWrite MUX1_A0 LOW digitalWrite MUX1_A1 LOW digitalWrite MUX1_A2 LOW digitalWrite MUX1_A3 LOW digitalWrite MUX1_CS LOW digitalWrite MUX1_EN LOW digitalWrite MUX1_WE LOW digitalWrite MUX2_A0 LOW digitalWrite MUX2_A1 LOW digitalWrite MUX2_A2 LOW digitalWrite MUX2_A3 LOW digitalWrite MUX2_CS LOW digitalWrite MUX2_EN LOW digitalWrite MUX2_WE LOW digitalWrite MUX2_A0 m_CurrentColumn digitalWrite MUX2_A1 m_CurrentColumn digitalWrite MUX2_A2 m_CurrentColumn digitalWrite MUX2_A3 m_CurrentColumn m_LastRow m_CurrentRow EnableChannel CH_MUX1 WriteRowPhysical m_LastRow m_CurrentRow m_LastColumn m_CurrentColumn EnableChannel CH_MUX2 WriteColumnPhysical m_LastColumn m_CurrentColumn NO_ERROR digitalWrite MUX1_A0 m_CurrentRow digitalWrite MUX1_A1 m_CurrentRow digitalWrite MUX1_A2 m_CurrentRow digitalWrite MUX1_A3 m_CurrentRow</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00008</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::MultiplexerController m_CurrentColumn SELECT_NO_COLUMN m_CurrentRow SELECT_NO_ROW m_LastColumn m_LastRow</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00016</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::~MultiplexerController DeInitializeMultiplexer</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00024</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::InitializeMultiplexer InitializePinModes SetPinDefaultValues</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00033</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::DeInitializeMultiplexer</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00041</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::SetPinDefaultValues digitalWrite MUX1_A0 LOW digitalWrite MUX1_A1 LOW digitalWrite MUX1_A2 LOW digitalWrite MUX1_A3 LOW digitalWrite MUX1_CS LOW digitalWrite MUX1_EN LOW digitalWrite MUX1_WE LOW digitalWrite MUX2_A0 LOW digitalWrite MUX2_A1 LOW digitalWrite MUX2_A2 LOW digitalWrite MUX2_A3 LOW digitalWrite MUX2_CS LOW digitalWrite MUX2_EN LOW digitalWrite MUX2_WE LOW</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00064</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::InitializePinModes pinMode MUX1_EN OUTPUT pinMode MUX1_CS OUTPUT pinMode MUX1_WE OUTPUT pinMode MUX1_A0 OUTPUT pinMode MUX1_A1 OUTPUT pinMode MUX1_A2 OUTPUT pinMode MUX1_A3 OUTPUT pinMode MUX2_EN OUTPUT pinMode MUX2_CS OUTPUT pinMode MUX2_WE OUTPUT pinMode MUX2_A0 OUTPUT pinMode MUX2_A1 OUTPUT pinMode MUX2_A2 OUTPUT pinMode MUX2_A3 OUTPUT</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00091</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::WriteRowPhysical digitalWrite MUX1_A0 m_CurrentRow digitalWrite MUX1_A1 m_CurrentRow digitalWrite MUX1_A2 m_CurrentRow digitalWrite MUX1_A3 m_CurrentRow</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00102</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::WriteColumnPhysical digitalWrite MUX2_A0 m_CurrentColumn digitalWrite MUX2_A1 m_CurrentColumn digitalWrite MUX2_A2 m_CurrentColumn digitalWrite MUX2_A3 m_CurrentColumn</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00116</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode MultiplexerController::SelectColumn uint8_t column column MAX_COLUMNS_IDX m_CurrentColumn column INVALID_INDEX NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00132</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode MultiplexerController::SelectRow uint8_t row row MAX_ROWS_IDX m_CurrentRow row INVALID_INDEX NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00148</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode MultiplexerController::WriteRowColumn m_LastRow m_CurrentRow EnableChannel CH_MUX1 WriteRowPhysical m_LastRow m_CurrentRow m_LastColumn m_CurrentColumn EnableChannel CH_MUX2 WriteColumnPhysical m_LastColumn m_CurrentColumn NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.cpp</field>
+    <field name="url">d2/d92/_multiplexer_controller_8cpp_source.html#l00170</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController::EnableChannel MultiplexerController::MUXChannel muxChannel digitalWrite MUX1_WE LOW digitalWrite MUX1_EN LOW digitalWrite MUX2_WE LOW digitalWrite MUX2_EN LOW muxChannel CH_MUX1 digitalWrite MUX1_CS LOW digitalWrite MUX2_CS LOW</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">ERR_CODE_BUFFER_SIZE</field>
+    <field name="url">d3/dd5/_error_handler_8h.html#aa10bc96946bec8842ddadc2f321cf32f</field>
+    <field name="keywords"></field>
+    <field name="text">This file is responsible for the error handling within the firmware It contains a function to convert error codes into string error messages Florian Frank 1.0 Maximum size of the buffer containing the error message</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorHandler.h</field>
+    <field name="url">d3/dd5/_error_handler_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorHandler.h</field>
+    <field name="url">d3/dd5/_error_handler_8h_source.html#l00014</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorHandler.h</field>
+    <field name="url">d3/dd5/_error_handler_8h_source.html#l00016</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorHandler ErrorCodeToString ErrorCode errCode</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorHandler.h</field>
+    <field name="url">d3/dd5/_error_handler_8h_source.html#l00022</field>
+    <field name="keywords"></field>
+    <field name="text">errorCodeBuffer ERR_CODE_BUFFER_SIZE</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.cpp</field>
+    <field name="url">d3/dee/_arduino_main_controller_8cpp_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">m_ConnectionEstablished m_MuxController MultiplexerController m_SerialInterfaceHandler SerialInterfaceHandler baudrate m_MuxController m_SerialInterfaceHandler m_MuxController m_SerialInterfaceHandler NOT_INITIALIZED ErrorCode muxErrorCode m_MuxController DeInitializeMultiplexer muxErrorCode NO_ERROR muxErrorCode m_SerialInterfaceHandler DeInitializeSerialInterface m_MuxController m_SerialInterfaceHandler NOT_INITIALIZED muxErrorCode m_MuxController InitializeMultiplexer muxErrorCode NO_ERROR muxErrorCode m_SerialInterfaceHandler InitializeSerialInterface len MAX_COMMAND_LEN Message message SerialInterfaceHandler::ReadAndParseMessageNonBlocking len Command currentCommand message GetCurrentCommand currentCommand NOPE buf MAX_COMMAND_LEN sprintf buf currentCommand Serial write buf Message acknowledgement ACK currentCommand ERROR_CODE acknowledgement message currentCommand CONNECT m_ConnectionEstablished currentCommand DISCONNECT m_ConnectionEstablished currentCommand SELECT_COLUMN currentCommand SELECT_ROW ErrorCode rowColumnErrCode SetRowColumn currentCommand message rowColumnErrCode NO_ERROR acknowledgement Message rowColumnErrCode ErrorCode serialError m_SerialInterfaceHandler WriteMessage acknowledgement serialError NO_ERROR serialError NO_ERROR m_ConnectionEstablished DISCONNECTED ErrorCode errorCode command SELECT_COLUMN errorCode m_MuxController SelectColumn message GetParameter command SELECT_ROW errorCode m_MuxController SelectRow message GetParameter errorCode NO_ERROR errorCode errorCode m_MuxController WriteRowColumn errorCode NO_ERROR errorCode NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.cpp</field>
+    <field name="url">d3/dee/_arduino_main_controller_8cpp_source.html#l00011</field>
+    <field name="keywords"></field>
+    <field name="text">ArduinoMainController::ArduinoMainController uint8_t baudrate m_ConnectionEstablished false m_MuxController MultiplexerController m_SerialInterfaceHandler SerialInterfaceHandler baudrate</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.cpp</field>
+    <field name="url">d3/dee/_arduino_main_controller_8cpp_source.html#l00021</field>
+    <field name="keywords"></field>
+    <field name="text">ArduinoMainController::~ArduinoMainController m_MuxController m_SerialInterfaceHandler</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.cpp</field>
+    <field name="url">d3/dee/_arduino_main_controller_8cpp_source.html#l00032</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode ArduinoMainController::Init m_MuxController m_SerialInterfaceHandler NOT_INITIALIZED muxErrorCode m_MuxController InitializeMultiplexer muxErrorCode NO_ERROR muxErrorCode m_SerialInterfaceHandler InitializeSerialInterface</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.cpp</field>
+    <field name="url">d3/dee/_arduino_main_controller_8cpp_source.html#l00049</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode ArduinoMainController::DeInit m_MuxController m_SerialInterfaceHandler NOT_INITIALIZED ErrorCode muxErrorCode m_MuxController DeInitializeMultiplexer muxErrorCode NO_ERROR muxErrorCode m_SerialInterfaceHandler DeInitializeSerialInterface</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.cpp</field>
+    <field name="url">d3/dee/_arduino_main_controller_8cpp_source.html#l00067</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode ArduinoMainController::Loop len MAX_COMMAND_LEN Message message SerialInterfaceHandler::ReadAndParseMessageNonBlocking len Command currentCommand message GetCurrentCommand currentCommand NOPE buf MAX_COMMAND_LEN sprintf buf currentCommand Serial write buf Message acknowledgement ACK currentCommand ERROR_CODE acknowledgement message currentCommand CONNECT m_ConnectionEstablished currentCommand DISCONNECT m_ConnectionEstablished currentCommand SELECT_COLUMN currentCommand SELECT_ROW ErrorCode rowColumnErrCode SetRowColumn currentCommand message rowColumnErrCode NO_ERROR acknowledgement Message rowColumnErrCode ErrorCode serialError m_SerialInterfaceHandler WriteMessage acknowledgement serialError NO_ERROR serialError NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.cpp</field>
+    <field name="url">d3/dee/_arduino_main_controller_8cpp_source.html#l00109</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode ArduinoMainController::SetRowColumn Command command Message message m_ConnectionEstablished DISCONNECTED ErrorCode errorCode command SELECT_COLUMN errorCode m_MuxController SelectColumn message GetParameter command SELECT_ROW errorCode m_MuxController SelectRow message GetParameter errorCode NO_ERROR errorCode errorCode m_MuxController WriteRowColumn errorCode NO_ERROR errorCode NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">enum</field>
+    <field name="name">ErrorCode</field>
+    <field name="url">d4/d18/_error_codes_8h.html#a59e56af19e754a6aa26a612ebf91d05f</field>
+    <field name="keywords"></field>
+    <field name="text">This file contains the list of all possible error codes which are used in this Arduino firmware Florian Frank 1.0</field>
+  </doc>
+  <doc>
+    <field name="type">enumvalue</field>
+    <field name="name">INVALID_INDEX</field>
+    <field name="url">d4/d18/_error_codes_8h.html#a59e56af19e754a6aa26a612ebf91d05fa8c92550c8a92a25ed11b1833fbc14f65</field>
+    <field name="keywords"></field>
+    <field name="text">Invalid index e.g invalid row or column is chosen</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">NO_ERROR INVALID_INDEX INVALID_MESSAGE INTERFACE_CLOSED INVALID_LENGTH INVALID_BUFFER_LEN INVALID_ARGUMENT INVALID_COMMAND DISCONNECTED NOT_INITIALIZED</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00010</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00011</field>
+    <field name="keywords"></field>
+    <field name="text">NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00013</field>
+    <field name="keywords"></field>
+    <field name="text">INVALID_INDEX</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00014</field>
+    <field name="keywords"></field>
+    <field name="text">INVALID_MESSAGE</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00015</field>
+    <field name="keywords"></field>
+    <field name="text">INTERFACE_CLOSED</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00016</field>
+    <field name="keywords"></field>
+    <field name="text">INVALID_LENGTH</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00017</field>
+    <field name="keywords"></field>
+    <field name="text">INVALID_BUFFER_LEN</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00018</field>
+    <field name="keywords"></field>
+    <field name="text">INVALID_ARGUMENT</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00019</field>
+    <field name="keywords"></field>
+    <field name="text">INVALID_COMMAND</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00020</field>
+    <field name="keywords"></field>
+    <field name="text">DISCONNECTED NOT_INITIALIZED</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ErrorCodes.h</field>
+    <field name="url">d4/d18/_error_codes_8h_source.html#l00022</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">variable</field>
+    <field name="name">Message::commandsAsStrings</field>
+    <field name="args">[50]</field>
+    <field name="url">d4/d7f/class_message.html#a8b6fe9015d63f407caa73a3dca2debc8</field>
+    <field name="keywords"></field>
+    <field name="text">This array contains the possible commands accepted by the control protocol</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">Message::commandsAsStrings MAX_COMMAND_LEN m_CurrentCommand NOPE Initialize command parameter m_CurrentCommand NOPE Initialize ERROR_CODE ErrorHandler::ErrorCodeToString errCode commandCtr command commandsAsStrings strstr byteMessage command Command commandCtr CONNECT Message CONNECT DISCONNECT Message DISCONNECT SELECT_ROW Message ParseParameter byteMessage command DELIMITER SELECT_ROW SELECT_COLUMN Message ParseParameter byteMessage command DELIMITER SELECT_COLUMN ACK Message ACK ERROR_CODE Message ParseParameter byteMessage command DELIMITER ERROR_CODE commandCtr Message INVALID_COMMAND m_CurrentCommand m_parameter m_Size m_Size m_CurrentCommand command m_parameter parameter m_ErrorMessage errorMessage buffer len INVALID_ARGUMENT tempBuffer MAX_COMMAND_LEN tempLen message m_CurrentCommand SELECT_ROW message m_CurrentCommand SELECT_COLUMN tempLen sprintf tempBuffer commandsAsStrings message m_CurrentCommand message m_parameter message m_CurrentCommand ERROR_CODE tempLen sprintf tempBuffer commandsAsStrings message m_CurrentCommand message m_ErrorMessage tempLen sprintf tempBuffer commandsAsStrings message m_CurrentCommand tempLen len INVALID_BUFFER_LEN len tempLen strcpy buffer tempBuffer NO_ERROR inputMessage searchString delimiter ret strstr inputMessage searchString delimiterPos strstr inputMessage valueBuffer strlenSearchStr strlen searchString strncpy valueBuffer ret strlenSearchStr delimiterPos ret strlenSearchStr endPtr valueBuffer strlen valueBuffer strtol valueBuffer endPtr</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00027</field>
+    <field name="keywords"></field>
+    <field name="text">Message::Message parameter Command command m_CurrentCommand NOPE Initialize command parameter</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00032</field>
+    <field name="keywords"></field>
+    <field name="text">Message::Message ErrorCode errCode m_CurrentCommand NOPE Initialize ERROR_CODE ErrorHandler::ErrorCodeToString errCode</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00040</field>
+    <field name="keywords"></field>
+    <field name="text">Message::Initialize Command command parameter errorMessage m_Size m_CurrentCommand command m_parameter parameter m_ErrorMessage errorMessage</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00049</field>
+    <field name="keywords"></field>
+    <field name="text">Message::GetSize m_Size</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00054</field>
+    <field name="keywords"></field>
+    <field name="text">Message Message::CharArrayToMessage byteMessage commandCtr command commandsAsStrings strstr byteMessage command Command commandCtr CONNECT Message CONNECT DISCONNECT Message DISCONNECT SELECT_ROW Message ParseParameter byteMessage command DELIMITER SELECT_ROW SELECT_COLUMN Message ParseParameter byteMessage command DELIMITER SELECT_COLUMN ACK Message ACK ERROR_CODE Message ParseParameter byteMessage command DELIMITER ERROR_CODE commandCtr Message INVALID_COMMAND</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00082</field>
+    <field name="keywords"></field>
+    <field name="text">Message::ParseParameter inputMessage searchString delimiter inputMessage searchString delimiter ret strstr inputMessage searchString delimiterPos strstr inputMessage valueBuffer strlenSearchStr strlen searchString strncpy valueBuffer ret strlenSearchStr delimiterPos ret strlenSearchStr endPtr valueBuffer strlen valueBuffer strtol valueBuffer endPtr</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00098</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode Message::MessageToCharArray Message message buffer len buffer len INVALID_ARGUMENT tempBuffer MAX_COMMAND_LEN tempLen message m_CurrentCommand SELECT_ROW message m_CurrentCommand SELECT_COLUMN tempLen sprintf tempBuffer commandsAsStrings message m_CurrentCommand message m_parameter message m_CurrentCommand ERROR_CODE tempLen sprintf tempBuffer commandsAsStrings message m_CurrentCommand message m_ErrorMessage tempLen sprintf tempBuffer commandsAsStrings message m_CurrentCommand tempLen len INVALID_BUFFER_LEN len tempLen strcpy buffer tempBuffer NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00122</field>
+    <field name="keywords"></field>
+    <field name="text">Command Message::GetCurrentCommand m_CurrentCommand</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.cpp</field>
+    <field name="url">d4/dab/_message_8cpp_source.html#l00127</field>
+    <field name="keywords"></field>
+    <field name="text">Message::GetParameter m_parameter</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MAX_LEN_SEND_BUFFER</field>
+    <field name="url">d5/d51/_serial_interface_handler_8h.html#ab356f5b267384a4c77c9b0e0c73683b4</field>
+    <field name="keywords"></field>
+    <field name="text">This file contains the functionality to control the serial connection to the control computer It contains functionality to send and receive messages Florian Frank 1.0</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.h</field>
+    <field name="url">d5/d51/_serial_interface_handler_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.h</field>
+    <field name="url">d5/d51/_serial_interface_handler_8h_source.html#l00016</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.h</field>
+    <field name="url">d5/d51/_serial_interface_handler_8h_source.html#l00018</field>
+    <field name="keywords"></field>
+    <field name="text">SerialInterfaceHandler SerialInterfaceHandler uint16_t baudRate ErrorCode InitializeSerialInterface ErrorCode DeInitializeSerialInterface ErrorCode WriteMessage Message message Message ReadAndParseMessageBlocking len Message ReadAndParseMessageNonBlocking len DataAvail</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.h</field>
+    <field name="url">d5/d51/_serial_interface_handler_8h_source.html#l00033</field>
+    <field name="keywords"></field>
+    <field name="text">uint16_t m_Baudrate</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.h</field>
+    <field name="url">d5/d51/_serial_interface_handler_8h_source.html#l00034</field>
+    <field name="keywords"></field>
+    <field name="text">m_IsSerialInterfaceOpen</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX1_A3</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a03b8342249473066afb04edfc342b83a</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 1 address line 3</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX1_CS</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a175014b8991e906cd832b5a534ab23a2</field>
+    <field name="keywords"></field>
+    <field name="text">Header file containing the physical Pins used to control the ADG726 Multiplexer Header file containing the physical Pins used to control the ADG726 Multiplexer Florian Frank 1.0 Multiplexer 2 U4 Pin of the Chip Select Signal for channel A Row Selector Florian Frank 1.0 Multiplexer 2 U4 Pin of the Chip Select Signal for channel A Row Selector</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX2_A0</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a1a167a8ffdcd7e974b44fa870b76f774</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 2 address line 0</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX2_EN</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a203c8add31e403bc685ea890f471dabf</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 2 U11 Multiplexer 2 EN Pin</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX1_A2</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a2acb3ea1b32835a7d1336e2be00585c9</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 1 address line 2</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX1_WE</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a85c5de2b10e47fec2baf4e24b1135778</field>
+    <field name="keywords"></field>
+    <field name="text">Pin for the Write Enable Signal of the multiplexer Pin for the Write Enable Signal of the multiplexer</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX2_WE</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a8e65c091e8ffdb68a6d05b2500537586</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 2 WE</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX2_A2</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a8ed6c28a986b97b5b3c7cc9a3817f235</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 2 address line 2</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX2_A3</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a91f0267c977c64c3fb296ae65af9d67a</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 2 address line 3</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX1_A0</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#a97f7658dc4a73148c1037a3ededbb007</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 1 address line 0</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX1_A1</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#aa0c48acc13523e8ce734744fe697b0a4</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 1 address line 1</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX2_A1</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#ab1986c0c82206c591c9d2d744906b1ed</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 2 address line 1</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX2_CS</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#ae2a0b4611fdb2c02eb24625e49b747bc</field>
+    <field name="keywords"></field>
+    <field name="text">Multiplexer 2 CSA CSB</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MUX1_EN</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h.html#ae4f47a8e738b23f6ad4dcb789087476e</field>
+    <field name="keywords"></field>
+    <field name="text">Pin for the Enable Signal of the multiplexer</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00018</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00023</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00025</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00027</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00029</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00031</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00032</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00039</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00041</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00043</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00046</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00048</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00050</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ADG726Pins.h</field>
+    <field name="url">d5/d58/_a_d_g726_pins_8h_source.html#l00052</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">class</field>
+    <field name="name">MultiplexerController</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html</field>
+    <field name="keywords"></field>
+    <field name="text">This class is responsible for controlling an ADG726 Multiplexer The row is set by controlling</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::SelectRow</field>
+    <field name="args">(uint8_t row)</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a1495faebe00d5ec5755d389b39495541</field>
+    <field name="keywords"></field>
+    <field name="text">Selects a row without physically switching the multiplexer column column to select NO_ERROR if index is valid otherwise INVALID_INDEX is returned</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::DeInitializeMultiplexer</field>
+    <field name="args">()</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a2696c9288fbf61e8fb16333a720c55e8</field>
+    <field name="keywords"></field>
+    <field name="text">Currently not used</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::SelectColumn</field>
+    <field name="args">(uint8_t column)</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a3a673e06cfd2bf44f498a15847a09d2a</field>
+    <field name="keywords"></field>
+    <field name="text">Selects a column without physically switching the multiplexer column column to select NO_ERROR if index is valid otherwise INVALID_INDEX is returned</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::SetPinDefaultValues</field>
+    <field name="args">()</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a64d584c9a60aab6db19476ee8dd349c9</field>
+    <field name="keywords"></field>
+    <field name="text">Deselect all rows and columns set CS EN and WE of both multiplexers to low</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::~MultiplexerController</field>
+    <field name="args">()</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a8c30ef8aeec2197b6bcb3c5058f1ad9c</field>
+    <field name="keywords"></field>
+    <field name="text">Destructor de-initializes the multiplexer</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::WriteColumnPhysical</field>
+    <field name="args">() const</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a8d18ffe6c95a687f88343ee60954bb2c</field>
+    <field name="keywords"></field>
+    <field name="text">Sets the physical pins to set a row via the multiplexer 2 U11</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::WriteRowPhysical</field>
+    <field name="args">() const</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a93ea769f948dc8f599be805f19747a0d</field>
+    <field name="keywords"></field>
+    <field name="text">Sets the physical pins to set a row via the multiplexer 1 U4</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::EnableChannel</field>
+    <field name="args">(MUXChannel muxChannel)</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a9b60b62a7a8c89ef19cd96e569508443</field>
+    <field name="keywords"></field>
+    <field name="text">Sets the Chip enable signal muxChannel select either multiplexer 1 or multiplexer 2</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::WriteRowColumn</field>
+    <field name="args">()</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#a9e2544bce59143c8b08082d5ee8a62dd</field>
+    <field name="keywords"></field>
+    <field name="text">This method writes the row and column by forwarding the commands to the two multiplexers A switch operation is only executed when the previous index changes NO_ERROR if no error occurred otherwise return error code</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::MultiplexerController</field>
+    <field name="args">()</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#ac331b0891121afbb6cab0186a9298207</field>
+    <field name="keywords"></field>
+    <field name="text">Constructor sets the maximum number of rows and columns</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">MultiplexerController::InitializeMultiplexer</field>
+    <field name="args">()</field>
+    <field name="url">d6/d94/class_multiplexer_controller.html#afc046fb7a2d518c0fceaf82029451dcc</field>
+    <field name="keywords"></field>
+    <field name="text">Initialization function enables the pin modes and initializes all lines to its default values</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">ErrorHandler::ErrorCodeToString</field>
+    <field name="args">(ErrorCode errCode)</field>
+    <field name="url">d8/dee/class_error_handler.html#ab52f87e567a7a72d1d751a6528bb90a1</field>
+    <field name="keywords"></field>
+    <field name="text">This function transforms an error code to a error message as string errCode error code to convert error message as string No error occurred Invalid row or column index chosen Format of received message is invalid UART interface is already closed TODO invalid length The length of the buffer is invalid Argument is invalid for current command Command is invalid UART connection is already closed Trying to apply a function on an uninitialized object</field>
+  </doc>
+  <doc>
+    <field name="type">enum</field>
+    <field name="name">Command</field>
+    <field name="url">d9/d8e/_commands_8h.html#a2afce0a47a93eee73a314d53e4890153</field>
+    <field name="keywords"></field>
+    <field name="text">This file contains all possible commands which are connected with a Message object Florian Frank 1.0</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">CONNECT DISCONNECT SELECT_ROW SELECT_COLUMN ACK ERROR_CODE NOPE</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00009</field>
+    <field name="keywords"></field>
+    <field name="text">Command</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00010</field>
+    <field name="keywords"></field>
+    <field name="text">CONNECT</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00011</field>
+    <field name="keywords"></field>
+    <field name="text">DISCONNECT</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00012</field>
+    <field name="keywords"></field>
+    <field name="text">SELECT_ROW</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00013</field>
+    <field name="keywords"></field>
+    <field name="text">SELECT_COLUMN</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00014</field>
+    <field name="keywords"></field>
+    <field name="text">ACK</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00015</field>
+    <field name="keywords"></field>
+    <field name="text">ERROR_CODE NOPE</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Commands.h</field>
+    <field name="url">d9/d8e/_commands_8h_source.html#l00017</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">m_Baudrate baudRate m_IsSerialInterfaceOpen InitializeSerialInterface m_IsSerialInterfaceOpen Serial available INVALID_LENGTH Serial begin m_Baudrate Serial m_IsSerialInterfaceOpen NO_ERROR len len Message NOPE pos tempData MAX_COMMAND_LEN memset tempData MAX_COMMAND_LEN lenToRead len len len Serial readBytes tempData pos lenToRead lenToRead len pos len strstr tempData lenToRead Serial write tempData len Message NOPE Message::CharArrayToMessage tempData len len Message NOPE DataAvail ReadAndParseMessageBlocking len Message NOPE m_IsSerialInterfaceOpen INTERFACE_CLOSED sendBuffer MAX_LEN_SEND_BUFFER len MAX_LEN_SEND_BUFFER Message::MessageToCharArray message sendBuffer len Serial write sendBuffer message GetSize INVALID_LENGTH NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00008</field>
+    <field name="keywords"></field>
+    <field name="text">SerialInterfaceHandler::SerialInterfaceHandler uint16_t baudRate m_Baudrate baudRate m_IsSerialInterfaceOpen false InitializeSerialInterface</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00013</field>
+    <field name="keywords"></field>
+    <field name="text">SerialInterfaceHandler::~SerialInterfaceHandler m_IsSerialInterfaceOpen</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00018</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode SerialInterfaceHandler::InitializeSerialInterface Serial begin m_Baudrate Serial m_IsSerialInterfaceOpen NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00031</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode SerialInterfaceHandler::DeInitializeSerialInterface INVALID_LENGTH</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00036</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode SerialInterfaceHandler::WriteMessage Message message m_IsSerialInterfaceOpen INTERFACE_CLOSED sendBuffer MAX_LEN_SEND_BUFFER len MAX_LEN_SEND_BUFFER Message::MessageToCharArray message sendBuffer len Serial write sendBuffer message GetSize INVALID_LENGTH NO_ERROR</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00052</field>
+    <field name="keywords"></field>
+    <field name="text">Message SerialInterfaceHandler::ReadAndParseMessageBlocking len len len Message NOPE pos tempData MAX_COMMAND_LEN memset tempData MAX_COMMAND_LEN lenToRead len len len Serial readBytes tempData pos lenToRead lenToRead len pos len strstr tempData lenToRead Serial write tempData len Message NOPE Message::CharArrayToMessage tempData</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00079</field>
+    <field name="keywords"></field>
+    <field name="text">Message SerialInterfaceHandler::ReadAndParseMessageNonBlocking len len len Message NOPE DataAvail ReadAndParseMessageBlocking len Message NOPE</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">SerialInterfaceHandler.cpp</field>
+    <field name="url">da/d30/_serial_interface_handler_8cpp_source.html#l00090</field>
+    <field name="keywords"></field>
+    <field name="text">SerialInterfaceHandler:: DataAvail Serial available</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">ArduinoMainController::DeInit</field>
+    <field name="args">()</field>
+    <field name="url">db/d27/class_arduino_main_controller.html#a458bb7c80156ddade542ad4f72c67219</field>
+    <field name="keywords"></field>
+    <field name="text">This function runs the de-initialization functions of the multiplexer as well as the serial interface handler NO_ERROR if no error occurred otherwise an error code is returned</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">ArduinoMainController::Init</field>
+    <field name="args">()</field>
+    <field name="url">db/d27/class_arduino_main_controller.html#a631be6c9a5f622af9db3a7ccfceac0ff</field>
+    <field name="keywords"></field>
+    <field name="text">This function runs the initialization functions of the multiplexer as well as the serial interface handler NO_ERROR if no error occurred otherwise an error code is returned</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">ArduinoMainController::ArduinoMainController</field>
+    <field name="args">(uint8_t baudrate=9600)</field>
+    <field name="url">db/d27/class_arduino_main_controller.html#a897f219b3f55a8b0753ddd86735e6f4e</field>
+    <field name="keywords"></field>
+    <field name="text">The constructor initializes the controller for ADG726 multiplexer and enables the serial interface handler with an Baudrate</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">ArduinoMainController::~ArduinoMainController</field>
+    <field name="args">()</field>
+    <field name="url">db/d27/class_arduino_main_controller.html#a909093c41d67c2eb0732f85873abba15</field>
+    <field name="keywords"></field>
+    <field name="text">The destructor deletes the multiplexer controller as well as the serial interface handler allocated on the heap</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">ArduinoMainController::Loop</field>
+    <field name="args">()</field>
+    <field name="url">db/d27/class_arduino_main_controller.html#aa851b7bdbfb738930816e18428551e32</field>
+    <field name="keywords"></field>
+    <field name="text">This method contains the main loop of the firmware executed on the Arduino Here data is read from the UART interface parsed and the commands are forwarded to the multiplexer to control the darlington arrays NO_ERROR if no error occurred otherwise return an error code</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">ArduinoMainController::SetRowColumn</field>
+    <field name="args">(Command command, Message message)</field>
+    <field name="url">db/d27/class_arduino_main_controller.html#acda46496cbb3d99001b859ea7c1b8b44</field>
+    <field name="keywords"></field>
+    <field name="text">This method forwards a Select Row or Select Column command to the ADG726 switch matrix command could be or message The message contains the row or column to select NO_ERROR if no error occurred otherwise return an error code</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MAX_COMMAND_LEN</field>
+    <field name="url">db/db6/_message_8h.html#a81f68567c11671e8c35cfcfb454a4160</field>
+    <field name="keywords"></field>
+    <field name="text">This file contains the functionality to transform messages into binary data and vise versa This allows to transform data into a readable format and into data which can be transmitted for example over an serial interface Florian Frank 1.0</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00013</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00014</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00017</field>
+    <field name="keywords"></field>
+    <field name="text">Message Message parameter Command command Message ErrorCode errCode nodiscard GetSize Message CharArrayToMessage byteMessage ErrorCode MessageToCharArray Message message buffer len nodiscard Command GetCurrentCommand nodiscard GetParameter Initialize Command command parameter errorMessage ParseParameter inputMessage searchString delimiter</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00035</field>
+    <field name="keywords"></field>
+    <field name="text">m_Size</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00036</field>
+    <field name="keywords"></field>
+    <field name="text">Command m_CurrentCommand</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00037</field>
+    <field name="keywords"></field>
+    <field name="text">m_parameter</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00038</field>
+    <field name="keywords"></field>
+    <field name="text">commandsAsStrings MAX_COMMAND_LEN</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">Message.h</field>
+    <field name="url">db/db6/_message_8h_source.html#l00039</field>
+    <field name="keywords"></field>
+    <field name="text">m_ErrorMessage</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.h</field>
+    <field name="url">db/def/_arduino_main_controller_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController SerialInterfaceHandler</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.h</field>
+    <field name="url">db/def/_arduino_main_controller_8h_source.html#l00018</field>
+    <field name="keywords"></field>
+    <field name="text">ArduinoMainController ArduinoMainController uint8_t baudrate ErrorCode Init ErrorCode DeInit ErrorCode Loop ErrorCode SetRowColumn Command command Message message</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.h</field>
+    <field name="url">db/def/_arduino_main_controller_8h_source.html#l00031</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController m_MuxController</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.h</field>
+    <field name="url">db/def/_arduino_main_controller_8h_source.html#l00032</field>
+    <field name="keywords"></field>
+    <field name="text">SerialInterfaceHandler m_SerialInterfaceHandler</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">ArduinoMainController.h</field>
+    <field name="url">db/def/_arduino_main_controller_8h_source.html#l00033</field>
+    <field name="keywords"></field>
+    <field name="text">m_ConnectionEstablished</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">setup</field>
+    <field name="args">()</field>
+    <field name="url">dd/ddd/_firmware_entry_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d</field>
+    <field name="keywords"></field>
+    <field name="text">Initialization of the Arduino Nano as well as the Switch Matrix</field>
+  </doc>
+  <doc>
+    <field name="type">variable</field>
+    <field name="name">mainController</field>
+    <field name="url">dd/ddd/_firmware_entry_8cpp.html#a7be6393b7822cdbed6df8b27b827ba30</field>
+    <field name="keywords"></field>
+    <field name="text">This file is the starting point of the Arduino firmware similar to a main file It consists of a setup phase where the Switch Matrix and Arduino is initialized and a continuous loop where commands are parsed and forwarded to the switch matrix Florian Frank 1.0</field>
+  </doc>
+  <doc>
+    <field name="type">function</field>
+    <field name="name">loop</field>
+    <field name="args">()</field>
+    <field name="url">dd/ddd/_firmware_entry_8cpp.html#afe461d27b9c48d5921c00d521181f12f</field>
+    <field name="keywords"></field>
+    <field name="text">Loop in which the commands are parsed and forwarded to the Switch Matrix</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">FirmwareEntry.cpp</field>
+    <field name="url">dd/ddd/_firmware_entry_8cpp_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">mainController Loop mainController Init</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">FirmwareEntry.cpp</field>
+    <field name="url">dd/ddd/_firmware_entry_8cpp_source.html#l00012</field>
+    <field name="keywords"></field>
+    <field name="text">ArduinoMainController mainController</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">FirmwareEntry.cpp</field>
+    <field name="url">dd/ddd/_firmware_entry_8cpp_source.html#l00017</field>
+    <field name="keywords"></field>
+    <field name="text">setup mainController Init</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">FirmwareEntry.cpp</field>
+    <field name="url">dd/ddd/_firmware_entry_8cpp_source.html#l00024</field>
+    <field name="keywords"></field>
+    <field name="text">loop mainController Loop</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">SELECT_NO_ROW</field>
+    <field name="url">df/d12/_multiplexer_controller_8h.html#a467beceadb2d529e2480e0dcf86414e5</field>
+    <field name="keywords"></field>
+    <field name="text">Index indicate that no row is chosen</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MAX_ROWS_IDX</field>
+    <field name="url">df/d12/_multiplexer_controller_8h.html#a94d375594cfd426507b1a7442362ef34</field>
+    <field name="keywords"></field>
+    <field name="text">This file contains the functionality to set the row and column from the relais by controlling the ADG726 multiplexer Florian Frank 1.0 Allowed range for the Row Index</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">SELECT_NO_COLUMN</field>
+    <field name="url">df/d12/_multiplexer_controller_8h.html#abb67e679510d6898c636e93acddde244</field>
+    <field name="keywords"></field>
+    <field name="text">Index indicate that no column is chosen</field>
+  </doc>
+  <doc>
+    <field name="type">define</field>
+    <field name="name">MAX_COLUMNS_IDX</field>
+    <field name="url">df/d12/_multiplexer_controller_8h.html#ae1f822020b3b0f6d3d57c4258a76a4a1</field>
+    <field name="keywords"></field>
+    <field name="text">Allowed range for the Column Index Index 1 3 indicates that no column is chosen</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00001</field>
+    <field name="keywords"></field>
+    <field name="text">CH_MUX1 CH_MUX2 ROW COLUMN</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00015</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00017</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00020</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00022</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00028</field>
+    <field name="keywords"></field>
+    <field name="text">MultiplexerController MultiplexerController InitializeMultiplexer DeInitializeMultiplexer ErrorCode SelectRow uint8_t row ErrorCode SelectColumn uint8_t column ErrorCode WriteRowColumn</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00044</field>
+    <field name="keywords"></field>
+    <field name="text">uint8_t m_CurrentColumn</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00046</field>
+    <field name="keywords"></field>
+    <field name="text">uint8_t m_CurrentRow</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00047</field>
+    <field name="keywords"></field>
+    <field name="text">uint8_t m_LastColumn</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00049</field>
+    <field name="keywords"></field>
+    <field name="text">uint8_t m_LastRow</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00051</field>
+    <field name="keywords"></field>
+    <field name="text">RowColumnSelector</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00052</field>
+    <field name="keywords"></field>
+    <field name="text">ROW COLUMN</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00054</field>
+    <field name="keywords"></field>
+    <field name="text"></field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00056</field>
+    <field name="keywords"></field>
+    <field name="text">MUXChannel</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00057</field>
+    <field name="keywords"></field>
+    <field name="text">CH_MUX1 CH_MUX2</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00059</field>
+    <field name="keywords"></field>
+    <field name="text">InitializePinModes SetPinDefaultValues</field>
+  </doc>
+  <doc>
+    <field name="type">source</field>
+    <field name="name">MultiplexerController.h</field>
+    <field name="url">df/d12/_multiplexer_controller_8h_source.html#l00064</field>
+    <field name="keywords"></field>
+    <field name="text">ErrorCode SetAddressLines RowColumnSelector rowColumnSelector uint8_t address4Bit EnableChannel MUXChannel muxChannel WriteRowPhysical WriteColumnPhysical</field>
+  </doc>
+</add>
