@@ -298,6 +298,62 @@ cd ./Arduino_Firmware
 ./compile.bat
 ```
 
-##### 2.2 Flashing the Firmware onto the Aruino Nano
+##### 2.2 Flashing the Firmware onto the Arduino Nano
 
+On Linux run after compiling:
 
+```
+cd ./Arduino_Firmware
+./flash.sh
+```
+
+On Windows after compiling:
+
+```
+cd ./Arduino_Firmware
+./flash.bat
+```
+
+##### 2.3 Communication protocol
+
+A lightweight communication protocol is implemented on the Arduino Nano tunneled over the USB UART interface.
+A UART connection is established by simply plugin in the Mini USB cable. On linux for example, the device is 
+typically available under "/dev/ttyUSB0" on Windows the device can be seen in the device manager under "COMxx".
+
+#### 2.3.1 UART properties 
+
+|     Properties     | Values |
+|:--------------:|:-----------:|
+| Baudrate            | 115200  |
+| Data bits           | 8  |
+| Stop Bits           | 8  |
+| Parity              | None  |
+| Flow control        | None  |
+
+##### 2.3.2 Commands
+
+|     Command     | Description | Allowed values |
+|:--------------:|:-----------:|:-----------:|
+| connect            | Connect to the Arduino controller  | - |
+| disconnect            | Disconnect the connection  | - |
+| r:           | Select a row | 1- 12  |
+| c:           | Select a column | 1- 12  |
+| ack           | Command was acknowledged by the Arduino controller | -  |
+| error:           | Error code returned by the Arduino controller |  Any error message |
+
+Sample accessing the protocol on linux: 
+```shell
+$ serial /dev/ttyUSB0
+$ connect
+-> ack
+$ row: 1
+ ack
+$ column: 1
+ ack
+
+$ column: 15
+ error: Invalid index
+
+$ disconnect
+ ack
+```
