@@ -84,7 +84,8 @@ Each component is identified by a Symbol ID.
 | Pin  4         |     I4      | Pin 4           |  S9A         |
 | Pin  5         |     I5      | Pin 5           |  S8A         |     
 | Pin  6         |     I6      | Pin 6           |  S7A         |     
- 
+| Pin  8         |     GND      | Pin 4/29       |  GND         |    
+
 <BR>
 
 ##### 1.2.3 Connections Darlington Array (U3) - ADG726 (U4)
@@ -97,6 +98,9 @@ Each component is identified by a Symbol ID.
 | Pin  4         |     I4      | Pin 10          |  S5A         |
 | Pin  5         |     I5      | Pin 11          |  S4A         |     
 | Pin  6         |     I6      | Pin 12          |  S3A         |     
+| Pin  8         |     GND      | Pin 4/29       |  GND         |    
+
+<BR>
 
 
 #### 1.2.4 Connections Arduino - ADG726 Multiplexer (M2)
@@ -131,7 +135,7 @@ Each component is identified by a Symbol ID.
 | Pin  4         |     I4      | Pin 3           |  S10A         |
 | Pin  5         |     I5      | Pin 2           |  S11A         |     
 | Pin  6         |     I6      | Pin 1           |  S12A         |     
- 
+| Pin  8         |     GND      | Pin 4/29       |  GND         |    
 <BR>
 
 ##### 1.2.6 Connections Darlington Array (U3) - ADG726 (U4)
@@ -147,34 +151,77 @@ Each component is identified by a Symbol ID.
 
 <BR>
 
+##### 1.2.7 Connections Darlington Array COM -GND (U2, U3, U5, U6)
+
+|     Pin U2, U3, U5, U6     | Description | Component (Pin) | Description  |
+|:--------------:|:-----------:|:---------------:|:------------:|
+| Pin  8         |     GND      | Arduino Pin (Pin 4/29), J6 (GND)    |  GND         |    
+| Pin  9         |     COM      | J6 (VDD)       |  12 V Power Supply         |    
+
+
+<BR>
+
 ##### 1.2.7 Connections M.2 interface (J1)
 
 
 |     Pin J1     | Description | Component            | Description  |
 |:--------------:|:-----------:|:--------------------:|:------------:|
 | Pin  1         |  GND Pad    | J9 |  Connected with ground pad connector forwarded to BNC GND (U10)        |       
-| Pin  3         |     Row 1      | K13 | Connected to Relay output (Pin 11) |     
-| Pin  5         |     Row 2      | K14 | Connected to Relay output (Pin 11) |    
-| Pin  7         |     Row 3      | K15 | Connected to Relay output (Pin 11) |
-| Pin  9         |     Row 4      | K16 | Connected to Relay output (Pin 11) |
-| Pin  11         |     Row 5     | K17 | Connected to Relay output (Pin 11) |
-| Pin  13         |     Row 6     | K18 | Connected to Relay output (Pin 11) |
-| Pin  15         |     Column 1  | K1 | Connected to Relay output (Pin 11) |
-| Pin  17         |     Column 2  | K3 | Connected to Relay output (Pin 11) |
-| Pin  19         |     Column 3  | K5 | Connected to Relay output (Pin 11) |
-| Pin  21         |     Column 4  | K7 | Connected to Relay output (Pin 11) |
-| Pin  23         |     Column 5  | K9 | Connected to Relay output (Pin 11) |
-| Pin  25         |     Column 6  | K11 | Connected to Relay output (Pin 11) |
-| Pin  27         |     Row 7      | K19 | Connected to Relay output (Pin 11) |
-| Pin  29         |     Row 8      | K20 | Connected to Relay output (Pin 11) |     
-| Pin  31         |     Row 9      | K21 | Connected to Relay output (Pin 11) |
-| Pin  33         |     Row 10      | K22 | Connected to Relay output (Pin 11) |     
-| Pin  35         |     Row 11     | K23 | Connected to Relay output (Pin 11) |
-| Pin  37         |     Row 12     | K24 | Connected to Relay output (Pin 11) |
-| Pin  27         |     Column 7      | K2 | Connected to Relay output (Pin 11) |
-| Pin  29         |     Column 8      | K4 | Connected to Relay output (Pin 11) |      
-| Pin  31         |     Column 9      | K6 | Connected to Relay output (Pin 11) |     
-| Pin  33         |     Column 10     | K8 | Connected to Relay output (Pin 11) |
-| Pin  35         |     Column 11      | K10 | Connected to Relay output (Pin 11) |     
-| Pin  37         |     Column 12  | K12 | Connected to Relay output (Pin 11) |
+| Pin  3         |     Row 1      | K13 | Connected to Relay output (Pin 11). Line length: 318 mm|     
+| Pin  5         |     Row 2      | K14 | Connected to Relay output (Pin 11). Line length: 318 mm |    
+| Pin  7         |     Row 3      | K15 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  9         |     Row 4      | K16 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  11         |     Row 5     | K17 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  13         |     Row 6     | K18 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  15         |     Column 1  | K1 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  17         |     Column 2  | K3 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  19         |     Column 3  | K5 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  21         |     Column 4  | K7 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  23         |     Column 5  | K9 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  25         |     Column 6  | K11 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  27         |     Row 7      | K19 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  29         |     Row 8      | K20 | Connected to Relay output (Pin 11). Line length: 318 mm |     
+| Pin  31         |     Row 9      | K21 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  33         |     Row 10      | K22 | Connected to Relay output (Pin 11). Line length: 318 mm |     
+| Pin  35         |     Row 11     | K23 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  37         |     Row 12     | K24 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  39         |     Column 7      | K2 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  41         |     Column 8      | K4 | Connected to Relay output (Pin 11). Line length: 318 mm |      
+| Pin  43         |     Column 9      | K6 | Connected to Relay output (Pin 11). Line length: 318 mm |     
+| Pin  45         |     Column 10     | K8 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  47         |     Column 11      | K10 | Connected to Relay output (Pin 11). Line length: 318 mm |     
+| Pin  49         |     Column 12  | K12 | Connected to Relay output (Pin 11). Line length: 318 mm |
+| Pin  53         |     V_GS  | U7 | Connected to the V_GS BNC connector. Line length: 180 mm |
 
+<BR>
+
+
+##### 1.2.8 Connections V_DS (U8)
+
+|     Pin U8     | Description | Component            | Description  |
+|:--------------:|:-----------:|:--------------------:|:------------:|
+| V_DS           | Drain Source connector | K 1 - K24 | Connected to the permanently connected input Pin 12 |
+
+<BR>
+
+
+##### 1.2.9 Connections I_D (U9)
+
+Routed on the Backside. Common length of 316 mm.
+
+|     Pin U9     | Description | Component            | Description  |
+|:--------------:|:-----------:|:--------------------:|:------------:|
+| I_D           | - | K 13 - K24 | Forwarded to a specific row when a row relay is switched.  |
+
+<BR>
+
+
+##### 1.2.10 Connections GND (U9)
+
+Routed on the Backside. Common length of 140 mm.
+
+|     Pin U9     | Description | Component            | Description  |
+|:--------------:|:-----------:|:--------------------:|:------------:|
+| I_D           | - | K 1 - K12 | Forwarded to a specific column when a column relay is switched.  |
+
+<BR>
