@@ -1,7 +1,7 @@
 # Measurement Switch Matrix
 
 This repository contains a description of the NanoSEC switch matrix, as well as all the relevant source code, 
-to controll the board. 
+to control the board. 
 
 ![Switch Matrix](documentation/figures/Motherboard.jpg)
 
@@ -13,7 +13,11 @@ for switching the Finder 40.41 relays. Single lines on the darlington arrays are
 The multiplexer transform a four bit input address signal to a parallel output signal which selects a specific row and column relay
 over the Darlington arrays. The multiplexers are controlled by a Arduino Nano.
 
-The measurement part consists of four BNC connectors $V_{ID}$, $V_{DS}$, $V_{GS}$, $V$ and GND. 
+The measurement part consists of four BNC connectors I_D, V_DS, V_GS and GND.
+V_DS connects is forwarded to each CNT_FETs on the matrix not switched. 
+I_D is forwarded to the selected row.
+GND is forwarded to the selected column.
+V_GS is connected to the global gate.
 
 ![PCB_Layout](documentation/figures/PCB_Layout.png)
 
@@ -52,6 +56,8 @@ Each component is identified by a Symbol ID.
 | MP* | Mounting holes  | To mount the board using M2 or M3 screws to a holder or case. The four mounting holes in the vicinity of the M.2 interface are used to mount holders for the daugherboard. The hole are placed according to the PC/104 EBX standard. | 
 
 #### 1.2 Connections 
+
+The following tables contain the connections between the components described in 1.1.
 
 #### 1.2.1 Connections Arduino - ADG726 Multiplexer (M1)
 
@@ -161,7 +167,7 @@ Each component is identified by a Symbol ID.
 
 <BR>
 
-##### 1.2.7 Connections M.2 interface (J1)
+##### 1.2.8 Connections M.2 interface (J1)
 
 
 |     Pin J1     | Description | Component            | Description  |
@@ -195,8 +201,15 @@ Each component is identified by a Symbol ID.
 
 <BR>
 
+##### 1.2.9 Connections V_DS (U8)
 
-##### 1.2.8 Connections V_DS (U8)
+|     Pin U7     | Description | Component            | Description  |
+|:--------------:|:-----------:|:--------------------:|:------------:|
+| V_GS           | Gate Source connector | J1 (Pin 53) | Connects to the common ground via the M.2 connector Pin 53 |
+
+<BR>
+
+##### 1.2.10 Connections V_DS (U8)
 
 |     Pin U8     | Description | Component            | Description  |
 |:--------------:|:-----------:|:--------------------:|:------------:|
@@ -205,7 +218,7 @@ Each component is identified by a Symbol ID.
 <BR>
 
 
-##### 1.2.9 Connections I_D (U9)
+##### 1.2.11 Connections I_D (U9)
 
 Routed on the Backside. Common length of 316 mm.
 
@@ -216,12 +229,24 @@ Routed on the Backside. Common length of 316 mm.
 <BR>
 
 
-##### 1.2.10 Connections GND (U9)
+##### 1.2.12 Connections GND (U9)
 
 Routed on the Backside. Common length of 140 mm.
 
 |     Pin U9     | Description | Component            | Description  |
 |:--------------:|:-----------:|:--------------------:|:------------:|
-| I_D           | - | K 1 - K12 | Forwarded to a specific column when a column relay is switched.  |
+| GND           | - | K 1 - K12 | Forwarded to a specific column when a column relay is switched.  |
+
+##### 1.2.13 Connections Arduino Breakout Pin Headers (J5)
+
+|     Pin A1     | Description | Pin J5            | Description  |
+|:--------------:|:-----------:|:--------------------:|:------------:|
+| Pin 1           | Tx0 | Pin 1 | UART TX (Transmission) Pin.  |
+| Pin 2           | Rx0 | Pin 2 | UART Rx (Receive) Pin.  |
+| Pin 14           | SPI MOSI | Pin 3 | SPI Master out Slave in signal.  |
+| Pin 15           | SPI MISO | Pin 4 | SPI Slave in Master out signal.  |
+| Pin 16           | SPI SCK | Pin 5 | SPI clock signal.  |
+| Pin 7           | SPI CS | Pin 6 | SPI chip select signal.  |
+| Pin 4/29           | GND | Pin 7 | Ground connection.  |
 
 <BR>
