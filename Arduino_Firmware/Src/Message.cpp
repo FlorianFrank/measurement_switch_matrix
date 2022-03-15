@@ -6,7 +6,7 @@
 /**
  * @brief This array contains the possible commands accepted by the control protocol.
  */
-/*static*/ const char *Message::commandsAsStrings[MAX_COMMAND_LEN] =
+/*static*/ const char *Message::m_CommandsAsStrings[MAX_COMMAND_LEN] =
         {
         /** Connect to the Arduino Nano. */
         "connect",
@@ -54,7 +54,7 @@ unsigned int Message::GetSize() const
 /*static*/ Message Message::CharArrayToMessage(const char *byteMessage)
 {
     int commandCtr = 0;
-    for(const char* command: commandsAsStrings)
+    for(const char* command: m_CommandsAsStrings)
     {
         if(strstr(byteMessage, command) != nullptr)
         {
@@ -103,11 +103,11 @@ unsigned long Message::ParseParameter(const char *inputMessage, const char *sear
     char tempBuffer[MAX_COMMAND_LEN];
     int tempLen;
     if(message.m_CurrentCommand == SELECT_ROW || message.m_CurrentCommand == SELECT_COLUMN)
-        tempLen = sprintf(tempBuffer, "%s %d\n", commandsAsStrings[message.m_CurrentCommand], message.m_parameter);
+        tempLen = sprintf(tempBuffer, "%s %d\n", m_CommandsAsStrings[message.m_CurrentCommand], message.m_parameter);
     else if(message.m_CurrentCommand == ERROR_CODE)
-        tempLen = sprintf(tempBuffer, "%s %s\n", commandsAsStrings[message.m_CurrentCommand], message.m_ErrorMessage);
+        tempLen = sprintf(tempBuffer, "%s %s\n", m_CommandsAsStrings[message.m_CurrentCommand], message.m_ErrorMessage);
     else
-        tempLen = sprintf(tempBuffer, "%s\n", commandsAsStrings[message.m_CurrentCommand]);
+        tempLen = sprintf(tempBuffer, "%s\n", m_CommandsAsStrings[message.m_CurrentCommand]);
 
 
     if (tempLen > *len)

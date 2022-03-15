@@ -35,7 +35,7 @@ private:
     unsigned int m_Size{};
     Command m_CurrentCommand;
     unsigned long m_parameter{};
-    static const char* commandsAsStrings[MAX_COMMAND_LEN];
+    static const char* m_CommandsAsStrings[MAX_COMMAND_LEN];
     const char* m_ErrorMessage{};
 };
 
