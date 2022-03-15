@@ -7,19 +7,10 @@
 #ifndef MULTIPLEXER_CONTROLLER_H
 #define MULTIPLEXER_CONTROLLER_H
 
+#include "MultiplexerDefines.h"
 #include "ErrorHandler.h"
 
-#include <stdint.h>
-
-/** Allowed range for the Row Index.  **/
-#define MAX_ROWS_IDX            13
- /** Allowed range for the Column Index. Index 13 indicates that no column is chosen. */
-#define MAX_COLUMNS_IDX         13
-
-/** Index indicate, that no row is chosen.  **/
-#define SELECT_NO_ROW           13
-/** Index indicate, that no column is chosen.  **/
-#define SELECT_NO_COLUMN        13
+#include <stdint.h> // uint8_t
 
 /**
  * @brief This class is responsible for controlling an ADG726 Multiplexer.
@@ -47,16 +38,6 @@ private:
     uint8_t m_LastColumn;
 
     uint8_t m_LastRow;
-
-    enum RowColumnSelector {
-        ROW,
-        COLUMN
-    };
-
-    enum MUXChannel {
-        CH_MUX1,
-        CH_MUX2
-    };
 
     static void InitializePinModes();
     static void SetPinDefaultValues();
