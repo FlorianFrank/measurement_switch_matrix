@@ -357,3 +357,34 @@ $ column: 15
 $ disconnect
  ack
 ```
+
+##### 2.3.2 Python Tester
+
+In the folder python_tester you can find a python test application, which switches all relays 
+in an infinite loop. 
+
+##### 2.3.2.1 Installation
+
+- On Windows: 
+  - Install Python3 (e.g. 3.10.2) from the [official home page](https://www.python.org/downloads/).
+  - Install pyserial from the [official home page](https://pypi.org/project/pyserial/#files)
+
+- On Linux
+  ```shell
+  # Install python3
+  $ sudo apt-get install python3
+  $ sudo apt-get install pip3
+  $ sudo pip install pyserial
+  ```
+
+##### 2.3.2.2 Execution
+
+  To run the program execute following command.
+  Thereby <serial_port> must be replaced with the actual port to which the Arduino is connected. 
+  On Linux this is typically /dev/ttyUSB0 on Windows computers you can look up the port in the device manager. 
+
+
+  ```shell
+  $ python3 switch_matrix_tester.py "<serial_port>"
+  ```
+
