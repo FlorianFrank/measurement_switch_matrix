@@ -17,7 +17,7 @@
 /** Pin for the Enable Signal of the multiplexer. **/
 #define MUX1_EN PIN_A4
 /** Pin for the Write Enable Signal of the multiplexer. **/
-#define MUX1_WE PIN_D9
+#define MUX1_WE 9
 
 /** Multiplexer 1 address line 0. **/
 #define MUX1_A0 PIN_A0 // Arduino Pin A0
