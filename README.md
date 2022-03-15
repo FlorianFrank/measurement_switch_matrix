@@ -282,7 +282,21 @@ Windows:
 Follow this link [Cmake install](https://cmake.org/download/) and download the latest version. 
 
 
-##### 2.2 Compiling the firmware
+##### 2.2 Setting CMAKE settings
+
+Currently, two settings within the central CMakeLists.txt of the Arduino Nano Firmware can be adjusted. 
+
+```
+option(BUILD_DOCUMENTATION "BUILD_DOCUMENTATION" ON)
+option(ARDUINO_NANO_OLD "BUILD for old Arduino Nano Board (blue)" OFF)
+```
+
+When using the old version of the Arduino Nano (blue PCB) the flag ARDUINO_NANO_OLD must be set to ON.
+To compile the firmware for the new version (green PCB) this flag must be disabled. 
+Set the BUILD_DOCUMENTATION option to automatically build the Code Documentation as HTML and Latex files. 
+
+
+##### 2.3 Compiling the firmware
 
 On Linux run: 
 
@@ -298,7 +312,7 @@ cd ./Arduino_Firmware
 ./compile.bat
 ```
 
-##### 2.2 Flashing the Firmware onto the Arduino Nano
+##### 2.4 Flashing the Firmware onto the Arduino Nano
 
 On Linux run after compiling:
 
