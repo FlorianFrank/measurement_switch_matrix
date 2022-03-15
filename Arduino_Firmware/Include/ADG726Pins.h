@@ -28,9 +28,6 @@
 /** Multiplexer 1 address line 3. **/
 #define MUX1_A3 PIN_A3 // Arduino Pin A3
 
-#define MUX1_CS 2 // Arduino Pin D3
-#define MUX1_WE 9 // Arduino Pin D3
-
 /**
  * ******************** Multiplexer 2 U11 *********************
  */
@@ -50,6 +47,5 @@
 #define MUX2_A2 7 // Arduino Pin D7
 /** Multiplexer 2 address line 3. **/
 #define MUX2_A3 8 // Arduino Pin D8
-
 
 #endif //ARDUINO_BOARD_CONTROLLER_ADG726PINS_H
