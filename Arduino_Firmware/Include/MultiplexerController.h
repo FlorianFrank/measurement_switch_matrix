@@ -61,8 +61,6 @@ private:
     static void InitializePinModes();
     static void SetPinDefaultValues();
 
-    static ErrorCode SetAddressLines(RowColumnSelector rowColumnSelector, uint8_t address4Bit);
-
     static void EnableChannel(MUXChannel muxChannel);
 
     void WriteRowPhysical() const;
