@@ -1,9 +1,0 @@
-<map id="SerialInterfaceHandler::ReadAndParseMessageNonBlocking" name="SerialInterfaceHandler::ReadAndParseMessageNonBlocking">
-<area shape="rect" id="node1" title=" " alt="" coords="5,39,268,80"/>
-<area shape="rect" id="node2" href="$d9/d61/class_serial_interface_handler.html#a49d8f1aebd456660b9278cebc90e9b68" title=" " alt="" coords="351,5,519,47"/>
-<area shape="rect" id="node3" href="$d9/d61/class_serial_interface_handler.html#abba67286134857f1ba7604b32db6f4d3" title=" " alt="" coords="316,71,553,112"/>
-<area shape="rect" id="node4" href="$d4/d7f/class_message.html#a2813a8d2312d3983fb932c8c1c8f31ce" title=" " alt="" coords="601,78,827,105"/>
-<area shape="rect" id="node5" href="$d4/d7f/class_message.html#a10b114269ff059d951abde6ae3d9d557" title=" " alt="" coords="897,53,1043,79"/>
-<area shape="rect" id="node7" href="$d4/d7f/class_message.html#aed010683351ce86eb3f613162650f1d1" title=" " alt="" coords="875,103,1065,130"/>
-<area shape="rect" id="node6" href="$d4/d7f/class_message.html#a6706a54e0080a074f706d32036d259c7" title=" " alt="" coords="1113,53,1257,79"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="SerialInterfaceHandler::DeInitializeSerialInterface" name="SerialInterfaceHandler::DeInitializeSerialInterface">
-<area shape="rect" id="node1" title=" " alt="" coords="221,5,420,47"/>
-<area shape="rect" id="node2" href="$db/d27/class_arduino_main_controller.html#a458bb7c80156ddade542ad4f72c67219" title="This function runs the de&#45;initialization functions of the multiplexer, as well as the serial interfac..." alt="" coords="5,5,173,47"/>
-</map>

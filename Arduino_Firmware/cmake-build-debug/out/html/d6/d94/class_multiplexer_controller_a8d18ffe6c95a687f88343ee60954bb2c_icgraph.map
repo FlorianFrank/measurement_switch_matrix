@@ -1,7 +1,0 @@
-<map id="MultiplexerController::WriteColumnPhysical" name="MultiplexerController::WriteColumnPhysical">
-<area shape="rect" id="node1" title="Sets the physical pins to set a row via the multiplexer 2 (U11)" alt="" coords="743,5,912,47"/>
-<area shape="rect" id="node2" href="$d6/d94/class_multiplexer_controller.html#a9e2544bce59143c8b08082d5ee8a62dd" title="This method writes the row and column by forwarding the commands to the two multiplexers...." alt="" coords="536,5,695,47"/>
-<area shape="rect" id="node3" href="$db/d27/class_arduino_main_controller.html#acda46496cbb3d99001b859ea7c1b8b44" title="This method forwards a Select Row or Select Column command to the ADG726 switch matrix." alt="" coords="320,5,488,47"/>
-<area shape="rect" id="node4" href="$db/d27/class_arduino_main_controller.html#aa851b7bdbfb738930816e18428551e32" title="This method contains the main loop of the firmware executed on the Arduino. Here, data is read from t..." alt="" coords="104,5,272,47"/>
-<area shape="rect" id="node5" href="$dd/ddd/_firmware_entry_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop in which the commands are parsed and forwarded to the Switch Matrix." alt="" coords="5,13,56,39"/>
-</map>

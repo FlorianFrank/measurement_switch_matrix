@@ -1,6 +1,0 @@
-<map id="MultiplexerController::SetPinDefaultValues" name="MultiplexerController::SetPinDefaultValues">
-<area shape="rect" id="node1" title="Deselect all rows and columns, set CS, EN and WE of both multiplexers to low." alt="" coords="535,5,697,47"/>
-<area shape="rect" id="node2" href="$d6/d94/class_multiplexer_controller.html#afc046fb7a2d518c0fceaf82029451dcc" title="Initialization function enables the pin modes and initializes all lines to its default values." alt="" coords="328,5,487,47"/>
-<area shape="rect" id="node3" href="$db/d27/class_arduino_main_controller.html#a631be6c9a5f622af9db3a7ccfceac0ff" title="This function runs the initialization functions of the multiplexer, as well as the serial interface h..." alt="" coords="112,5,280,47"/>
-<area shape="rect" id="node4" href="$dd/ddd/_firmware_entry_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Initialization of the Arduino Nano as well as the Switch Matrix." alt="" coords="5,13,64,39"/>
-</map>
