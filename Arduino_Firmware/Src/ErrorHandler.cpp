@@ -1,7 +1,7 @@
 #include <string.h>
 #include "ErrorHandler.h"
 
-/*static*/ char ErrorHandler::errorCodeBuffer[ERR_CODE_BUFFER_SIZE];
+/*static*/ char ErrorHandler::m_ErrorCodeBuffer[ERR_CODE_BUFFER_SIZE];
 
 
 /**
@@ -15,44 +15,44 @@ const char *ErrorHandler::ErrorCodeToString(ErrorCode errCode)
     {
             /** No error occurred. */
         case NO_ERROR:
-            strcpy(errorCodeBuffer, "NO ERROR");
+            strcpy(m_ErrorCodeBuffer, "NO ERROR");
             break;
             /** Invalid row or column index chosen. */
         case INVALID_INDEX:
-            strcpy(errorCodeBuffer, "Invalid Index");
+            strcpy(m_ErrorCodeBuffer, "Invalid Index");
             break;
             /** Format of received message is invalid. */
         case INVALID_MESSAGE:
-            strcpy(errorCodeBuffer, "Invalid Message");
+            strcpy(m_ErrorCodeBuffer, "Invalid Message");
             break;
             /** UART interface is already closed. */
         case INTERFACE_CLOSED:
-            strcpy(errorCodeBuffer, "Interface Closed");
+            strcpy(m_ErrorCodeBuffer, "Interface Closed");
             break;
             /** TODO invalid length? */
         case INVALID_LENGTH:
-            strcpy(errorCodeBuffer, "Invalid Length");
+            strcpy(m_ErrorCodeBuffer, "Invalid Length");
             break;
             /** The length of the buffer is invalid. */
         case INVALID_BUFFER_LEN:
-            strcpy(errorCodeBuffer, "Invalid Buffer Len");
+            strcpy(m_ErrorCodeBuffer, "Invalid Buffer Len");
             break;
             /** Argument is invalid for current command. */
         case INVALID_ARGUMENT:
-            strcpy(errorCodeBuffer, "Invalid Argument");
+            strcpy(m_ErrorCodeBuffer, "Invalid Argument");
             break;
             /** Command is invalid. */
         case INVALID_COMMAND:
-            strcpy(errorCodeBuffer, "Invalid Command");
+            strcpy(m_ErrorCodeBuffer, "Invalid Command");
             break;
             /** UART connection is already closed. */
         case DISCONNECTED:
-            strcpy(errorCodeBuffer, "Disconnected");
+            strcpy(m_ErrorCodeBuffer, "Disconnected");
             break;
             /** Trying to apply a function on an uninitialized object. */
         case NOT_INITIALIZED:
-            strcpy(errorCodeBuffer, "Variable not initialized");
+            strcpy(m_ErrorCodeBuffer, "Variable not initialized");
             break;
     }
-    return errorCodeBuffer;
+    return m_ErrorCodeBuffer;
 }

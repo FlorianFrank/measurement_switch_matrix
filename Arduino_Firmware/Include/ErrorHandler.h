@@ -19,9 +19,7 @@ public:
     static const char* ErrorCodeToString(ErrorCode errCode);
 
 private:
-    static char errorCodeBuffer[ERR_CODE_BUFFER_SIZE];
+    static char m_ErrorCodeBuffer[ERR_CODE_BUFFER_SIZE];
 };
-
-
 
 #endif //ARDUINO_BOARD_CONTROLLER_ERRORHANDLER_H
