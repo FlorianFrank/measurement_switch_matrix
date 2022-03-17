@@ -16,7 +16,6 @@ def connect_to_arduino(serial_port, number_of_attempts=3):
     Args:
         serial_port: previously opened serial port to connect to the Arduino.
     """
-    send_connect_message(serial_port)
     for i in range(number_of_attempts):
         print("Try to connect (attempt {})".format(i))
         if send_connect_message(serial_port):
@@ -27,7 +26,7 @@ def connect_to_arduino(serial_port, number_of_attempts=3):
 
 
 def wait_for_response(serial_port, timeout_in_secs):
-    time.sleep(1)
+    time.sleep(0.4)
     start_ts = time.time()
     while time.time() < start_ts + timeout_in_secs:
         ack = serial_port.readline()
@@ -74,7 +73,7 @@ def write_row(serial_port, row_idx, timeout_in_secs=2):
         row_idx: row to set valid values are 0 - 12. 12 means no row is selected.
         timeout_in_secs: Timeout in seconds to wait for the acknowledgement.
     """
-    row = 'r:{}\n'.format(row_idx)
+    row = 'r: {}\n'.format(row_idx)
     serial_port.write(row.encode('ascii'))
     logging.info("Write {}".format(row.encode('ascii')))
     return wait_for_response(serial_port, timeout_in_secs)
@@ -88,7 +87,7 @@ def write_column(serial_port, column_idx, timeout_in_secs=2):
          column_idx: column to set valid values are 0 - 12. 12 means no column is selected.
          timeout_in_secs: Timeout in seconds to wait for the acknowledgement.
      """
-    column = 'c:{}\n'.format(column_idx)
+    column = 'c: {}\n'.format(column_idx)
     serial_port.write(column.encode('ascii'))
     logging.info("Write {}".format(column.encode('ascii')))
     return wait_for_response(serial_port, timeout_in_secs)
@@ -111,7 +110,7 @@ def main(interface):
     global running
     logging.basicConfig(level=logging.INFO)
     signal.signal(signal.SIGINT, signal_handler)
-    with serial.Serial(interface, 9600, timeout=2) as serial_port:
+    with serial.Serial(interface, 9600, timeout=1) as serial_port:
         serial_port.flush()
         print("Connect to board")
         connect_to_arduino(serial_port)
@@ -121,13 +120,13 @@ def main(interface):
                 if not running:
                     break
                 write_row(serial_port, row_ctr)
-                time.sleep(1)
+                time.sleep(0.1)
                 for column_ctr in range(12):
                     if not running:
                         break
                     print("Select Row: {} Column: {}".format(row_ctr, column_ctr))
                     write_column(serial_port, column_ctr)
-                    time.sleep(1)
+                    time.sleep(0.1)
         send_disconnect_message(serial_port)
 
 
