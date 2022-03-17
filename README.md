@@ -251,6 +251,19 @@ Routed on the Backside. Common length of 140 mm.
 
 <BR>
 
+### 3. Connecting the board
+
+#### 3.1 Connect the Arduino Nano 
+
+Connect the Arduino Nano to the NanoSEC Switch Matrix like shown in the following picture.
+Use a Micro USB cable to connect the arduino to the computer. The Arduino is working if the green 
+'ON' led is green. If the Arduino was flashed once the firmware is automatically restarted on the device
+when it's connected to the power supply of the computer. The Arduino should show up in the device manager. 
+On linux the device should be registered as '/dev/ttyUSB0'.
+
+
+![Arduino Connection](documentation/figures/Arduino_Connection.jpg)
+
 
 ### 2. Code description 
 
