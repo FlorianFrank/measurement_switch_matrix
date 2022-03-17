@@ -261,8 +261,31 @@ Use a Micro USB cable to connect the arduino to the computer. The Arduino is wor
 when it's connected to the power supply of the computer. The Arduino should show up in the device manager. 
 On linux the device should be registered as '/dev/ttyUSB0'.
 
-
 ![Arduino Connection](documentation/figures/Arduino_Connection.jpg)
+
+
+#### 3.1 Connect the Power Supply
+
+A DC power supply must be connected to drive the relays. The power supply can be connected by the barrel jack connector
+on the left buttom of the board or by connecting jumper cables to the power supply pins below the barrel jack connector.
+
+![Connector DC Power Supply](documentation/figures/Connectors_DC_Powersupply.jpg)
+
+Please check the maximum ratings like described in the following table.
+
+|   Unit       | Minimum | Maximum  |
+|:------------:|:--------|:--------:|
+| Voltage      |   12    |       12 |
+| Current      | 83mA    |    500mA |
+
+When two relays are switched a current of 83mA can be observed on a DC power supply like shown in the subsequent figure.
+
+
+![Connector DC Power Supply](documentation/figures/DC_Powersupply.jpg)
+
+
+
+
 
 
 ### 2. Code description 
