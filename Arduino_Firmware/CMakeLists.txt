@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 2.8.4)
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/settings.cmake)
+
 if(WIN32)
 	set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/ArduinoToolchain_Win.cmake)
 else()
@@ -9,13 +12,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_NAME nanosec_crossbar_controller)
 
 set(${PROJECT_NAME}_BOARD nano)
-#set(ARDUINO_CPU atmega328old)
-set(ARDUINO_CPU atmega328old)
+
 project(${PROJECT_NAME})
 set(CMAKE_CXX_STANDARD 17)
-
-option(BUILD_DOCUMENTATION "BUILD_DOCUMENTATION" ON)
-
 
 include_directories("./Include")
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/build_documentation.cmake)
@@ -40,8 +39,8 @@ set(${PROJECT_NAME}_HDRS
         Include/ErrorCodes.h)
 
 # Set Arduino settings
-set(${PROJECT_NAME}_PROGRAMMER avrispmkii)
-set(${PROJECT_NAME}_PORT /dev/ttyUSB0)
+set(${PROJECT_NAME}_PROGRAMMER ${ARDUINO_PROGRAMMER})
+set(${PROJECT_NAME}_PORT ${USB_PORT})
 set(${PROJECT_NAME}_AFLAGS -v)
 
 generate_arduino_firmware(${PROJECT_NAME})
