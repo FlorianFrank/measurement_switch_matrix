@@ -315,11 +315,17 @@ manually.
 
 ##### 2.2 Setting CMAKE settings
 
-Currently, two settings within the central CMakeLists.txt of the Arduino Nano Firmware can be adjusted. 
+In the Arduino_Firmware folder you can find a settings.cmake file.  
+These contain the most important properties of the firmware. 
+To build and flash the Arduino firmware. Only the USB_Port must be adjusted. You can check out the correct
+'COM' port in the device manager.
 
 ```
-option(BUILD_DOCUMENTATION "BUILD_DOCUMENTATION" ON)
-option(ARDUINO_NANO_OLD "BUILD for old Arduino Nano Board (blue)" OFF)
+option(BUILD_DOCUMENTATION "BUILD_DOCUMENTATION" OFF)
+option(ARDUINO_NANO_OLD "BUILD for old Arduino Nano Board (blue)" ON)
+option(USB_PORT "Set the USB port on Linux /dev/ttyUSB0 on windows COM<comID>" "COM3")
+option(ARDUINO_PROGRAMMER "Set the programmer to be used to flash the Arduino Nano" "avrispmkii")
+
 ```
 
 When using the old version of the Arduino Nano (blue PCB) the flag ARDUINO_NANO_OLD must be set to ON.
