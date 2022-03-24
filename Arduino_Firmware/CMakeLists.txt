@@ -43,6 +43,11 @@ set(${PROJECT_NAME}_PROGRAMMER ${ARDUINO_PROGRAMMER})
 set(${PROJECT_NAME}_PORT ${USB_PORT})
 set(${PROJECT_NAME}_AFLAGS -v)
 
+if(ARDUINO_NANO_OLD)
+        set(ARDUINO_CPU atmega328old)
+else
+        set(ARDUINO_CPU atmega328)
+
 generate_arduino_firmware(${PROJECT_NAME})
 
 if (BUILD_DOCUMENTATION)
