@@ -1,6 +1,7 @@
 #include "MultiplexerController.h"
 #include "ADG726Pins.h"
 #include "Arduino.h"
+#include "unistd.h"
 
 /**
  * @brief Constructor sets the maximum number of rows and columns.
@@ -41,10 +42,8 @@ void MultiplexerController::DeInitializeMultiplexer()
 /*static*/ void MultiplexerController::SetPinDefaultValues()
 {
     // Deselect all rows and columns
-    digitalWrite(MUX1_A0, LOW);
-    digitalWrite(MUX1_A1, LOW);
-    digitalWrite(MUX1_A2, LOW);
-    digitalWrite(MUX1_A3, LOW);
+    DisableChannel(CH_MUX1);
+    DisableChannel(CH_MUX2);
 
     digitalWrite(MUX1_CS, LOW);
     digitalWrite(MUX1_EN, LOW);
@@ -59,6 +58,7 @@ void MultiplexerController::DeInitializeMultiplexer()
     digitalWrite(MUX2_CS, LOW);
     digitalWrite(MUX2_EN, LOW);
     digitalWrite(MUX2_WE, LOW);
+
 }
 
 /*static*/ void MultiplexerController::InitializePinModes()
@@ -115,13 +115,12 @@ void MultiplexerController::WriteColumnPhysical() const
  */
 ErrorCode MultiplexerController::SelectColumn(uint8_t column)
 {
-    if (column < MAX_COLUMNS_IDX)
+  if (column <= MAX_COLUMNS_IDX)
     {
         m_CurrentColumn = column;
+        return NO_ERROR;
     }
-    else
         return INVALID_INDEX;
-    return NO_ERROR;
 }
 
 /**
@@ -131,13 +130,13 @@ ErrorCode MultiplexerController::SelectColumn(uint8_t column)
  */
 ErrorCode MultiplexerController::SelectRow(uint8_t row)
 {
-    if (row < MAX_ROWS_IDX)
+    if (row <= MAX_ROWS_IDX)
     {
         m_CurrentRow = row;
+        return NO_ERROR;
+
     }
-    else
-        return INVALID_INDEX;
-    return NO_ERROR;
+    return INVALID_INDEX;
 }
 
 /**
@@ -149,7 +148,7 @@ ErrorCode MultiplexerController::WriteRowColumn()
 {
     if (m_LastRow != m_CurrentRow)
     {
-        EnableChannel(CH_MUX1);
+       EnableChannel(CH_MUX1);
         WriteRowPhysical();
         m_LastRow = m_CurrentRow;
     }
@@ -167,19 +166,33 @@ ErrorCode MultiplexerController::WriteRowColumn()
  * @brief Sets the Chip enable signal
  * @param muxChannel select either multiplexer 1 or multiplexer 2.
  */
-/*static*/ void MultiplexerController::EnableChannel(MultiplexerController::MUXChannel muxChannel)
+/*static*/ void MultiplexerController::EnableChannel(MUXChannel muxChannel)
 {
-    digitalWrite(MUX1_WE, LOW);
-    digitalWrite(MUX1_EN, LOW);
-    digitalWrite(MUX2_WE, LOW);
-    digitalWrite(MUX2_EN, LOW);
-
     if (muxChannel == CH_MUX1)
     {
         digitalWrite(MUX1_CS, LOW);
+        digitalWrite(MUX1_WE, LOW);
+        digitalWrite(MUX1_EN, LOW);
     } else
     {
         digitalWrite(MUX2_CS, LOW);
+        digitalWrite(MUX2_WE, LOW);
+        digitalWrite(MUX2_EN, LOW);
+    }
+}
+
+void MultiplexerController::DisableChannel(MUXChannel muxChannel)
+{
+    if (muxChannel == CH_MUX1)
+    {
+        digitalWrite(MUX1_CS, HIGH);
+        digitalWrite(MUX1_WE, HIGH);
+        digitalWrite(MUX1_EN, HIGH);
+    } else
+    {
+        digitalWrite(MUX2_CS, HIGH);
+        digitalWrite(MUX2_WE, HIGH);
+        digitalWrite(MUX2_EN, HIGH);
     }
 }
 

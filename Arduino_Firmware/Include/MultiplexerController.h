@@ -22,7 +22,7 @@ public:
     MultiplexerController();
     ~MultiplexerController();
 
-    static void InitializeMultiplexer();
+    void InitializeMultiplexer();
     void DeInitializeMultiplexer();
 
     ErrorCode SelectRow(uint8_t row);
@@ -40,9 +40,10 @@ private:
     uint8_t m_LastRow;
 
     static void InitializePinModes();
-    static void SetPinDefaultValues();
+    void SetPinDefaultValues();
 
     static void EnableChannel(MUXChannel muxChannel);
+    static void DisableChannel(MUXChannel muxChannel);
 
     void WriteRowPhysical() const;
     void WriteColumnPhysical() const;
