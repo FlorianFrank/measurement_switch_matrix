@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 2.8.4)
-set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/ArduinoToolchain.cmake)
+if(WIN32)
+	set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/ArduinoToolchain_Win.cmake)
+else()
+	set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/ArduinoToolchain.cmake)
+endif() # if WIN32
+
 set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_NAME nanosec_crossbar_controller)
 
