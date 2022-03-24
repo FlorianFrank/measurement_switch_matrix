@@ -264,7 +264,7 @@ On linux the device should be registered as '/dev/ttyUSB0'.
 ![Arduino Connection](documentation/figures/Arduino_Connection.jpg)
 
 
-#### 3.1 Connect the Power Supply
+#### 3.2 Connect the Power Supply
 
 A DC power supply must be connected to drive the relays. The power supply can be connected by the barrel jack connector
 on the left buttom of the board or by connecting jumper cables to the power supply pins below the barrel jack connector.
@@ -284,7 +284,9 @@ When two relays are switched a current of 83mA can be observed on a DC power sup
 ![Connector DC Power Supply](documentation/figures/DC_Powersupply.jpg)
 
 
+#### 3.3 Jumpers 
 
+The board contains several Jumpers for debugging purposes or to execute differnt types of measurements. 
 
 
 
@@ -299,24 +301,17 @@ commands to the Arduino Nano via an UART interface.
   
 #### 2.1 Preconditions
 
-##### 2.1.1 Installing the compilers
+##### 2.1.1 Install the avr-gcc compiler
 
-To compile the firmware the avr-gcc or avr-g++ compilers must be installed.
-These can be installed manually or are part of the [Arduino IDE](https://www.arduino.cc/en/software).
+First hte avr-gcc compiler must be installed. Therefore, go to **Arduino_Firmware/Toolchain/SysGCC** and execute **avr-gcc5.3.0.exe
+.** You see an installation dialog. Like shown the in the figure below. Select the Arduino_firmware/Toolchain/ directory and install the compiler.
 
-##### 2.1.1 Installing CMAKE
+![Connector DC Power Supply](documentation/figures/Install_Compiler.png)
 
-Additionally, the cmake build system must be installed to build the Firmware as well as the Client Side API.
+##### 2.1.2 Further tools
 
-Linux: 
-```
-sudo apt-get install cmake
-```
-
-Windows: 
-
-Follow this link [Cmake install](https://cmake.org/download/) and download the latest version. 
-
+Further tools like cmake and ninja are already included in the repository in the Toolchain folder and do not have to be installed
+manually. 
 
 ##### 2.2 Setting CMAKE settings
 
