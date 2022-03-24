@@ -20,8 +20,8 @@ ArduinoMainController::ArduinoMainController(const uint8_t baudrate): m_Connecti
  */
 ArduinoMainController::~ArduinoMainController()
 {
-    delete m_MuxController;
-    delete m_SerialInterfaceHandler;
+    free(m_MuxController);
+    free(m_SerialInterfaceHandler);
 }
 
 /**
@@ -34,9 +34,7 @@ ErrorCode ArduinoMainController::Init()
     if(!m_MuxController || !m_SerialInterfaceHandler)
         return NOT_INITIALIZED;
 
-    auto muxErrorCode = m_MuxController->InitializeMultiplexer();
-    if(muxErrorCode != NO_ERROR)
-        return muxErrorCode;
+    m_MuxController->InitializeMultiplexer();
 
     return m_SerialInterfaceHandler->InitializeSerialInterface();
 }
@@ -51,9 +49,7 @@ ErrorCode ArduinoMainController::DeInit()
     if(!m_MuxController || !m_SerialInterfaceHandler)
         return NOT_INITIALIZED;
 
-    ErrorCode muxErrorCode = m_MuxController->DeInitializeMultiplexer();
-    if(muxErrorCode != NO_ERROR)
-        return muxErrorCode;
+    m_MuxController->DeInitializeMultiplexer();
 
     return m_SerialInterfaceHandler->DeInitializeSerialInterface();
 }
