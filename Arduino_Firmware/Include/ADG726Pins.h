@@ -12,7 +12,7 @@
  */
 
 /** Pin of the Chip Select Signal for channel A (Row Selector). **/
-#define MUX1_CS PIN_A4 // D2
+#define MUX1_CS 2 // D2
 
 /** Pin for the Enable Signal of the multiplexer. **/
 #define MUX1_EN PIN_A4
