@@ -45,8 +45,9 @@ set(${PROJECT_NAME}_AFLAGS -v)
 
 if(ARDUINO_NANO_OLD)
         set(ARDUINO_CPU atmega328old)
-else
+else()
         set(ARDUINO_CPU atmega328)
+endif()
 
 generate_arduino_firmware(${PROJECT_NAME})
 
