@@ -10,8 +10,20 @@ endif() # if WIN32
 
 set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_NAME nanosec_crossbar_controller)
-
 set(${PROJECT_NAME}_BOARD nano)
+
+
+# Set Arduino settings
+set(${PROJECT_NAME}_PROGRAMMER ${ARDUINO_PROGRAMMER})
+set(${PROJECT_NAME}_PORT ${USB_PORT})
+set(${PROJECT_NAME}_AFLAGS -v)
+
+if(ARDUINO_NANO_OLD)
+        set(ARDUINO_CPU atmega328old)
+else()
+        set(ARDUINO_CPU atmega328)
+endif()
+
 
 project(${PROJECT_NAME})
 set(CMAKE_CXX_STANDARD 17)
@@ -38,16 +50,6 @@ set(${PROJECT_NAME}_HDRS
         Include/Commands.h
         Include/ErrorCodes.h)
 
-# Set Arduino settings
-set(${PROJECT_NAME}_PROGRAMMER ${ARDUINO_PROGRAMMER})
-set(${PROJECT_NAME}_PORT ${USB_PORT})
-set(${PROJECT_NAME}_AFLAGS -v)
-
-if(ARDUINO_NANO_OLD)
-        set(ARDUINO_CPU atmega328old)
-else()
-        set(ARDUINO_CPU atmega328)
-endif()
 
 generate_arduino_firmware(${PROJECT_NAME})
 
