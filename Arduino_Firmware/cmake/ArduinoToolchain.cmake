@@ -7,9 +7,17 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 #=============================================================================#
 set(CMAKE_SYSTEM_NAME Arduino)
-set(ARDUINO_SDK_PATH "/home/florianfrank/Downloads/arduino-1.8.18")
+set(ARDUINO_SDK_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Arduino_SDK")
 set(CMAKE_C_COMPILER   avr-gcc)
 set(CMAKE_CXX_COMPILER avr-g++)
+
+
+if(ARDUINO_NANO_OLD)
+    set(ARDUINO_CPU atmega328old)
+else()
+    set(ARDUINO_CPU atmega328)
+endif()
+
 
 
 # Add current directory to CMake Module path automatically
