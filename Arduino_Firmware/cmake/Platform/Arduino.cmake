@@ -2235,11 +2235,20 @@ if(NOT ARDUINO_FOUND AND ARDUINO_SDK_PATH)
         DOC "Path to Arduino version file."
         NO_SYSTEM_ENVIRONMENT_PATH)
 
-    find_program(ARDUINO_AVRDUDE_PROGRAM
-        NAMES avrdude
-        PATHS ${ARDUINO_SDK_PATH}
-        PATH_SUFFIXES hardware/tools hardware/tools/avr/bin
-        NO_DEFAULT_PATH)
+    if(WIN32)
+        find_program(ARDUINO_AVRDUDE_PROGRAM
+                NAMES avrdude
+                PATHS ${CMAKE_CURRENT_LIST_DIR}/../../Toolchain/AVRDude/bin
+                PATH_SUFFIXES Win32
+                NO_DEFAULT_PATH)
+    else() # Linux
+        find_program(ARDUINO_AVRDUDE_PROGRAM
+                NAMES avrdude
+                PATHS ${CMAKE_CURRENT_LIST_DIR}/../../Toolchain/AVRDude/bin
+                PATH_SUFFIXES amd64
+                NO_DEFAULT_PATH)
+    endif()
+
 
     find_program(ARDUINO_AVRDUDE_PROGRAM
         NAMES avrdude
@@ -2250,9 +2259,8 @@ if(NOT ARDUINO_FOUND AND ARDUINO_SDK_PATH)
 
     find_file(ARDUINO_AVRDUDE_CONFIG_PATH
         NAMES avrdude.conf
-        PATHS ${ARDUINO_SDK_PATH} /etc/avrdude /etc
-        PATH_SUFFIXES hardware/tools
-                      hardware/tools/avr/etc
+        PATHS ${CMAKE_CURRENT_LIST_DIR}/../../Toolchain/AVRDude
+        PATH_SUFFIXES config
         DOC "Path to avrdude programmer configuration file."
         NO_SYSTEM_ENVIRONMENT_PATH)
 
