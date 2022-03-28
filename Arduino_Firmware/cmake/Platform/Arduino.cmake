@@ -2237,7 +2237,7 @@ if(NOT ARDUINO_FOUND AND ARDUINO_SDK_PATH)
 
     if(WIN32)
         find_program(ARDUINO_AVRDUDE_PROGRAM
-                NAMES avrdude
+                NAMES avrdude.exe
                 PATHS ${CMAKE_CURRENT_LIST_DIR}/../../Toolchain/AVRDude/bin
                 PATH_SUFFIXES Win32
                 NO_DEFAULT_PATH)
