@@ -2235,7 +2235,7 @@ if(NOT ARDUINO_FOUND AND ARDUINO_SDK_PATH)
         DOC "Path to Arduino version file."
         NO_SYSTEM_ENVIRONMENT_PATH)
 
-    if(WIN32)
+    if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
         find_program(ARDUINO_AVRDUDE_PROGRAM
                 NAMES avrdude.exe
                 PATHS ${CMAKE_CURRENT_LIST_DIR}/../../Toolchain/AVRDude/bin
