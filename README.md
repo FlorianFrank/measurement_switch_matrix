@@ -313,6 +313,25 @@ First hte avr-gcc compiler must be installed. Therefore, go to **Arduino_Firmwar
 Further tools like cmake and ninja are already included in the repository in the Toolchain folder and do not have to be installed
 manually. 
 
+##### 2.1.2 Compiling AVRDude
+
+We are using AVRDude to flash the firmware image on the Arduino Nano. 
+You can find the installation under Toolchain/AVRDude. 
+
+On Windows: 
+<br>
+There is alredy a precompiled version under AVRDude/bin/Win32 so the files don't need to be compiled
+
+On Linux: 
+<br>
+Go to AVRDude and run: 
+```
+./compile_linux.sh
+```
+
+Afterwareds you will find the avr compilation under bin/amd64.
+
+
 ##### 2.2 Setting CMAKE settings
 
 In the Arduino_Firmware folder you can find a settings.cmake file.  
@@ -333,6 +352,7 @@ To compile the firmware for the new version (green PCB) this flag must be disabl
 Set the BUILD_DOCUMENTATION option to automatically build the Code Documentation as HTML and Latex files. 
 
 
+
 ##### 2.3 Compiling the firmware
 
 On Linux run: 
@@ -348,6 +368,21 @@ On Windows run:
 cd ./Arduino_Firmware
 ./compile.bat
 ```
+<br><br>
+After comiling you find a folder ./build in the Arduino Firmware directory containing the firmware to be flashed on the Arduino Nano.
+The firmware is build sucessfully when you see an output similar to the command line output below:
+```
+[100%] Linking CXX executable nanosec_crossbar_controller.elf
+Generating EEP image
+Generating HEX image
+Calculating image size
+Firmware Size:  [Program: 8186 bytes (25.0%)]  [Data: 641 bytes (31.3%)] on atmega328p
+EEPROM   Size:  [Program: 0 bytes (0.0%)]  [Data: 0 bytes (0.0%)] on atmega328p
+
+[100%] Built target nanosec_crossbar_controller
+```
+
+
 
 ##### 2.4 Flashing the Firmware onto the Arduino Nano
 
@@ -358,11 +393,112 @@ cd ./Arduino_Firmware
 ./flash.sh
 ```
 
+
 On Windows after compiling:
 
 ```
 cd ./Arduino_Firmware
 ./flash.bat
+```
+
+fterwards you should see following output:
+
+```
+avrdude: Version 6.4
+         Copyright (c) Brian Dean, http://www.bdmicro.com/
+         Copyright (c) Joerg Wunsch
+
+         System wide configuration file is "/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/Toolchain/AVRDude/config/avrdude.conf"
+         User configuration file is "/home/florianfrank/.avrduderc"
+         User configuration file does not exist or is not a regular file, skipping
+
+         Using Port                    : /dev/ttyUSB0
+         Using Programmer              : arduino
+         Overriding Baud Rate          : 115200
+         AVR Part                      : ATmega328P
+         Chip Erase delay              : 9000 us
+         PAGEL                         : PD7
+         BS2                           : PC2
+         RESET disposition             : dedicated
+         RETRY pulse                   : SCK
+         serial program mode           : yes
+         parallel program mode         : yes
+         Timeout                       : 200
+         StabDelay                     : 100
+         CmdexeDelay                   : 25
+         SyncLoops                     : 32
+         ByteDelay                     : 0
+         PollIndex                     : 3
+         PollValue                     : 0x53
+         Memory Detail                 :
+
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           eeprom        65    20     4    0 no       1024    4      0  3600  3600 0xff 0xff
+           flash         65     6   128    0 yes     32768  128    256  4500  4500 0xff 0xff
+           lfuse          0     0     0    0 no          1    1      0  4500  4500 0x00 0x00
+           hfuse          0     0     0    0 no          1    1      0  4500  4500 0x00 0x00
+           efuse          0     0     0    0 no          1    1      0  4500  4500 0x00 0x00
+           lock           0     0     0    0 no          1    1      0  4500  4500 0x00 0x00
+           calibration    0     0     0    0 no          1    1      0     0     0 0x00 0x00
+           signature      0     0     0    0 no          3    1      0     0     0 0x00 0x00
+
+         Programmer Type : Arduino
+         Description     : Arduino
+         Hardware Version: 3
+         Firmware Version: 4.4
+         Vtarget         : 0.3 V
+         Varef           : 0.3 V
+         Oscillator      : 28.800 kHz
+         SCK period      : 3.3 us
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e950f (probably m328p)
+avrdude: safemode: lfuse reads as 0
+avrdude: safemode: hfuse reads as 0
+avrdude: safemode: efuse reads as 0
+avrdude: reading input file "/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.hex"
+avrdude: writing flash (8186 bytes):
+
+Writing | ################################################## | 100% 3.07s
+
+avrdude: 8186 bytes of flash written
+avrdude: verifying flash memory against /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.hex:
+avrdude: load data flash data from input file /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.hex:
+avrdude: input file /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.hex contains 8186 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 2.75s
+
+avrdude: verifying ...
+avrdude: 8186 bytes of flash verified
+avrdude: reading input file "/home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.eep"
+avrdude: writing eeprom (0 bytes):
+
+Writing | ################################################## | 100% 0.00s
+
+avrdude: 0 bytes of eeprom written
+avrdude: verifying eeprom memory against /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.eep:
+avrdude: load data eeprom data from input file /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.eep:
+avrdude: input file /home/florianfrank/Documents/Research/Projects/NanoSec/measurement_switch_matrix/Arduino_Firmware/build/nanosec_crossbar_controller.eep contains 0 bytes
+avrdude: reading on-chip eeprom data:
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: verifying ...
+avrdude: 0 bytes of eeprom verified
+
+avrdude: safemode: lfuse reads as 0
+avrdude: safemode: hfuse reads as 0
+avrdude: safemode: efuse reads as 0
+avrdude: safemode: Fuses OK (E:00, H:00, L:00)
+
+avrdude done.  Thank you.
+
 ```
 
 ##### 2.3 Communication protocol
