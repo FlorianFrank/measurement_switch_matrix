@@ -20,7 +20,7 @@ if (CMAKE_GENERATOR MATCHES "Ninja")
         # "ninja: warning: bad deps log signature or version; starting over"
         # This is why ninja is fantastic
         message("CMAKE_MAKE_PROGRAM: ${CMAKE_CURRENT_SOURCE_DIR}")
-        set(CMAKE_MAKE_PROGRAM "D:/foobar/ninja/1.10.0/ninja.exe" CACHE FILEPATH "" FORCE)
+        set(CMAKE_MAKE_PROGRAM "${CMAKE_CURRENT_LIST_DIR}/../Toolchain/Ninja/ninja.exe" CACHE FILEPATH "" FORCE)
 endif()
 
 
