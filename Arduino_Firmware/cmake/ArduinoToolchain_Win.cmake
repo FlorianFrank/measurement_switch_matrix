@@ -12,6 +12,17 @@ set(ARDUINO_SDK_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Arduino_SDK")
 set(CMAKE_C_COMPILER   "${CMAKE_CURRENT_SOURCE_DIR}/Toolchain/SysGCC/bin/avr-gcc.exe")
 set(CMAKE_CXX_COMPILER "${CMAKE_CURRENT_SOURCE_DIR}/Toolchain/SysGCC/bin/avr-g++.exe")
 
+if (CMAKE_GENERATOR MATCHES "Ninja")
+        # Force update the program to allow updating the ninja version
+        # Don't worry about bad builds
+        # Ninja handles this update by starting over. Here is the error message ninja gave from
+        # upgrading from version 1.7 -> 1.10
+        # "ninja: warning: bad deps log signature or version; starting over"
+        # This is why ninja is fantastic
+        message("CMAKE_MAKE_PROGRAM: ${CMAKE_CURRENT_SOURCE_DIR}")
+        set(CMAKE_MAKE_PROGRAM "D:/foobar/ninja/1.10.0/ninja.exe" CACHE FILEPATH "" FORCE)
+endif()
+
 
 # Add current directory to CMake Module path automatically
 if(EXISTS  ${CMAKE_CURRENT_LIST_DIR}/Platform/Arduino.cmake)
