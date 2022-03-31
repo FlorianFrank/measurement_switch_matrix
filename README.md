@@ -354,6 +354,20 @@ option(USB_PORT "Set the USB port on Linux /dev/ttyUSB0 on windows COM<comID>" "
 option(ARDUINO_PROGRAMMER "Set the programmer to be used to flash the Arduino Nano" "avrispmkii")
 
 ```
+When using the old version of the Arduino Nano (blue PCB) the flag ARDUINO_NANO_OLD must be set to ON.
+
+![arduino_new](documentation/figures/arduino_new.jpg)
+```
+option(ARDUINO_NANO_OLD "BUILD for old Arduino Nano Board (blue)" OFF)
+# uses the atmega328 programmer
+```
+
+![arduino_old](documentation/figures/arduino_old.jpg)
+```
+option(ARDUINO_NANO_OLD "BUILD for old Arduino Nano Board (blue)" ON)
+# uses the atmega328old programmer
+```
+
 
 When using the old version of the Arduino Nano (blue PCB) the flag ARDUINO_NANO_OLD must be set to ON.
 To compile the firmware for the new version (green PCB) this flag must be disabled. 
