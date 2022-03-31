@@ -331,6 +331,12 @@ Go to AVRDude and run:
 
 Afterwareds you will find the avr compilation under bin/amd64.
 
+#### 2.1 Look up the COM Port
+
+Press the windows button on the keyboard and go to the device manager. The device should be listed as **"USB Serial Port (COM[ID])".**
+In a next step adjust the settings.cmake.
+
+![COMPort](documentation/figures/Device_Manager.png)
 
 ##### 2.2 Setting CMAKE settings
 
@@ -342,7 +348,7 @@ To build and flash the Arduino firmware. Only the USB_Port must be adjusted. You
 ```
 option(BUILD_DOCUMENTATION "BUILD_DOCUMENTATION" OFF)
 option(ARDUINO_NANO_OLD "BUILD for old Arduino Nano Board (blue)" ON)
-option(USB_PORT "Set the USB port on Linux /dev/ttyUSB0 on windows COM<comID>" "COM3")
+option(USB_PORT "Set the USB port on Linux /dev/ttyUSB0 on windows COM<comID>" "COM6")
 option(ARDUINO_PROGRAMMER "Set the programmer to be used to flash the Arduino Nano" "avrispmkii")
 
 ```
