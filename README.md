@@ -109,7 +109,7 @@ The following tables contain the connections between the components described in
 <BR>
 
 
-#### 1.2.4 Connections Arduino - ADG726 Multiplexer (M2)
+##### 1.2.4 Connections Arduino - ADG726 Multiplexer (M2)
 
 
 | Pin Arduino | Description | ADG726 (U11) | Description   |
@@ -251,9 +251,9 @@ Routed on the Backside. Common length of 140 mm.
 
 <BR>
 
-### 3. Connecting the board
+### 2. Connecting the board
 
-#### 3.1 Connect the Arduino Nano 
+#### 2.1 Connect the Arduino Nano 
 
 Connect the Arduino Nano to the NanoSEC Switch Matrix like shown in the following picture.
 Use a Micro USB cable to connect the arduino to the computer. The Arduino is working if the green 
@@ -264,7 +264,7 @@ On linux the device should be registered as '/dev/ttyUSB0'.
 ![Arduino Connection](documentation/figures/Arduino_Connection.jpg)
 
 
-#### 3.2 Connect the Power Supply
+#### 2.2 Connect the Power Supply
 
 A DC power supply must be connected to drive the relays. The power supply can be connected by the barrel jack connector
 on the left buttom of the board or by connecting jumper cables to the power supply pins below the barrel jack connector.
@@ -284,13 +284,15 @@ When two relays are switched a current of 83mA can be observed on a DC power sup
 ![Connector DC Power Supply](documentation/figures/DC_Powersupply.jpg)
 
 
-#### 3.3 Jumpers 
+#### 2.3 Jumpers 
 
 The board contains several Jumpers for debugging purposes or to execute differnt types of measurements. 
+  
+  TODO add jumper descriptions.
 
 
 
-### 2. Code description 
+### 3. Setup and Production
 
 The code is basically subdivided into two different components. 
 - The **Arduino Firmware** which is the code executed on the Arduino Nano. 
@@ -299,21 +301,21 @@ It accepts commands via an UART interface and forwards the commands to the multi
 - The **Client Side API** is executed on the computer responsible for the test execution and communicates the 
 commands to the Arduino Nano via an UART interface.
   
-#### 2.1 Preconditions
+#### 3.1 Preconditions
 
-##### 2.1.1 Install the avr-gcc compiler
+##### 3.1.1 Install the avr-gcc compiler
 
 First hte avr-gcc compiler must be installed. Therefore, go to **Arduino_Firmware/Toolchain/SysGCC** and execute **avr-gcc5.3.0.exe
 .** You see an installation dialog. Like shown the in the figure below. Select the Arduino_firmware/Toolchain/ directory and install the compiler.
 
 ![Connector DC Power Supply](documentation/figures/Install_Compiler.png)
 
-##### 2.1.2 Further tools
+##### 3.1.2 Further tools
 
 Further tools like cmake and ninja are already included in the repository in the Toolchain folder and do not have to be installed
 manually. 
 
-##### 2.1.2 Compiling AVRDude
+##### 3.1.3 Compiling AVRDude
 
 We are using AVRDude to flash the firmware image on the Arduino Nano. 
 You can find the installation under Toolchain/AVRDude. 
@@ -331,14 +333,14 @@ Go to AVRDude and run:
 
 Afterwareds you will find the avr compilation under bin/amd64.
 
-#### 2.1 Look up the COM Port
+#### 3.2 Look up the COM Port
 
 Press the windows button on the keyboard and go to the device manager. The device should be listed as **"USB Serial Port (COM[ID])".**
 In a next step adjust the settings.cmake.
 
 ![COMPort](documentation/figures/Device_Manager.png)
 
-##### 2.2 Setting CMAKE settings
+##### 3.3 Setting CMAKE settings
 
 In the Arduino_Firmware folder you can find a settings.cmake file.  
 These contain the most important properties of the firmware. 
@@ -359,7 +361,7 @@ Set the BUILD_DOCUMENTATION option to automatically build the Code Documentation
 
 
 
-##### 2.3 Compiling the firmware
+##### 3.4 Compiling the firmware
 
 On Linux run: 
 
@@ -390,7 +392,7 @@ EEPROM   Size:  [Program: 0 bytes (0.0%)]  [Data: 0 bytes (0.0%)] on atmega328p
 
 
 
-##### 2.4 Flashing the Firmware onto the Arduino Nano
+##### 3.5 Flashing the Firmware onto the Arduino Nano
 
 On Linux run after compiling:
 
@@ -507,13 +509,13 @@ avrdude done.  Thank you.
 
 ```
 
-##### 2.3 Communication protocol
+### 3. Communication Protocol
 
 A lightweight communication protocol is implemented on the Arduino Nano tunneled over the USB UART interface.
 A UART connection is established by simply plugin in the Mini USB cable. On linux for example, the device is 
 typically available under "/dev/ttyUSB0" on Windows the device can be seen in the device manager under "COMxx".
 
-#### 2.3.1 UART properties 
+#### 3.1 UART properties 
 
 |     Properties     | Values |
 |:--------------:|:-----------:|
@@ -523,7 +525,7 @@ typically available under "/dev/ttyUSB0" on Windows the device can be seen in th
 | Parity              | None  |
 | Flow control        | None  |
 
-##### 2.3.2 Commands
+##### 3.2 Commands
 
 |     Command     | Description | Allowed values |
 |:--------------:|:-----------:|:-----------:|
@@ -551,12 +553,12 @@ $ disconnect
  ack
 ```
 
-##### 2.3.2 Python Tester
+### 4 Python Tester
 
 In the folder python_tester you can find a python test application, which switches all relays 
 in an infinite loop. 
 
-##### 2.3.2.1 Installation
+##### 4.1 Installation
 
 - On Windows: 
   - Install Python3 (e.g. 3.10.2) from the [official home page](https://www.python.org/downloads/).
@@ -570,7 +572,7 @@ in an infinite loop.
   $ sudo pip install pyserial
   ```
 
-##### 2.3.2.2 Execution
+##### 4.2 Execution
 
   To run the program execute following command.
   Thereby <serial_port> must be replaced with the actual port to which the Arduino is connected. 
