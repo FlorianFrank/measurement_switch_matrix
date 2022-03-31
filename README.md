@@ -555,9 +555,9 @@ Sample accessing the protocol on linux:
 $ serial /dev/ttyUSB0
 $ connect
 -> ack
-$ row: 1
+$ r: 1
  ack
-$ column: 1
+$ c: 1
  ack
 
 $ column: 15
