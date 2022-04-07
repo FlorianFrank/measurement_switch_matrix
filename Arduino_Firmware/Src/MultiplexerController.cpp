@@ -90,10 +90,10 @@ void MultiplexerController::DeInitializeMultiplexer()
  */
 void MultiplexerController::WriteRowPhysical() const
 {
-    digitalWrite(MUX1_A0, m_CurrentRow & 1);
-    digitalWrite(MUX1_A1, ((m_CurrentRow & 2) > 0) ? 1 : 0);
-    digitalWrite(MUX1_A2, ((m_CurrentRow & 4) > 0) ? 1 : 0);
-    digitalWrite(MUX1_A3, ((m_CurrentRow & 8) > 0) ? 1 : 0);
+    digitalWrite(MUX2_A0, m_CurrentColumn & 1);
+    digitalWrite(MUX2_A1, ((m_CurrentColumn & 2) > 0) ? 1 : 0);
+    digitalWrite(MUX2_A2, ((m_CurrentColumn & 4) > 0) ? 1 : 0);
+    digitalWrite(MUX2_A3, ((m_CurrentColumn & 8) > 0) ? 1 : 0);
 }
 
 /**
@@ -101,10 +101,10 @@ void MultiplexerController::WriteRowPhysical() const
  */
 void MultiplexerController::WriteColumnPhysical() const
 {
-    digitalWrite(MUX2_A0, m_CurrentColumn & 1);
-    digitalWrite(MUX2_A1, ((m_CurrentColumn & 2) > 0) ? 1 : 0);
-    digitalWrite(MUX2_A2, ((m_CurrentColumn & 4) > 0) ? 1 : 0);
-    digitalWrite(MUX2_A3, ((m_CurrentColumn & 8) > 0) ? 1 : 0);
+    digitalWrite(MUX1_A0, m_CurrentRow & 1);
+    digitalWrite(MUX1_A1, ((m_CurrentRow & 2) > 0) ? 1 : 0);
+    digitalWrite(MUX1_A2, ((m_CurrentRow & 4) > 0) ? 1 : 0);
+    digitalWrite(MUX1_A3, ((m_CurrentRow & 8) > 0) ? 1 : 0);
 }
 
 
