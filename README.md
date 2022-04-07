@@ -302,6 +302,35 @@ It accepts commands via an UART interface and forwards the commands to the multi
 commands to the Arduino Nano via an UART interface.
   
 #### 3.1 Preconditions
+  
+##### 3.1.1 Install git
+  
+ On Windows: 
+  ```
+  Follow the link:
+  https://git-scm.com/download/win
+  And install the executable.
+  ```
+ On Linux:
+  ```
+  # apt-get install git
+  ```
+  
+#### 3.1.2 Clone the directory
+  
+  ```
+$ git clone https://github.com/FlorianFrank/measurement_switch_matrix.git
+Cloning into 'measurement_switch_matrix'...
+Username for 'https://github.com': test
+Password for 'https://test@github.com': test123
+  ```
+##### 3.1.3 Update on changes
+  
+ ```
+  $ git pull
+ ```
+  
+  Updates the current working copy to the current version on the repo.
 
 ##### 3.1.1 Install the avr-gcc compiler
 
