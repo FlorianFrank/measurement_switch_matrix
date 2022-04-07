@@ -64,6 +64,10 @@ ErrorCode SerialInterfaceHandler::DeInitializeSerialInterface()
     do
     {
         *len += Serial.readBytes(&tempData[pos], lenToRead);
+        char buff[512];
+        sprintf(buff, "Ausgabe %s\n", &tempData[pos]);
+
+        Serial.write(buff);
         lenToRead =- *len;
         pos += *len;
     } while(!strstr(tempData, "\n") && lenToRead > 0);
@@ -82,7 +86,7 @@ ErrorCode SerialInterfaceHandler::DeInitializeSerialInterface()
         return Message(0, NOPE);
 
 
-    if(DataAvail() > 3)
+    if(DataAvail() >= 3)
         return ReadAndParseMessageBlocking(len);
     return Message(0, NOPE);
 }
