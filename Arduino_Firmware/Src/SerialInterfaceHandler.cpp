@@ -17,7 +17,7 @@ SerialInterfaceHandler::~SerialInterfaceHandler()
 
 ErrorCode SerialInterfaceHandler::InitializeSerialInterface()
 {
-    Serial.begin(m_Baudrate);
+    Serial.begin(9600);
     while(!Serial)
     {
         // TODO implement timeout and error handling
