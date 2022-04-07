@@ -82,7 +82,7 @@ ErrorCode SerialInterfaceHandler::DeInitializeSerialInterface()
         return Message(0, NOPE);
 
 
-    if(DataAvail() > 0)
+    if(DataAvail() > 3)
         return ReadAndParseMessageBlocking(len);
     return Message(0, NOPE);
 }
