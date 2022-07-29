@@ -1,7 +1,9 @@
 # Measurement Switch Matrix
 
 This repository contains a description of the NanoSEC switch matrix, as well as all the relevant source code, 
-to control the board. 
+to control the board. The material in this repository corresponds to the paper:
+
+[F. Frank et al., "A Dedicated Mixed-Signal Characterisation and Testing Framework for Novel Digital Security Circuits That Use Carbon-Nanotube-Based Physical Unclonable Functions," 2022 11th International Conference on Modern Circuits and Systems Technologies (MOCAST), 2022, pp. 1-4, doi: 10.1109/MOCAST54814.2022.9837567](https://ieeexplore.ieee.org/document/9837567)
 
 ![Switch Matrix](documentation/figures/Motherboard.jpg)
 
