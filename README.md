@@ -5,19 +5,6 @@ to control the board. The material in this repository corresponds to the paper:
 
 [F. Frank et al., "A Dedicated Mixed-Signal Characterisation and Testing Framework for Novel Digital Security Circuits That Use Carbon-Nanotube-Based Physical Unclonable Functions," 2022 11th International Conference on Modern Circuits and Systems Technologies (MOCAST), 2022, pp. 1-4, doi: 10.1109/MOCAST54814.2022.9837567](https://ieeexplore.ieee.org/document/9837567)
 
-**Cite:**
-```
-@INPROCEEDINGS{9837567,  author={Frank, Florian and Anagnostopoulos, Nikolaos Athanasios and Böttger, 
-Simon and Hermann, Sascha and Arul, Tolga and Stavrinides, Stavros G. and Katzenbeisser, Stefan},  
-booktitle={2022 11th International Conference on Modern Circuits and Systems Technologies (MOCAST)},   
-title={A Dedicated Mixed-Signal Characterisation and Testing Framework for Novel Digital Security 
-Circuits That Use Carbon-Nanotube-Based Physical Unclonable Functions},   
-year={2022},  
-volume={},  
-number={},  
-pages={1-4},  
-doi={10.1109/MOCAST54814.2022.9837567}}
-```
 
 ![Switch Matrix](documentation/figures/Motherboard.jpg)
 
