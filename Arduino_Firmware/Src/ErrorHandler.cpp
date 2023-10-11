@@ -53,6 +53,13 @@ const char *ErrorHandler::ErrorCodeToString(ErrorCode errCode)
         case NOT_INITIALIZED:
             strcpy(m_ErrorCodeBuffer, "Variable not initialized");
             break;
+        case RETURNED_NULLPTR:
+            strcpy(m_ErrorCodeBuffer, "nullptr returned");
+            break;
+        case JSON_PARSING_ERROR:
+            strcpy(m_ErrorCodeBuffer, "Error while parsing JSON");
+            break;
+
     }
     return m_ErrorCodeBuffer;
 }

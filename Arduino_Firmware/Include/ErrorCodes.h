@@ -26,7 +26,11 @@ enum ErrorCode {
     /** Device is disconnected. */
     DISCONNECTED        = 8,
     /** Trying to execute a function on a not initialized structure. */
-    NOT_INITIALIZED     = 9
+    NOT_INITIALIZED     = 9,
+    /** Function returned a nullptr. */
+    RETURNED_NULLPTR   = 10,
+    /** JSON parsing error. */
+    JSON_PARSING_ERROR   = 11
 };
 
 #endif //NANOSEC_CROSSBAR_CONTROLLER_ERRORCODES_H

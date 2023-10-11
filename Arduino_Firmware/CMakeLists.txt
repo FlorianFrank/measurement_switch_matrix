@@ -25,29 +25,66 @@ else()
 endif() # if WIN32
 
 project(${PROJECT_NAME})
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
-include_directories("./Include")
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/build_documentation.cmake)
 
 # Define additional source and header files or default arduino sketch files
-set(${PROJECT_NAME}_SRCS
+
+
+set(src_files
         Src/FirmwareEntry.cpp
         Src/MultiplexerController.cpp
-        Src/SerialInterfaceHandler.cpp
         Src/ErrorHandler.cpp
         Src/Message.cpp
         Src/ArduinoMainController.cpp)
 
-set(${PROJECT_NAME}_HDRS
+set(headers_files
         Include/MultiplexerController.h
-        Include/SerialInterfaceHandler.h
         Include/ErrorHandler.h
         Include/ADG726Pins.h
         Include/Message.h
         Include/ArduinoMainController.h
         Include/Commands.h
         Include/ErrorCodes.h)
+
+if(DEFINED ETHERNET_SUPPORT)
+    add_definitions(-DETHERNET_SUPPORT=1)
+    message("Build UIPEthernet library")
+    file(GLOB eth_src_files ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/*.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/utility/*.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/utility/*.c
+                            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/*.c
+                            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/*.h
+                            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/utility/*.h
+                            Src/ethernet/EthernetCommandParser.cpp
+                            Src/ethernet/EthernetController.cpp)
+
+    file(GLOB eth_header_files ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/*.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/utility/*.h
+            Include/ethernet/EthernetDefines.h
+            Include/ethernet/EthernetCommandParser.h
+            Include/ethernet/EthernetController.h)
+
+
+    set(${PROJECT_NAME}_SRCS ${src_files} ${eth_src_files})
+    set(${PROJECT_NAME}_HDRS ${header_files} ${eth_header_files})
+
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Include/
+                        ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/
+                        ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/utility/)
+else() # SERIAL interface
+    set(serial_src_files    Src/SerialInterfaceHandler.cpp)
+    set(serial_header_files Include/SerialInterfaceHandler.h)
+
+    set(${PROJECT_NAME}_SRCS ${src_files} ${serial_src_files})
+    set(${PROJECT_NAME}_HDRS ${header_files} ${serial_header_files})
+
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Include/
+            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/
+            ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/utility/)
+endif() #defined ETHERNET_SUPPORT
+
 
 generate_arduino_firmware(${PROJECT_NAME})
 

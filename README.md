@@ -384,7 +384,7 @@ option(BUILD_DOCUMENTATION "BUILD_DOCUMENTATION" OFF)
 option(ARDUINO_NANO_OLD "BUILD for old Arduino Nano Board (blue)" ON)
 option(USB_PORT "Set the USB port on Linux /dev/ttyUSB0 on windows COM<comID>" "COM6")
 option(ARDUINO_PROGRAMMER "Set the programmer to be used to flash the Arduino Nano" "avrispmkii")
-
+option(ETHERNET_SUPPORT "Enable Ethernet utilizing using the AZ delivery ENC28J60 Ethernet Shield. Disable UART" ON)
 ```
 When using the old version of the Arduino Nano (blue PCB) the flag ARDUINO_NANO_OLD must be set to ON.
 
@@ -555,7 +555,7 @@ avrdude done.  Thank you.
 
 ```
 
-### 3. Communication Protocol
+### 3. UART Communication
 
 A lightweight communication protocol is implemented on the Arduino Nano tunneled over the USB UART interface.
 A UART connection is established by simply plugin in the Mini USB cable. On linux for example, the device is 
@@ -628,4 +628,104 @@ in an infinite loop.
   ```shell
   $ python3 switch_matrix_tester.py "<serial_port>"
   ```
+
+
+### 4. TCP Communication
+
+#### 4.1 Enable Ethernet support
+
+The switch matrix includes TCP communication capabilities, leveraging the ENC28J60 Ethernet Shield. Ethernet support can be activated using the following command within the **settings.cmake** file:
+
+```CMAKE
+option(ETHERNET_SUPPORT "Enable Ethernet utilizing using the AZ delivery ENC28J60 Ethernet Shield. Disable UART" ON)
+```
+in the **settings.cmake** file. 
+
+This configuration will deactivate the UART interface and enable the Ethernet shield for communication.
+
+#### 4.2 Default Configuration
+
+The default ethernet configuration is defined in the file **/Include/ethernet/EthernetDefines.h.**
+
+```c
+/**
+ * @brief This file contains all definition required to execute the Ethernet Controller.
+ */
+#define MAC_ADDRESS 0x00,0x10,0xFA,0x6E,0x38,0x4A
+#define IP_SIZE 4
+#define DEFAULT_IP 192,168,0,2
+#define DEFAULT_PORT 2000
+#define ETHERNET_LOOP_DELAY_MS 1
+
+#define ETH_MAX_MSG_SIZE 64
+#define ETH_MAX_RESPONSE_SIZE 64
+```
+
+#### 4.3 Supported Commands
+
+
+The Ethernet interface supports multiple commands that must be transmitted to the endpoint **192.168.0.2:2000** in the default configuration. The following commands are supported:
+
+The following commands are supported. 
+```JSON
+Request: {"cmd": "*IDN?"}
+Response:  {"status":"ok","idn":"NANOSec Crossbar Controller"}
+```
+This command is used to identify the switch matrix. The identification string can be customized within the EthernetCommandParser implementation.
+
+It additionally supports setting only the row selector: 
+
+```JSON
+Request: {"cmd": "SET_ROW", "row": "10"}
+Response: b'{"status":"ok","row":"10"}'
+```
+
+If the command was successful it returns a status: ok and the set row. 
+
+Simultanously the column can be set:
+
+```JSON
+Request: {"cmd": "SET_COLUMN", "column": "10"}
+Response: b'{"status":"ok","column":"2"}'
+```
+
+Furthermore it also supports a JSON command setting both the row and column at the same time:
+
+```JSON
+Request: {"cmd": "SET_ROW_COLUMN", "row": "1", "column": "2"}
+Response: b'{"status":"ok","row":1,"column":2}'
+```
+
+In case of any error an error string is returned, e.g. 
+
+```JSON
+Request: {"cmd": "INVALID_COMMAND", "row": "1", "column": "2"}
+Response: {"status":"err","msg":"Could not parse cmd INVALID_COMMAND"}'
+```
+
+#### 4.4 Python Tester
+
+A Python testing script is available under **python_tester/ethernet_tester** for verifying the functionality of the switch matrix's different commands. You can execute the script using the following command:
+
+ ```shell
+ $ python3 ethernet_tester
+
+ **********************
+Run NANOSec Switch Matrix TCP tester
+**********************
+
+
+Send: {"cmd": "*IDN?"}
+Received: b'{"status":"ok","idn":"NANOSec Crossbar Controller"}'
+Send: {"cmd": "SET_ROW", "row": "4"}
+Received: b'{"status":"ok","row":"4"}'
+Send: {"cmd": "SET_COLUMN", "column": "10"}
+Received: b'{"status":"ok","column":"10"}'
+Send: {"cmd": "SET_ROW_COLUMN", "row": "1", "column": "2"}
+Received: b'{"status":"ok","row":1,"column":2}'
+
+
+Execution finished! Exit program!
+
+ ```
 

@@ -8,19 +8,23 @@
 
 enum Command {
     /** Establish a connection to the Arduino Nano. */
-    CONNECT         = 0,
+    CONNECT             = 0,
     /** Disconnect connection from the Arduino Nano. */
-    DISCONNECT      = 1,
+    DISCONNECT          = 1,
     /** Select and switch a ro specified by its ID. */
-    SELECT_ROW      = 2,
+    SELECT_ROW          = 2,
     /** Select and switch a column specified by its ID. */
-    SELECT_COLUMN   = 3,
+    SELECT_COLUMN       = 3,
+    /** Select and switch row and column simultaneously. */
+    SELECT_ROW_COLUMN   = 4,
     /** Send an acknowledgement that a certain command was executed. */
-    ACK             = 4,
+    ACK                 = 5,
+    /** Send identification string. */
+    IDENT               = 6,
     /** Send error code if an error occurred. */
-    ERROR_CODE      = 5,
+    ERROR_CODE          = 7,
     /** No command executed. */
-    NOPE            = 6
+    NOPE                = 8
 };
 
 #endif //NANOSEC_CROSSBAR_CONTROLLER_COMMANDS_H
