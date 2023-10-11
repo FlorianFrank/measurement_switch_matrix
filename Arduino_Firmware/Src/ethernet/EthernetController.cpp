@@ -59,7 +59,6 @@ Command EthernetController::ReceiveMessage(int *row, int *column)
         memset(m_Response, '\0', ETH_MAX_RESPONSE_SIZE * sizeof(char));
         while ((readMessageSize = client.available()) > 0)
         {
-            Serial.flush();
             if (readMessageSize > ETH_MAX_MSG_SIZE){
                 client.stop();
                 return ERROR_CODE;
@@ -78,7 +77,6 @@ Command EthernetController::ReceiveMessage(int *row, int *column)
                 Serial.println("Receive message returns len < 1");
                 return ERROR_CODE;
             }
-            Serial.flush();
         }
     }
     return cmd;
