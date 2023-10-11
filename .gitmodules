@@ -1,3 +1,0 @@
-[submodule "Arduino_Firmware/thirdparty/tiny-json"]
-	path = Arduino_Firmware/thirdparty/tiny-json
-	url = git@github.com:rafagafe/tiny-json.git
