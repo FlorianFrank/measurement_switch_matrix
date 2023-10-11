@@ -48,7 +48,7 @@ set(headers_files
         Include/Commands.h
         Include/ErrorCodes.h)
 
-if(DEFINED ETHERNET_SUPPORT)
+if(ETHERNET_SUPPORT)
     add_definitions(-DETHERNET_SUPPORT=1)
     message("Build UIPEthernet library")
     file(GLOB eth_src_files ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/UIPEthernet/src/*.cpp
