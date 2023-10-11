@@ -14,14 +14,8 @@
 #include "Commands.h"
 #include "ErrorCodes.h"
 
-extern "C" {
-#include <tiny-json.h>
-}
-
-#define IDENT_STR "NANOSEC Crossbar Controller"
 #define NR_COMMANDS 4
 #define MAX_CMD_LEN sizeof("SET_ROW_COLUMN")
-#define JSON_ELEMENT_POOL_SIZE 3
 #define INT_TRANSFORM_BASE 10
 
 
@@ -29,22 +23,21 @@ class EthernetCommandParser
 {
 public:
     enum IdentifierCMD{
-        /** Returns an identification stirng  */
+        /** Returns an identification string  */
         IDN = 0,
+        /** Set the row of the switch matrix  */
         SET_ROW = 1,
+        /** Set the column of the switch matrix  */
         SET_COLUMN = 2,
+        /** Set row and column simultaneously  */
         SET_ROW_COLUMN = 3
     };
-    static Command ParseCommand(const char *command, char *response, int *row, int *column);
+    static Command ParseCommand(char *command, char *response, int *row, int *column);
 
 private:
-    static ErrorCode getValueOfJSONElement(json_t const *parent, const char *identifier, char *result, size_t maxLen);
     static ErrorCode
-    parseRowColumn(json_t const *parent, char *buffer, EthernetCommandParser::IdentifierCMD identifier, int *row,
-                   int *column, char *result);
-
+    ParseRowColumnIdentifier(const char *jsonStr, IdentifierCMD identifier, char *response, int *row, int *column);
     static char cmdList[NR_COMMANDS][MAX_CMD_LEN];
 };
-
 
 #endif //NANOSEC_CROSSBAR_CONTROLLER_ETHERNETCOMMANDPARSER_HPP
