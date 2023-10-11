@@ -1,12 +1,13 @@
+/**
+ * @brief This file implements a TCP handler to receive commands by an AZ delivery ENC28J60 Ethernet Adapter.
+ * @author Florian Frank
+ * @version 1.0
+ */
 #include "ethernet/EthernetController.h"
 #include "ethernet/EthernetDefines.h"
 #include "ethernet/EthernetCommandParser.h"
 
 #include "UIPEthernet.h"
-#include "unistd.h"
-
-#define MAX_MSG_SIZE 128
-#define MAX_RESPONSE_SIZE 128
 
 /**
  * @brief Sets the MAC address and IP and port of the Ethernet Adapter
@@ -18,6 +19,8 @@ EthernetController::EthernetController(const byte ip[IP_SIZE], const uint16_t po
     m_IP = new IPAddress(ip);
     m_Server = new EthernetServer(port);
     m_Mac = new uint8_t[MAC_ADDRESS];
+    m_MessageBuffer = new char[ETH_MAX_MSG_SIZE];
+    m_Response = new char[ETH_MAX_RESPONSE_SIZE];
 }
 
 /**
@@ -28,6 +31,8 @@ EthernetController::~EthernetController()
     free(m_IP);
     free(m_Mac);
     free(m_Server);
+    free(m_MessageBuffer);
+    free(m_Response);
 }
 
 /**
@@ -51,25 +56,30 @@ Command EthernetController::ReceiveMessage(int *row, int *column)
     if (EthernetClient client = m_Server->available())
     {
         size_t readMessageSize;
-        char *response = (char *) malloc(MAX_RESPONSE_SIZE * sizeof(char));
-        memset(response, '\0', MAX_RESPONSE_SIZE * sizeof(char));
+        memset(m_Response, '\0', ETH_MAX_RESPONSE_SIZE * sizeof(char));
         while ((readMessageSize = client.available()) > 0)
         {
-            size_t allocSize = ((readMessageSize < MAX_MSG_SIZE) ? readMessageSize : MAX_MSG_SIZE)*sizeof(char);
-            char *inputMsg = (char *) malloc(allocSize);
-            memset(inputMsg, '\0', allocSize);
-            readMessageSize = client.read(reinterpret_cast<uint8_t *>(inputMsg), allocSize);
+            Serial.flush();
+            if (readMessageSize > ETH_MAX_MSG_SIZE){
+                client.stop();
+                return ERROR_CODE;
+            }
+
+            memset(m_MessageBuffer, '\0', ETH_MAX_MSG_SIZE);
+            readMessageSize = client.read(reinterpret_cast<uint8_t *>(m_MessageBuffer), readMessageSize);
             if (readMessageSize > 0)
             {
-               cmd = EthernetCommandParser::ParseCommand(inputMsg, response, row, column);
-               if (cmd == ERROR_CODE)
+                cmd = EthernetCommandParser::ParseCommand(m_MessageBuffer, m_Response, row, column);
+                if (cmd == ERROR_CODE)
                     Serial.write("ParseCommand returned an Error\n");
-                client.write(response, strlen(response));
+                client.write(m_Response, strlen(m_Response));
             } else
+            {
                 Serial.println("Receive message returns len < 1");
-            free(inputMsg);
+                return ERROR_CODE;
+            }
+            Serial.flush();
         }
-        free(response);
     }
     return cmd;
 }

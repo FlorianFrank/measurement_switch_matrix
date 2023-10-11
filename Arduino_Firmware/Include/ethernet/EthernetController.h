@@ -26,5 +26,7 @@ private:
     IPAddress *m_IP;
     EthernetServer *m_Server;
     uint8_t* m_Mac;
+    char* m_MessageBuffer;
+    char *m_Response;
 };
 #endif //NANOSEC_CROSSBAR_CONTROLLER_ETHERNETCONTROLLER_HPP
