@@ -42,18 +42,12 @@ void MultiplexerController::DeInitializeMultiplexer()
 /*static*/ void MultiplexerController::SetPinDefaultValues()
 {
     // Deselect all rows and columns
-    DisableChannel(CH_MUX1);
-    DisableChannel(CH_MUX2);
+    // DisableChannel(CH_MUX1);
+    // DisableChannel(CH_MUX2);
 
     digitalWrite(MUX1_CS, LOW);
     digitalWrite(MUX1_EN, LOW);
     digitalWrite(MUX1_WE, LOW);
-
-    // Deselect all rows and columns
-    digitalWrite(MUX2_A0, LOW);
-    digitalWrite(MUX2_A1, LOW);
-    digitalWrite(MUX2_A2, LOW);
-    digitalWrite(MUX2_A3, LOW);
 
     digitalWrite(MUX2_CS, LOW);
     digitalWrite(MUX2_EN, LOW);
@@ -146,17 +140,19 @@ ErrorCode MultiplexerController::SelectRow(uint8_t row)
  */
 ErrorCode MultiplexerController::WriteRowColumn()
 {
+    WriteRowPhysical();
+    WriteColumnPhysical();
     if (m_LastRow != m_CurrentRow)
     {
-       EnableChannel(CH_MUX1);
-        WriteRowPhysical();
+        // EnableChannel(CH_MUX1);
+
         m_LastRow = m_CurrentRow;
     }
 
     if (m_LastColumn != m_CurrentColumn)
     {
-        EnableChannel(CH_MUX2);
-        WriteColumnPhysical();
+        // EnableChannel(CH_MUX2);
+
         m_LastColumn = m_CurrentColumn;
     }
     return NO_ERROR;
