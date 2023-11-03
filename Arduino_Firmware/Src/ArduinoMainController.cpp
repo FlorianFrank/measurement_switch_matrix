@@ -1,8 +1,11 @@
 #include "ArduinoMainController.h"
 #include "MultiplexerController.h"
+
 #ifdef ETHERNET_SUPPORT
+
 #include "ethernet/EthernetController.h"
 #include "ethernet/EthernetDefines.h"
+
 #else // SERIAL_SUPPORT
 #include "SerialInterfaceHandler.h"
 #endif // ifdef ETHERNET_SUPPORT
@@ -15,7 +18,8 @@
  * and enables the serial interface handler with an Baudrate.
  */
 #ifdef ETHERNET_SUPPORT
-ArduinoMainController::ArduinoMainController(): m_ConnectionEstablished(false)
+
+ArduinoMainController::ArduinoMainController() : m_ConnectionEstablished(false)
 #else
 ArduinoMainController::ArduinoMainController(const uint8_t baudrate): m_ConnectionEstablished(false)
 #endif
@@ -33,8 +37,7 @@ ArduinoMainController::ArduinoMainController(const uint8_t baudrate): m_Connecti
  * @brief The destructor deletes the multiplexer controller,
  * as well as the serial interface handler allocated on the heap.
  */
-ArduinoMainController::~ArduinoMainController()
-{
+ArduinoMainController::~ArduinoMainController() {
     free(m_MuxController);
 #if ETHERNET_SUPPORT
     free(m_EthernetController);
@@ -49,9 +52,8 @@ ArduinoMainController::~ArduinoMainController()
  * as well as the serial interface handler.
  * @return NO_ERROR if no error occurred otherwise an error code is returned.
  */
-ErrorCode ArduinoMainController::Init()
-{
-    if(!m_MuxController)
+ErrorCode ArduinoMainController::Init() {
+    if (!m_MuxController)
         return NOT_INITIALIZED;
 
     m_MuxController->InitializeMultiplexer();
@@ -60,6 +62,7 @@ ErrorCode ArduinoMainController::Init()
     // Enable serial interface logging
     Serial.begin(9600);
     m_EthernetController->Initialize();
+    m_ConnectionEstablished = true;
     return NO_ERROR;
 #else
     return m_SerialInterfaceHandler->InitializeSerialInterface();
@@ -71,9 +74,8 @@ ErrorCode ArduinoMainController::Init()
  * as well as the serial interface handler.
  * @return NO_ERROR if no error occurred otherwise an error code is returned.
  */
-ErrorCode ArduinoMainController::DeInit()
-{
-    if(!m_MuxController)
+ErrorCode ArduinoMainController::DeInit() {
+    if (!m_MuxController)
         return NOT_INITIALIZED;
 
     m_MuxController->DeInitializeMultiplexer();
@@ -89,19 +91,18 @@ ErrorCode ArduinoMainController::DeInit()
  *        multiplexer to control the darlington arrays.
  * @return NO_ERROR if no error occurred otherwise return an error code.
  */
-ErrorCode ArduinoMainController::Loop()
-{
+ErrorCode ArduinoMainController::Loop() {
 #if ETHERNET_SUPPORT
     int row, column;
     Command currentCommand = m_EthernetController->ReceiveMessage(&row, &column);
 
-    if(currentCommand == SELECT_ROW)
-        SetRowColumn(Message(row, currentCommand));
-    else if(currentCommand == SELECT_COLUMN)
-        SetRowColumn(Message(column, currentCommand));
-    else if(currentCommand == SELECT_ROW_COLUMN){
-        SetRowColumn(Message(column, SELECT_COLUMN));
-        SetRowColumn(Message(row, SELECT_ROW));
+    if (currentCommand == SELECT_ROW) {
+        SetRowColumn(Message(static_cast<unsigned long>(row), currentCommand));
+    } else if (currentCommand == SELECT_COLUMN) {
+        SetRowColumn(Message(static_cast<unsigned long>(column), currentCommand));
+    } else if (currentCommand == SELECT_ROW_COLUMN) {
+        SetRowColumn(Message(static_cast<unsigned long>(column), SELECT_COLUMN));
+        SetRowColumn(Message(static_cast<unsigned long>(row), SELECT_ROW));
     }
     delay(ETHERNET_LOOP_DELAY_MS);
 #else // Serial interface
@@ -145,22 +146,21 @@ ErrorCode ArduinoMainController::Loop()
  * @param message The message contains the row or column to select.
  * @return NO_ERROR if no error occurred otherwise return an error code.
  */
-ErrorCode ArduinoMainController::SetRowColumn(Message message)
-{
-    if(!m_ConnectionEstablished)
+ErrorCode ArduinoMainController::SetRowColumn(Message message) {
+    if (!m_ConnectionEstablished)
         return DISCONNECTED;
 
     ErrorCode errorCode;
-    if(message.GetCurrentCommand() == SELECT_COLUMN)
+    if (message.GetCurrentCommand() == SELECT_COLUMN)
         errorCode = m_MuxController->SelectColumn(message.GetParameter());
-    if(message.GetCurrentCommand() == SELECT_ROW)
+    if (message.GetCurrentCommand() == SELECT_ROW)
         errorCode = m_MuxController->SelectRow(message.GetParameter());
 
-    if(errorCode != NO_ERROR)
+    if (errorCode != NO_ERROR)
         return errorCode;
 
     errorCode = m_MuxController->WriteRowColumn();
-    if(errorCode != NO_ERROR)
+    if (errorCode != NO_ERROR)
         return errorCode;
     return NO_ERROR;
 }
